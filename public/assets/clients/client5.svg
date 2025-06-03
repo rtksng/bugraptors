@@ -1,0 +1,7 @@
+<svg width="150" height="48" viewBox="0 0 150 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="75" cy="24" r="20" stroke="white" stroke-width="2"/>
+  <path d="M65 24C65 18.4772 69.4772 14 75 14C80.5228 14 85 18.4772 85 24C85 29.5228 80.5228 34 75 34" stroke="white" stroke-width="2"/>
+  <path d="M82 24H75" stroke="white" stroke-width="2"/>
+  <path d="M75 24V17" stroke="white" stroke-width="2"/>
+  <circle cx="75" cy="24" r="2" fill="white"/>
+</svg> 

@@ -1,0 +1,30 @@
+<svg width="500" height="400" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background elements -->
+  <rect x="50" y="50" width="400" height="300" rx="20" fill="#1F2937" />
+  <circle cx="120" cy="120" r="60" fill="#272C3D" />
+  
+  <!-- Laptop illustration -->
+  <rect x="150" y="160" width="200" height="120" rx="10" fill="#4D2DA8" />
+  <rect x="160" y="170" width="180" height="100" rx="5" fill="#111827" />
+  <rect x="130" y="280" width="240" height="10" rx="5" fill="#4D2DA8" />
+  
+  <!-- Graph on laptop screen -->
+  <line x1="180" y1="240" x2="180" y2="190" stroke="#4D2DA8" stroke-width="2" />
+  <line x1="180" y1="240" x2="320" y2="240" stroke="#4D2DA8" stroke-width="2" />
+  <path d="M190 230 L220 210 L250 225 L280 190 L310 215" stroke="#4D2DA8" stroke-width="3" fill="none" />
+  <circle cx="220" cy="210" r="4" fill="#4D2DA8" />
+  <circle cx="250" cy="225" r="4" fill="#4D2DA8" />
+  <circle cx="280" cy="190" r="4" fill="#4D2DA8" />
+  <circle cx="310" cy="215" r="4" fill="#4D2DA8" />
+  
+  <!-- Checkmarks and testing symbols -->
+  <circle cx="370" cy="100" r="30" fill="#4D2DA8" fillOpacity="0.2" />
+  <path d="M355 100 L365 110 L385 90" stroke="#4D2DA8" stroke-width="4" fill="none" />
+  
+  <circle cx="70" cy="230" r="30" fill="#4D2DA8" fillOpacity="0.2" />
+  <path d="M70 215 L70 245 M55 230 L85 230" stroke="#4D2DA8" stroke-width="4" />
+  
+  <circle cx="400" cy="230" r="30" fill="#4D2DA8" fillOpacity="0.2" />
+  <path d="M400 215 L400 230 M400 240 L400 240" stroke="#4D2DA8" stroke-width="4" stroke-linecap="round" />
+  <circle cx="400" cy="240" r="2" fill="#4D2DA8" />
+</svg> 

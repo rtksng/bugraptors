@@ -1,0 +1,137 @@
+import React from 'react';
+import { 
+  FaRobot, 
+  FaShieldAlt, 
+  FaChartLine, 
+  FaComments,
+  FaArrowRight,
+  FaCog
+} from 'react-icons/fa';
+
+const services = [
+  {
+    title: 'AI-powered Test Automation',
+    description: 'Accelerate your testing cycles with intelligent automation driven by AI algorithms.',
+    icon: <FaRobot className="w-8 h-8" />,
+    gradient: 'from-purple-600 to-blue-600'
+  },
+  {
+    title: 'AI Security Testing',
+    description: 'Detect vulnerabilities and threats using advanced AI-based security analysis.',
+    icon: <FaShieldAlt className="w-8 h-8" />,
+    gradient: 'from-cyan-600 to-purple-600'
+  },
+  {
+    title: 'Predictive Analysis',
+    description: 'Leverage AI to predict defects, optimize test coverage, and improve product quality.',
+    icon: <FaChartLine className="w-8 h-8" />,
+    gradient: 'from-blue-600 to-indigo-600'
+  },
+  {
+    title: 'Chatbot Testing',
+    description: 'Ensure your chatbots deliver seamless and accurate user experiences with AI-driven testing.',
+    icon: <FaComments className="w-8 h-8" />,
+    gradient: 'from-indigo-600 to-purple-600'
+  }
+];
+
+const AIServices: React.FC = () => {
+  return (
+    <section className="relative py-20  overflow-hidden">
+   
+
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Animated gradient orbs */}
+        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
+        
+        {/* Additional floating elements */}
+        <div className="absolute top-40 right-[20%] w-2 h-2 bg-purple-400 rounded-full animate-float opacity-50"></div>
+        <div className="absolute bottom-32 left-[30%] w-3 h-3 bg-blue-400 rounded-full animate-float-delayed opacity-30"></div>
+        <div className="absolute top-[60%] right-[40%] w-2 h-2 bg-cyan-400 rounded-full animate-float opacity-40"></div>
+      </div>
+
+      {/* Grid Pattern with Animation */}
+      <div className="absolute inset-0 opacity-[0.02] animate-grid-flow">
+        <div className="w-full h-full" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }}></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-6 shadow-xl">
+            <FaRobot className="w-4 h-4 text-blue-400 mr-3" />
+            <span className="text-sm font-medium text-purple-200">AI-Powered Solutions</span>
+          </div>
+          
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+            <span className="relative">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200">
+                AI Services
+              </span>
+              <span className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 blur-3xl transform scale-150 opacity-20"></span>
+            </span>
+          </h2>
+          
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            Harness the power of artificial intelligence to revolutionize your testing processes
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          {services.map((service, index) => (
+            <div 
+              key={service.title} 
+              className="group relative bg-gradient-to-br from-[#181e36]/80 to-[#1a2040]/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 hover:scale-105 hover:-translate-y-2 transition-all duration-500 border border-purple-500/20 hover:border-purple-400/40 overflow-hidden"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              {/* Glowing Background Effect */}
+              <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`}></div>
+              
+              {/* Corner Accent */}
+              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-600/20 to-transparent rounded-bl-full"></div>
+
+              {/* Icon Container */}
+              <div className={`relative mb-6 w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-xl flex items-center justify-center text-white transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-xl"></div>
+                <div className="relative z-10">
+                  {service.icon}
+                </div>
+                {/* Glowing Ring */}
+                <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} rounded-xl blur-md opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10`}></div>
+              </div>
+
+              {/* Content */}
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 mb-4 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                  {service.description}
+                </p>
+              </div>
+
+              {/* Bottom Glowing Line */}
+              <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
+
+              {/* Floating Particles */}
+              <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
+              <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
+            </div>
+          ))}
+        </div>
+
+        
+      </div>
+    </section>
+  );
+};
+
+export default AIServices; 

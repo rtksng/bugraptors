@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.swiper-slide
+{
+    height: 300px;
+}
