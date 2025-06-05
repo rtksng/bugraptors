@@ -1,12 +1,13 @@
 import React from 'react';
-import { 
-  FaRobot, 
-  FaShieldAlt, 
-  FaChartLine, 
+import {
+  FaRobot,
+  FaShieldAlt,
+  FaChartLine,
   FaComments,
   FaArrowRight,
   FaCog
 } from 'react-icons/fa';
+import SectionTitle from './SectionTittle';
 
 const services = [
   {
@@ -38,7 +39,7 @@ const services = [
 const AIServices: React.FC = () => {
   return (
     <section className="relative py-20  overflow-hidden">
-   
+
 
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -46,7 +47,7 @@ const AIServices: React.FC = () => {
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
-        
+
         {/* Additional floating elements */}
         <div className="absolute top-40 right-[20%] w-2 h-2 bg-purple-400 rounded-full animate-float opacity-50"></div>
         <div className="absolute bottom-32 left-[30%] w-3 h-3 bg-blue-400 rounded-full animate-float-delayed opacity-30"></div>
@@ -64,48 +65,35 @@ const AIServices: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-6 shadow-xl">
-            <FaRobot className="w-4 h-4 text-blue-400 mr-3" />
-            <span className="text-sm font-medium text-purple-200">AI-Powered Solutions</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-            <span className="relative">
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200">
-                AI Services
-              </span>
-              <span className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-blue-600/20 blur-3xl transform scale-150 opacity-20"></span>
-            </span>
-          </h2>
-          
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Harness the power of artificial intelligence to revolutionize your testing processes
-          </p>
-        </div>
 
+
+        <SectionTitle
+          tag="Industry Expertise"
+          
+          title="Driving Quality Across Diverse Domains"
+          subtitle="Delivering specialized testing solutions across diverse industries" />
+          
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {services.map((service, index) => (
-            <div 
-              key={service.title} 
-              className="group relative bg-gradient-to-br from-[#181e36]/80 to-[#1a2040]/80 backdrop-blur-sm rounded-2xl shadow-2xl p-6 hover:scale-105 hover:-translate-y-2 transition-all duration-500 border border-purple-500/20 hover:border-purple-400/40 overflow-hidden"
+            <div
+              key={service.title}
+              className="group relative bg-custom-transparent rounded-2xl shadow-2xl p-6 hover:scale-105 hover:-translate-y-2 transition-all duration-500 border border-purple-500/20 hover:border-purple-400/40 overflow-hidden"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Glowing Background Effect */}
               <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-2xl`}></div>
-              
+
               {/* Corner Accent */}
-              <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-purple-600/20 to-transparent rounded-bl-full"></div>
+              <div className="absolute top-0 right-0 w-20 h-20 bg-custom-transparent rounded-bl-full"></div>
 
               {/* Icon Container */}
-              <div className={`relative mb-6 w-16 h-16 bg-gradient-to-r ${service.gradient} rounded-xl flex items-center justify-center text-white transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+              <div className={`relative mb-6 w-16 h-16 custom-bg-color rounded-xl flex items-center justify-center text-white transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-xl"></div>
                 <div className="relative z-10">
                   {service.icon}
                 </div>
-                {/* Glowing Ring */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${service.gradient} rounded-xl blur-md opacity-0 group-hover:opacity-75 transition-opacity duration-300 -z-10`}></div>
+              
               </div>
 
               {/* Content */}
@@ -128,7 +116,7 @@ const AIServices: React.FC = () => {
           ))}
         </div>
 
-        
+
       </div>
     </section>
   );

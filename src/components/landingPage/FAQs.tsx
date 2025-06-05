@@ -8,6 +8,7 @@ import {
   FaUsers,
   FaCog
 } from 'react-icons/fa';
+import SectionTitle from './SectionTittle';
 
 const faqs = [
   {
@@ -88,19 +89,11 @@ const FAQs: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header section */}
-        <div className="text-center mb-16 max-w-4xl mx-auto">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-6">
-            <FaQuestionCircle className="w-4 h-4 text-blue-400 mr-3" />
-            <span className="text-sm font-medium text-purple-200">FAQ Section</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-            <div className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200">
-              Frequently Asked Questions
-            </div>
-          </h2>
-          
-        </div>
+
+        <SectionTitle
+          tag="FAQ Section"
+          title="Frequently Asked Questions"
+        />
 
         {/* Enhanced FAQ Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">

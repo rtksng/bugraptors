@@ -1,22 +1,19 @@
 import React from 'react';
-import { 
-  FaVial, 
-  FaDesktop, 
-  FaMousePointer, 
-  FaCheckCircle, 
-  FaTachometerAlt, 
-  FaMobile,
+import {
+  FaVial,
+  FaDesktop,
+  FaMousePointer,
+  FaCheckCircle,
   FaArrowRight,
   FaArrowLeft,
   FaCog,
-  FaShieldAlt,
-  FaCloud,
-  FaRobot
+
 } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import SectionTitle from './SectionTittle';
 
 const offerings = [
   {
@@ -41,13 +38,13 @@ const offerings = [
     category: 'Functionality'
   },
   {
-    name: 'User Acceptance Testing',
+    name: 'User Testing',
     description: 'End-user validation ensuring the software meets actual user needs and business objectives through UAT',
     icon: <FaCheckCircle className="w-7 h-7" />,
     gradient: 'from-purple-600 to-blue-600',
     category: 'Validation'
   },
-  
+
 ];
 
 
@@ -59,7 +56,7 @@ const SoftwareTestingOfferings: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
-        
+
         {/* Subtle decorative elements */}
         {[...Array(5)].map((_, i) => (
           <div
@@ -77,24 +74,9 @@ const SoftwareTestingOfferings: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header Section */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-6">
-            <FaCog className="w-4 h-4 text-blue-400 mr-3" />
-            <span className="text-sm font-medium text-purple-200">Our Services</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-            <div className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200">
-              Comprehensive Software Testing Solutions
-            </div>
-          </h2>
-          
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From initial planning to final deployment, we provide end-to-end testing services that transform your software from bugged to bug-free.
-          </p>
 
-          
-        </div>
+
+        <SectionTitle tag="Our Services" title=" Comprehensive Software Testing Solutions" subtitle=" From initial planning to final deployment, we provide end-to-end testing services that transform your software from bugged to bug-free." />
 
         {/* Offerings Carousel */}
         <div className="relative px-12">
@@ -116,7 +98,7 @@ const SoftwareTestingOfferings: React.FC = () => {
             {offerings.map((offering, index) => (
               <SwiperSlide key={offering.name}>
                 <div
-                  className="group relative bg-gradient-to-br  from-[#0B1120]/80 to-[#0a0f2e]/80 backdrop-blur-sm rounded-4xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 h-full"
+                  className="group relative bg-custom-transparent rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300 h-full"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   {/* Category Badge */}
@@ -125,22 +107,24 @@ const SoftwareTestingOfferings: React.FC = () => {
                       {offering.category}
                     </span>
                   </div>
-               
-                  
+
+
                   {/* Content */}
-                  <div className="relative z-10">
+                  <div className="relative z-10 flex flex-col h-full">
                     <h3 className="text-xl font-semibold text-white mb-3">
                       {offering.name}
                     </h3>
-                    <p className="text-sm text-gray-400 leading-relaxed mb-4">
+
+                    <p className="text-sm text-gray-400 leading-relaxed mb-4 h-[110px] text-wrap">
                       {offering.description}
                     </p>
 
-                    {/* Learn More Link */}
-                    <button className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 text-sm font-medium cursor-pointer">
-                      Learn More
-                      <FaArrowRight className="w-3 h-3 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
-                    </button>
+                    <div className="mt-2">
+                      <button className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 text-sm font-medium cursor-pointer">
+                        Learn More
+                        <FaArrowRight className="w-3 h-3 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" />
+                      </button>
+                    </div>
                   </div>
 
                   {/* Subtle Background Gradient */}
@@ -159,7 +143,7 @@ const SoftwareTestingOfferings: React.FC = () => {
           </button>
         </div>
 
-        
+
       </div>
     </section>
   );

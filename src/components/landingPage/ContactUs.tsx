@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { 
-  FaEnvelope, 
-  FaPaperPlane, 
+import {
+  FaEnvelope,
+  FaPaperPlane,
   FaCheckCircle,
   FaPhone,
   FaMapMarkerAlt,
   FaClock,
   FaArrowRight
 } from 'react-icons/fa';
+import SectionTitle from './SectionTittle';
 
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,13 +24,13 @@ const ContactUs: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     console.log('Form submitted:', formData);
     setIsSubmitting(false);
-    
+
     // Reset form
     setFormData({
       name: '',
@@ -81,7 +82,7 @@ const ContactUs: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
-        
+
         {/* Creative Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="w-full h-full" style={{
@@ -94,22 +95,13 @@ const ContactUs: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section - Mobile Optimized */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-4 sm:mb-6">
-            <FaEnvelope className="w-3 h-3 sm:w-4 sm:h-4 text-purple-400 mr-2 sm:mr-3" />
-            <span className="text-xs sm:text-sm font-medium text-purple-200">Get In Touch</span>
-          </div>
-          
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200">
-              Let's Start Something Great
-            </span>
-          </h2>
-          
-          <p className="text-gray-400 text-base sm:text-lg md:text-xl mb-4 max-w-2xl mx-auto px-4">
-            Share your QA requirements with us and our experts will get back to you
-          </p>
-        </div>
+
+        <SectionTitle
+          tag="Get In Touch"
+
+          title="Let's Start Something Great"
+          subtitle="Share your QA requirements with us and our experts will get back to you" />
+
 
         {/* Creative Two-Column Layout - Mobile Optimized */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">
@@ -126,21 +118,21 @@ const ContactUs: React.FC = () => {
                 {/* Contact Cards - Mobile Optimized */}
                 <div className="space-y-3 sm:space-y-4">
                   {contactInfo.map((info, index) => (
-                    <div 
+                    <div
                       key={info.title}
-                      className="group relative p-4 sm:p-6 bg-gradient-to-br from-[#0a102a]/80 to-[#151b3d]/80 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 overflow-hidden"
+                      className="group relative p-4 sm:p-6 bg-custom-transparent rounded-xl sm:rounded-2xl border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 overflow-hidden"
                       style={{ animationDelay: `${index * 150}ms` }}
                     >
                       {/* Creative Background Accent */}
                       <div className={`absolute top-0 right-0 w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-br ${info.gradient} opacity-5 rounded-full translate-x-6 sm:translate-x-8 -translate-y-6 sm:-translate-y-8`}></div>
-                      
+
                       <div className="relative flex items-start space-x-3 sm:space-x-4">
-                        <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl bg-gradient-to-r ${info.gradient} bg-opacity-20 border border-white/10 flex-shrink-0`}>
+                        <div className={`p-2 sm:p-3 rounded-lg sm:rounded-xl custom-bg-color bg-opacity-20  flex-shrink-0`}>
                           <div className="text-white">
                             {info.icon}
                           </div>
                         </div>
-                        
+
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center justify-between mb-1 sm:mb-2">
                             <h4 className="text-white font-semibold text-sm sm:text-base">{info.title}</h4>
@@ -175,7 +167,7 @@ const ContactUs: React.FC = () => {
             <div className="relative">
               {/* Background Decoration */}
               <div className="absolute -inset-1 sm:-inset-2 bg-gradient-to-r from-purple-600/10 via-blue-600/10 to-cyan-600/10 rounded-2xl sm:rounded-3xl blur-xl"></div>
-              
+
               <div className="relative bg-gradient-to-br from-[#0a102a]/90 to-[#151b3d]/90 backdrop-blur-sm rounded-xl sm:rounded-2xl border border-purple-500/20 p-4 sm:p-6 lg:p-8">
                 {/* Form Header */}
                 <div className="text-center mb-6 sm:mb-8">
@@ -197,7 +189,7 @@ const ContactUs: React.FC = () => {
                         required
                       />
                     </div>
-                    
+
                     <div className="space-y-1 sm:space-y-2">
                       <label className="text-xs sm:text-sm font-medium text-gray-300">Email *</label>
                       <input
@@ -211,7 +203,7 @@ const ContactUs: React.FC = () => {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-1 sm:space-y-2">
                     <label className="text-xs sm:text-sm font-medium text-gray-300">Phone</label>
                     <input
@@ -223,7 +215,7 @@ const ContactUs: React.FC = () => {
                       className="w-full px-3 py-2.5 sm:px-4 sm:py-3 bg-[#0a0f2e]/80 rounded-lg border border-purple-500/20 focus:border-purple-500/50 focus:ring-1 focus:ring-purple-500/20 text-white placeholder-gray-400 outline-none transition-all duration-300 text-sm sm:text-base"
                     />
                   </div>
-                  
+
                   <div className="space-y-1 sm:space-y-2">
                     <label className="text-xs sm:text-sm font-medium text-gray-300">Message *</label>
                     <textarea
@@ -238,37 +230,40 @@ const ContactUs: React.FC = () => {
                   </div>
 
                   <div className="flex items-start space-x-3">
-                    <div className="relative flex-shrink-0 mt-0.5">
-                      <input
-                        type="checkbox"
-                        id="privacy"
-                        name="isRobot"
-                        checked={formData.isRobot}
-                        onChange={handleChange}
-                        className="peer sr-only"
-                      />
-                      <div 
-                        className={`w-4 h-4 sm:w-5 sm:h-5 rounded border cursor-pointer transition-all duration-300
-                          ${formData.isRobot 
-                            ? 'border-purple-500 bg-gradient-to-r from-purple-600 to-blue-600' 
-                            : 'border-purple-500/30 bg-[#0a0f2e]/80'
-                          }`}
-                      >
-                        <FaCheckCircle
-                          className={`w-full h-full p-[1px] text-white transition-all duration-300
-                            ${formData.isRobot ? 'opacity-100' : 'opacity-0'}`}
+                    <label htmlFor="privacy" className="flex items-start space-x-3 cursor-pointer select-none">
+                      <div className="relative flex-shrink-0 mt-0.5">
+                        <input
+                          type="checkbox"
+                          id="privacy"
+                          name="isRobot"
+                          checked={formData.isRobot}
+                          onChange={handleChange}
+                          className="peer sr-only"
                         />
+                        <div
+                          className={`w-4 h-4 sm:w-5 sm:h-5 rounded border cursor-pointer transition-all duration-300
+                      ${formData.isRobot
+                              ? 'border-purple-500 bg-gradient-to-r from-purple-600 to-blue-600'
+                              : 'border-purple-500/30 bg-[#0a0f2e]/80'
+                            }`}
+                        >
+                          <FaCheckCircle
+                            className={`w-full h-full p-[1px] text-white transition-all duration-300
+                            ${formData.isRobot ? 'opacity-100' : 'opacity-0'}`}
+                          />
+                        </div>
                       </div>
-                    </div>
-                    <label htmlFor="privacy" className="text-xs sm:text-sm text-gray-400 cursor-pointer leading-relaxed">
-                      I agree to the privacy policy and terms of service
+                      <span className="text-xs sm:text-sm text-gray-400 leading-relaxed">
+                        I agree to the privacy policy and terms of service
+                      </span>
                     </label>
+
                   </div>
 
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 sm:px-6 sm:py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-medium disabled:opacity-70 disabled:cursor-not-allowed hover:from-purple-700 hover:to-blue-700 transition-all duration-300 group text-sm sm:text-base cursor-pointer"
+                    className="w-full px-4 py-3 sm:px-6 sm:py-4 custom-bg-color text-white rounded-full  disabled:opacity-70 disabled:cursor-not-allowed hover:from-purple-700 hover:to-blue-700 transition-all duration-300 group text-sm sm:text-base cursor-pointer"
                   >
                     <div className="flex items-center justify-center">
                       {isSubmitting ? (

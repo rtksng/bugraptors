@@ -1,13 +1,15 @@
 import React from 'react';
-import { 
-  FaQuoteRight, 
-  FaStar, 
-  FaUsers, 
+import {
+  FaQuoteRight,
+  FaStar,
+  FaUsers,
   FaBuilding,
   FaChevronRight,
   FaHeart,
   FaShieldAlt
 } from 'react-icons/fa';
+import SectionTitle from './SectionTittle';
+import CTAButton from './Button';
 
 const testimonials = [
   {
@@ -67,7 +69,7 @@ const ClientTestimonials: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
-        
+
         {/* Subtle decorative elements */}
         {[...Array(5)].map((_, i) => (
           <div
@@ -86,22 +88,15 @@ const ClientTestimonials: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-6">
-            <FaHeart className="w-4 h-4 text-pink-400 mr-3" />
-            <span className="text-sm font-medium text-purple-200">Client Success Stories</span>
-          </div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-            <span className="text-gray-200">What Our</span>{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 text-transparent bg-clip-text">Clients Say</span>
-          </h2>
-          
-          <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
-            We're proud of the partnerships we've built! Don't simply believe what we say; read what our clients have to say about working with us.
-          </p>
+          <SectionTitle
+            tag="Client Success Stories"
+
+            title="What Our Clients Say"
+            subtitle="We're proud of the partnerships we've built! Don't simply believe what we say; read what our clients have to say about working with us." />
 
           {/* Stats Section */}
-          <div className="flex justify-center items-center space-x-8 mt-8">
+          <div className="flex justify-center items-center space-x-8">
             <div className="flex items-center space-x-2">
               <FaUsers className="w-5 h-5 text-purple-400" />
               <span className="text-white font-semibold">1000+</span>
@@ -125,14 +120,14 @@ const ClientTestimonials: React.FC = () => {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="group relative bg-gradient-to-br from-[#0B1120]/80 to-[#0a0f2e]/80 backdrop-blur-sm rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
+              className="group relative bg-custom-transparent  rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Header */}
               <div className="flex items-start justify-between mb-6">
                 {/* Company Logo */}
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl border border-purple-500/30 flex items-center justify-center">
+                  <div className="w-12 h-12 custom-bg-color rounded-xl  flex items-center justify-center">
                     <span className="text-purple-300 font-bold text-sm">{testimonial.logo}</span>
                   </div>
                   <div>
@@ -190,14 +185,12 @@ const ClientTestimonials: React.FC = () => {
 
         {/* CTA Section */}
         <div className="text-center mt-16">
-          <div className="inline-flex flex-col items-center p-6 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-2xl border border-purple-500/20 backdrop-blur-sm">
+          <div className="inline-flex flex-col items-center p-6 bg-custom-transparent rounded-2xl border border-purple-500/20 backdrop-blur-sm">
             <h3 className="text-xl font-semibold text-white mb-2">Ready to join our success stories?</h3>
             <p className="text-gray-400 mb-4">Let's discuss how we can help transform your testing processes</p>
-            <button className="inline-flex items-center px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
-              <FaUsers className="w-4 h-4 mr-2" />
-              Start Your Success Story
-            </button>
+            <CTAButton label="Start Your Success Story " onClick={() => console.log('Clicked!')} variant={'primary'} />
           </div>
+         
         </div>
       </div>
     </section>

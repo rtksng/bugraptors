@@ -8,35 +8,44 @@ import {
   FaVideo,
   FaIndustry,
 } from 'react-icons/fa';
-
+import SectionTitle from './SectionTittle';
+import BankingFinance from "../../assets/Banking&Finance.png"
+import HealthCare from "../../assets/HealthCare.png"
+import RetailCommerce from "../../assets/Retail&Commerce.png"
+import EnergyUtilities from "../../assets/Energy&Utilities.png"
+import mediaentertainment from "../../assets/Media&Entertainment.png"
 const domains = [
   {
     name: 'Healthcare',
     description: 'Comprehensive testing for medical software and devices',
     icon: FaHospital,
     color: 'bg-purple-500',
-    gradient: 'from-purple-500/20 to-purple-500/5'
+    gradient: 'from-purple-500/20 to-purple-500/5',
+    img:HealthCare,
   },
   {
     name: 'Retail & Commerce',
     description: 'End-to-end testing for seamless shopping experiences',
     icon: FaShoppingCart,
     color: 'bg-yellow-500',
-    gradient: 'from-yellow-500/20 to-yellow-500/5'
+    gradient: 'from-yellow-500/20 to-yellow-500/5',
+    img:RetailCommerce,
   },
   {
     name: 'Banking & Finance',
     description: 'Secure and reliable financial software testing',
     icon: FaUniversity,
     color: 'bg-purple-500',
-    gradient: 'from-purple-500/20 to-purple-500/5'
+    gradient: 'from-purple-500/20 to-purple-500/5',
+    img:BankingFinance,
   },
   {
     name: 'Energy & Utilities',
     description: 'Quality assurance for critical infrastructure systems',
     icon: FaBolt,
     color: 'bg-purple-500',
-    gradient: 'from-purple-500/20 to-purple-500/5'
+    gradient: 'from-purple-500/20 to-purple-500/5',
+    img:EnergyUtilities,
   },
   {
     name: 'Telecommunication',
@@ -50,7 +59,8 @@ const domains = [
     description: 'Quality testing for streaming and content platforms',
     icon: FaVideo,
     color: 'bg-purple-500',
-    gradient: 'from-purple-500/20 to-purple-500/5'
+    gradient: 'from-purple-500/20 to-purple-500/5',
+    img:mediaentertainment,
   }
 ];
 
@@ -75,26 +85,9 @@ const DomainsWeServe: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-6">
-            <FaIndustry className="w-4 h-4 text-blue-400 mr-3" />
-            <span className="text-sm font-medium text-purple-200">Industry Expertise</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200">
-              Driving Quality Across
-            </span>
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200">
-              Diverse Domains
-            </span>
-          </h2>
-          
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Delivering specialized testing solutions across diverse industries
-          </p>
-        </div>
+      
+
+        <SectionTitle  tag='Industry Expertise' title={'Driving Quality Across Diverse Domains '} subtitle='  Delivering specialized testing solutions across diverse industries'/>
 
         {/* Domains Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -110,7 +103,7 @@ const DomainsWeServe: React.FC = () => {
               {/* Card Content */}
               <div className="relative h-full p-4 flex flex-col justify-between bg-gradient-to-br from-[#0a102a]/80 to-[#151b3d]/80 backdrop-blur-sm">
                 {/* Icon */}
-                <img src="/src/assets/img1.png" alt="" className='mb-3' />
+                <img src={domain.img} alt="" className='mb-3 h-[187px] object-fill bg-[#7446d9] rounded-2xl' />
                 
                 {/* Text Content */}
                 <div>

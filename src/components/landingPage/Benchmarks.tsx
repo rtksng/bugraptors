@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
+
+interface SectionTitleProps {
+  tag?: string;
+  title: string;
+  subtitle?: string;
+  titleClassName?: string; // Optional: override default title styles
+}
 import { 
   FaAward, 
   FaUsers, 
   FaCertificate, 
   FaCheckCircle
 } from 'react-icons/fa';
+import SectionTitle from './SectionTittle';
 
 const clients = [
   {
@@ -74,29 +82,16 @@ const Benchmarks: React.FC<BenchmarksProps> = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-6">
-            <FaAward className="w-4 h-4 text-green-400 mr-3" />
-            <span className="text-sm font-medium text-purple-200">Industry Recognition</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-purple-200 to-cyan-200 mb-6">
-            Our Benchmarks
-          </h2>
-          
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Delivering excellence in software testing to leading companies worldwide
-          </p>
-        </div>
+        <SectionTitle   title={'BenchmAarks '} />
 
         {/* Tabs */}
         <div className="flex justify-center mb-12">
-          <div className="inline-flex rounded-2xl backdrop-blur-sm bg-white/5 p-2 border border-purple-500/10">
+          <div className="inline-flex rounded-full backdrop-blur-sm bg-white/5 p-2 border border-purple-500/10">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex items-center space-x-2 px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${
+                className={`relative flex items-center space-x-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
                   activeTab === tab.id
                     ? 'text-white bg-gradient-to-r shadow-lg'
                     : 'text-gray-400 hover:text-gray-300'
