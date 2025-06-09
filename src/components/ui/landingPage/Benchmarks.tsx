@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 
-interface SectionTitleProps {
-  tag?: string;
-  title: string;
-  subtitle?: string;
-  titleClassName?: string; // Optional: override default title styles
-}
+
 import { 
   FaAward, 
   FaUsers, 
   FaCertificate, 
   FaCheckCircle
 } from 'react-icons/fa';
-import SectionTitle from './SectionTittle';
+import SectionTitle from '../common/SectionTittle';
+
 
 const clients = [
   {

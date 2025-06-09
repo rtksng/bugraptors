@@ -8,7 +8,7 @@ import {
   FaClock,
   FaArrowRight
 } from 'react-icons/fa';
-import SectionTitle from './SectionTittle';
+import SectionTitle from '../common/SectionTittle';
 
 const ContactUs: React.FC = () => {
   const [formData, setFormData] = useState({

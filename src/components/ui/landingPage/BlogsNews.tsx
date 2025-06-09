@@ -4,13 +4,12 @@ import {
   FaBlog,
   FaArrowRight,
   FaCalendarAlt,
-  FaEye,
   FaClock,
   FaBookmark,
   FaTags,
   FaChevronRight
 } from 'react-icons/fa';
-import CTAButton from './Button';
+import CTAButton from '../common/Button';
 
 const blogs = [
 
@@ -234,8 +233,8 @@ const BlogsNews: React.FC = () => {
         </div>
 
         {/* Enhanced Load More Section */}
-        <div className="text-center mt-12 block  flex items-center justify-center">
-        <CTAButton label="Load More Articles " onClick={() => console.log('Clicked!')} variant={'primary'} />
+        <div className="text-center mt-12   flex items-center justify-center">
+        <CTAButton onClick={() => console.log('Clicked!')} variant="primary">Load More Articles</CTAButton>
         </div>
       </div>
       

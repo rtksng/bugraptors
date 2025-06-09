@@ -1,5 +1,3 @@
-import React from 'react';
-
 const starPositions = [
   { top: '10%', left: '50%' },
   { top: '25%', left: '80%' },
@@ -65,4 +63,4 @@ const StarDotsBlink = () => {
   );
 };
 
-export default StarDotsBlink;
+export default StarDotsBlink; 

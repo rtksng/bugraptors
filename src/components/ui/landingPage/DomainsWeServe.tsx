@@ -6,14 +6,13 @@ import {
   FaBolt, 
   FaMobile, 
   FaVideo,
-  FaIndustry,
 } from 'react-icons/fa';
-import SectionTitle from './SectionTittle';
-import BankingFinance from "../../assets/Banking&Finance.png"
-import HealthCare from "../../assets/HealthCare.png"
-import RetailCommerce from "../../assets/Retail&Commerce.png"
-import EnergyUtilities from "../../assets/Energy&Utilities.png"
-import mediaentertainment from "../../assets/Media&Entertainment.png"
+import SectionTitle from '../common/SectionTittle';
+import BankingFinance from "../../../assets/Banking&Finance.png"
+import HealthCare from "../../../assets/HealthCare.png"
+import RetailCommerce from "../../../assets/Retail&Commerce.png"
+import EnergyUtilities from "../../../assets/Energy&Utilities.png"
+import mediaentertainment from "../../../assets/Media&Entertainment.png"
 const domains = [
   {
     name: 'Healthcare',

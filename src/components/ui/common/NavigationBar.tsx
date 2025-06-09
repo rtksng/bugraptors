@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import logo from '../../assets/logo.svg';
+import { Link, useLocation } from 'react-router-dom';
+import logo from '../../../assets/logo.svg';
 
 const navLinks = [
-  { name: 'Services', href: '#' },
-  { name: 'Company', href: '#' },
+  { name: 'Services', href: '/services' },
+  { name: 'Company', href: '/company' },
   { name: 'Insights', href: '#' },
   { name: 'Careers', href: '#' },
   { name: 'Contact Us', href: '#' },
@@ -39,7 +40,7 @@ const NavigationBar: React.FC = () => {
 
       <div className="container mx-auto flex items-center justify-between px-4 h-16 sm:h-20">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <div className="relative">
             <img
               src={logo}
@@ -47,22 +48,38 @@ const NavigationBar: React.FC = () => {
               className="relative h-8 sm:h-10 w-auto filter brightness-110 group-hover:brightness-125 transition-all duration-300"
             />
           </div>
-        </a>
+        </Link>
 
         {/* Navigation Links - Desktop */}
         <div className="hidden lg:flex gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="relative group text-gray-300 hover:text-white font-medium text-lg transition-all duration-300 py-2 px-4 rounded-full"
-            >
-              <span className="relative z-10">{link.name}</span>
-              {/* Hover Effect */}
-              <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const isExternalLink = link.href.startsWith('#');
+            const linkClasses = "relative group text-gray-300 hover:text-white font-medium text-lg transition-all duration-300 py-2 px-4 rounded-full";
+            
+            if (isExternalLink) {
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={linkClasses}
+                >
+                  <span className="relative z-10">{link.name}</span>
+                  <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </a>
+              );
+            } else {
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={linkClasses}
+                >  
+                  <span className="relative z-10">{link.name}</span>
+                  <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </Link>
+              );
+            }
+          })}
         </div>
 
         {/* CTA Button */}
@@ -114,17 +131,36 @@ const NavigationBar: React.FC = () => {
         } overflow-hidden bg-gradient-to-b from-[#0a0f2e]/95 to-[#050a27]/95 backdrop-blur-lg border-t border-purple-500/20`}
       >
         <div className="px-4 py-4 sm:py-6 space-y-2 sm:space-y-4">
-          {navLinks.map((link, index) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="block text-gray-300 hover:text-white font-medium text-base sm:text-lg py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-blue-600/20 transition-all duration-300 border border-transparent hover:border-purple-500/30"
-              onClick={() => setIsMenuOpen(false)}
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              {link.name}
-            </a>
-          ))}
+          {navLinks.map((link, index) => {
+            const isExternalLink = link.href.startsWith('#');
+            const linkClasses = "block text-gray-300 hover:text-white font-medium text-base sm:text-lg py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-blue-600/20 transition-all duration-300 border border-transparent hover:border-purple-500/30";
+            
+            if (isExternalLink) {
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className={linkClasses}
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {link.name}
+                </a>
+              );
+            } else {
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className={linkClasses}
+                  onClick={() => setIsMenuOpen(false)}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  {link.name}
+                </Link>
+              );
+            }
+          })}
         </div>
       </div>
 
@@ -138,4 +174,4 @@ const NavigationBar: React.FC = () => {
   );
 };
 
-export default NavigationBar;
+export default NavigationBar; 

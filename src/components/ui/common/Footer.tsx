@@ -180,8 +180,6 @@ const Footer: React.FC = () => {
                 <img src="/src/assets/logo.svg" alt="BugRaptors" className="relative h-12 transform group-hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
-            
-           
           </div>
         </div>
 
@@ -193,12 +191,10 @@ const Footer: React.FC = () => {
             <div key={section.title} className="space-y-6 group">
               <h3 className="text-lg font-semibold relative inline-block">
                 <span className="flex items-center space-x-3">
-                
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 group-hover:from-purple-300 group-hover:to-blue-300 transition-all duration-300">
                     {section.title}
                   </span>
                 </span>
-              
               </h3>
               <ul className="space-y-4">
                 {section.items.map((item, index) => (
@@ -212,7 +208,6 @@ const Footer: React.FC = () => {
                         <div className="text-sm text-gray-300 group-hover/link:text-white transition-colors duration-300">
                           {item.label}
                         </div>
-                      
                       </div>
                       <div className="absolute bottom-0 left-2 right-2 h-px bg-gradient-to-r from-transparent via-purple-400/50 to-transparent opacity-0 group-hover/link:opacity-100 transition-all duration-300"></div>
                     </a>
@@ -222,8 +217,6 @@ const Footer: React.FC = () => {
             </div>
           ))}
         </div>
-
-        
 
         {/* Social Links and Copyright */}
         <div className={`relative flex flex-col md:flex-row justify-between items-center pt-8 transition-all duration-1000 delay-600 ${

@@ -5,13 +5,12 @@ import {
   FaInfinity,
   FaShieldAlt,
   FaChartLine,
-  FaArrowRight,
-  FaPlay,
+
   FaCheckCircle,
   FaUsers,
   FaClock
 } from 'react-icons/fa';
-import CTAButton from './Button';
+import CTAButton from '../common/Button';
 
 const DevOpsCTA: React.FC = () => {
   const features = [
@@ -110,8 +109,8 @@ const DevOpsCTA: React.FC = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               
-              <CTAButton label="Get Started Now " onClick={() => console.log('Clicked!')} variant={'primary'} />
-              <CTAButton label="Watch Demo " onClick={() => console.log('Clicked!')} variant={'secondary'} />
+              <CTAButton onClick={() => console.log('Clicked!')} variant="primary">Get Started Now</CTAButton>
+              <CTAButton onClick={() => console.log('Clicked!')} variant="secondary">Watch Demo</CTAButton>
 
 
              

@@ -1,22 +1,16 @@
 import React from 'react';
 import {
   FaRocket,
-  FaCertificate,
   FaCogs,
   FaChartLine,
-  FaShieldAlt,
-  FaMobile,
   FaEye,
   FaAward,
-  FaUsers,
-  FaCheckCircle,
   FaArrowRight,
-  FaStar
 } from 'react-icons/fa';
-import raptorinfinity from "../../assets/RaptorInfinity.svg"
-import raptorvista from "../../assets/RaptorVista.svg"
-import raptorsecurity from "../../assets/RaptorSecurity.svg"
-import mobraptors from "../../assets/MoboRaptors.svg"
+import raptorinfinity from "../../../assets/RaptorInfinity.svg"
+import raptorvista from "../../../assets/RaptorVista.svg"
+import raptorsecurity from "../../../assets/RaptorSecurity.svg"
+import mobraptors from "../../../assets/MoboRaptors.svg"
 
 
 const frameworks = [
@@ -55,12 +49,7 @@ const process = [
   { step: 'Continuous Improvement', icon: <FaArrowRight className="w-4 h-4" /> }
 ];
 
-const achievements = [
-  { label: '500+ Projects', icon: <FaRocket className="w-5 h-5" /> },
-  { label: 'ISTQB Certified', icon: <FaCertificate className="w-5 h-5" /> },
-  { label: '98% Success Rate', icon: <FaStar className="w-5 h-5" /> },
-  { label: '24/7 Support', icon: <FaUsers className="w-5 h-5" /> }
-];
+
 
 const WhyChooseBugRaptors: React.FC = () => {
   return (

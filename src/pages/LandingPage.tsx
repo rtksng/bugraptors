@@ -1,18 +1,18 @@
 import React from 'react';
-import Hero from '../components/landingPage/Hero';
-import NavigationBar from '../components/landingPage/NavigationBar';
-import Benchmarks from '../components/landingPage/Benchmarks';
-import AIServices from '../components/landingPage/AIServices';
-import ProprietaryTools from '../components/landingPage/ProprietaryTools';
-import DomainsWeServe from '../components/landingPage/DomainsWeServe';
-import SoftwareTestingOfferings from '../components/landingPage/SoftwareTestingOfferings';
-import WhyChooseBugRaptors from '../components/landingPage/WhyChooseBugRaptors';
-import ClientTestimonials from '../components/landingPage/ClientTestimonials';
-import FAQs from '../components/landingPage/FAQs';
-import BlogsNews from '../components/landingPage/BlogsNews';
-import DevOpsCTA from '../components/landingPage/DevOpsCTA';
-import ContactUs from '../components/landingPage/ContactUs';
-import Footer from '../components/landingPage/Footer';
+import Hero from '../components/ui/landingpage/Hero';
+import NavigationBar from '../components/ui/common/NavigationBar';
+import Benchmarks from '../components/ui/landingpage/Benchmarks';
+import AIServices from '../components/ui/landingpage/AIServices';
+import ProprietaryTools from '../components/ui/landingpage/ProprietaryTools';
+import DomainsWeServe from '../components/ui/landingpage/DomainsWeServe';
+import SoftwareTestingOfferings from '../components/ui/landingpage/SoftwareTestingOfferings';
+import WhyChooseBugRaptors from '../components/ui/landingpage/WhyChooseBugRaptors';
+import ClientTestimonials from '../components/ui/landingpage/ClientTestimonials';
+import FAQs from '../components/ui/landingpage/FAQs';
+import BlogsNews from '../components/ui/landingpage/BlogsNews';
+import DevOpsCTA from '../components/ui/landingpage/DevOpsCTA';
+import ContactUs from '../components/ui/landingpage/ContactUs';
+import Footer from '../components/ui/common/Footer';
 
 const LandingPage: React.FC = () => {
   return (

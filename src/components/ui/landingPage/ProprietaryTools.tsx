@@ -9,8 +9,7 @@ import {
   FaTools,
   FaCog
 } from 'react-icons/fa';
-import mobraptors from "../../assets/circuitimagesvg.svg"
-import AnimatedGradientImage from './circuitanimation';
+import mobraptors from "../../../assets/circuitimagesvg.svg"
 const tools = [
   {
     name: 'RaptorGen',

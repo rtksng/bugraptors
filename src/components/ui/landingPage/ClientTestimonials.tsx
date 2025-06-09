@@ -5,11 +5,10 @@ import {
   FaUsers,
   FaBuilding,
   FaChevronRight,
-  FaHeart,
   FaShieldAlt
 } from 'react-icons/fa';
-import SectionTitle from './SectionTittle';
-import CTAButton from './Button';
+import SectionTitle from '../common/SectionTittle';
+import CTAButton from '../common/Button';
 
 const testimonials = [
   {
@@ -188,7 +187,7 @@ const ClientTestimonials: React.FC = () => {
           <div className="inline-flex flex-col items-center p-6 bg-custom-transparent rounded-2xl border border-purple-500/20 backdrop-blur-sm">
             <h3 className="text-xl font-semibold text-white mb-2">Ready to join our success stories?</h3>
             <p className="text-gray-400 mb-4">Let's discuss how we can help transform your testing processes</p>
-            <CTAButton label="Start Your Success Story " onClick={() => console.log('Clicked!')} variant={'primary'} />
+            <CTAButton  onClick={() => console.log('Clicked!')} variant={'primary'} >Start Your Success Story </CTAButton>
           </div>
          
         </div>

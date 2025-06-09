@@ -7,7 +7,7 @@ import {
   FaArrowRight,
   FaCog
 } from 'react-icons/fa';
-import SectionTitle from './SectionTittle';
+import SectionTitle from '../common/SectionTittle';
 
 const services = [
   {

@@ -1,10 +1,8 @@
 import React from 'react';
 import {
-
   FaArrowRight,
-
 } from 'react-icons/fa';
-import StarDotsBlink from './blinkingstars';
+import StarDotsBlink from '../common/StarDotsBlink';
 
 const Hero: React.FC = () => {
   return (
@@ -26,7 +24,7 @@ const Hero: React.FC = () => {
         }}></div>
       </div>
 
-      <div className="relative -top-[275px] shadow-[0px_40px_60px_0px_rgba(8,11,58,_0.5)] flex items-center justify-end mx-auto lg:size-[1200px] rounded-full relative z-10 overflow-hidden bg-[#010212]">
+      <div className=" -top-[275px] shadow-[0px_40px_60px_0px_rgba(8,11,58,_0.5)] flex items-center justify-end mx-auto lg:size-[1200px] rounded-full relative z-10 overflow-hidden bg-[#010212]">
 
         {/* Image-Pannel */}
         <div className="absolute left-[-80px] bottom-0  w-[724px] h-[920px] overflow-hidden">

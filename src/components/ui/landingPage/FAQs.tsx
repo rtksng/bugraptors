@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { 
-  FaQuestionCircle, 
   FaChevronDown, 
   FaSearch, 
   FaRobot,
@@ -8,7 +7,7 @@ import {
   FaUsers,
   FaCog
 } from 'react-icons/fa';
-import SectionTitle from './SectionTittle';
+import SectionTitle from '../common/SectionTittle';
 
 const faqs = [
   {
