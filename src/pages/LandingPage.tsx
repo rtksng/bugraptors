@@ -11,7 +11,7 @@ import ClientTestimonials from '../components/ui/landingpage/ClientTestimonials'
 import FAQs from '../components/ui/landingpage/FAQs';
 import BlogsNews from '../components/ui/landingpage/BlogsNews';
 import DevOpsCTA from '../components/ui/landingpage/DevOpsCTA';
-import ContactUs from '../components/ui/landingpage/ContactUs';
+import ContactUs from '../components/ui/common/ContactUs';
 import Footer from '../components/ui/common/Footer';
 
 const LandingPage: React.FC = () => {
