@@ -10,6 +10,7 @@ import NewSectionCommon from '../common/NewSectionCommon';
 import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
 import HeroesCommon from '../common/HeroesCommon';
 import SectionTitle from '../common/SectionTittle';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorVista: React.FC = () => {
   const handleCtaClick = () => {
@@ -583,6 +584,9 @@ const RaptorVista: React.FC = () => {
 
         {/* Latest News Section */}
         <NewSectionCommon />
+
+        {/* Other Offices Info Section */}
+        <OtherOfficesInfo />
 
 
 

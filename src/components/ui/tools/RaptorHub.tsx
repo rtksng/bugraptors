@@ -12,6 +12,7 @@ import HeroesCommon from '../common/HeroesCommon';
 import BlogSectionCommon from '../common/BlogSectionCommon';
 import NewSectionCommon from '../common/NewSectionCommon';
 import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorHub: React.FC = () => {
   const handleCtaClick = () => {
@@ -318,6 +319,10 @@ const RaptorHub: React.FC = () => {
 
 {/* Latest News Section */}
 <NewSectionCommon />
+
+{/* Other Offices Info Section */}
+<OtherOfficesInfo />
+
         <Footer />
       </main>
     </div>

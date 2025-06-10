@@ -10,6 +10,7 @@ import HeroesCommon from '../common/HeroesCommon';
 import BlogSectionCommon from '../common/BlogSectionCommon';
 import NewSectionCommon from '../common/NewSectionCommon';
 import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorSelect: React.FC = () => {
   const handleCtaClick = () => {
@@ -270,14 +271,19 @@ const RaptorSelect: React.FC = () => {
 
         {/* Project Success Stories Section */}
         <MoboraptorsSection />
-{/* Blogs Section */}
-<BlogSectionCommon />
 
-{/* Newsletter/Ebook Subscription Section */}
-<NewsletterSectionCommon />
+        {/* Blogs Section */}
+        <BlogSectionCommon />
 
-{/* Latest News Section */}
-<NewSectionCommon />
+        {/* Newsletter/Ebook Subscription Section */}
+        <NewsletterSectionCommon />
+
+        {/* Latest News Section */}
+        <NewSectionCommon />
+
+        {/* Other Offices Info Section */}
+        <OtherOfficesInfo />
+
         <Footer />
       </main>
     </div>

@@ -2,9 +2,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 import logo from '../../../assets/logo.svg';
+import MegaMenu from './MegaMenu';
 
 const navLinks = [
   { name: 'Services', href: '/services' },
+  { 
+    name: 'QA Offerings', 
+    href: '#',
+    hasMegaMenu: true
+  },
   { 
     name: 'Company', 
     href: '/company',
@@ -52,7 +58,6 @@ const navLinks = [
       { name: 'MoboRaptors', href: '/tools/moboraptors' },
       { name: 'RaptorVista', href: '/tools/raptorvista' },
       { name: 'BugBot', href: '/tools/bugbot' },
-      { name: 'RaptorGen', href: '/tools/raptorgen' },
       { name: 'RaptorHub', href: '/tools/raptorhub' },
       { name: 'RaptorAssist', href: '/tools/raptorassist' },
       { name: 'RaptorSelect', href: '/tools/raptorselect' },
@@ -69,6 +74,7 @@ const NavigationBar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [hoverDropdown, setHoverDropdown] = useState<string | null>(null);
+  const [isMegaMenuOpen, setIsMegaMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -99,8 +105,23 @@ const NavigationBar: React.FC = () => {
     setActiveDropdown(activeDropdown === linkName ? null : linkName);
   };
 
+  const toggleMegaMenu = () => {
+    setIsMegaMenuOpen(!isMegaMenuOpen);
+    // Close other dropdowns when mega menu opens
+    setActiveDropdown(null);
+    setHoverDropdown(null);
+  };
+
+  const closeMegaMenu = () => {
+    setIsMegaMenuOpen(false);
+  };
+
   const handleMouseEnter = (linkName: string) => {
     setHoverDropdown(linkName);
+    // Close mega menu when hovering over other items
+    if (linkName !== 'QA Offerings') {
+      setIsMegaMenuOpen(false);
+    }
   };
 
   const handleMouseLeave = () => {
@@ -136,7 +157,26 @@ const NavigationBar: React.FC = () => {
             const isExternalLink = link.href.startsWith('#');
             const linkClasses = "relative group text-gray-300 hover:text-white font-medium text-lg transition-all duration-300 py-2 px-4 rounded-full";
             
-            if (link.hasDropdown) {
+            if (link.hasMegaMenu) {
+              return (
+                <div key={link.name} className="relative">
+                  <button
+                    onClick={toggleMegaMenu}
+                    className={`${linkClasses} flex items-center gap-2 cursor-pointer ${
+                      isMegaMenuOpen ? 'text-white bg-purple-500/20' : ''
+                    }`}
+                  >
+                    <span className="relative z-10">{link.name}</span>
+                    <FaChevronDown 
+                      className={`w-3 h-3 transition-transform duration-300 ${
+                        isMegaMenuOpen ? 'rotate-180' : ''
+                      }`} 
+                    />
+                    <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </button>
+                </div>
+              );
+            } else if (link.hasDropdown) {
               return (
                 <div 
                   key={link.name} 
@@ -256,6 +296,7 @@ const NavigationBar: React.FC = () => {
                   key={link.name}
                   href={link.href}
                   className={linkClasses}
+                  onClick={() => setIsMegaMenuOpen(false)}
                 >
                   <span className="relative z-10">{link.name}</span>
                   <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -267,6 +308,7 @@ const NavigationBar: React.FC = () => {
                   key={link.name}
                   to={link.href}
                   className={linkClasses}
+                  onClick={() => setIsMegaMenuOpen(false)}
                 >  
                   <span className="relative z-10">{link.name}</span>
                   <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -318,6 +360,11 @@ const NavigationBar: React.FC = () => {
         </div>
       </div>
 
+      {/* Mega Menu */}
+      <div className="relative">
+        <MegaMenu isOpen={isMegaMenuOpen} onClose={closeMegaMenu} />
+      </div>
+
       {/* Mobile Menu */}
       <div
         className={`lg:hidden transition-all duration-300 ease-in-out ${
@@ -329,7 +376,23 @@ const NavigationBar: React.FC = () => {
             const isExternalLink = link.href.startsWith('#');
             const linkClasses = "block text-gray-300 hover:text-white font-medium text-base sm:text-lg py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-blue-600/20 transition-all duration-300 border border-transparent hover:border-purple-500/30";
             
-            if (link.hasDropdown) {
+            if (link.hasMegaMenu) {
+              return (
+                <div key={link.name} style={{ animationDelay: `${index * 100}ms` }}>
+                  <button
+                    onClick={toggleMegaMenu}
+                    className={`${linkClasses} w-full text-left flex items-center justify-between`}
+                  >
+                    <span>{link.name}</span>
+                    <FaChevronDown 
+                      className={`w-3 h-3 transition-transform duration-300 ${
+                        isMegaMenuOpen ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
+                </div>
+              );
+            } else if (link.hasDropdown) {
               return (
                 <div key={link.name} style={{ animationDelay: `${index * 100}ms` }}>
                   <button
@@ -370,7 +433,10 @@ const NavigationBar: React.FC = () => {
                   key={link.name}
                   href={link.href}
                   className={linkClasses}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsMegaMenuOpen(false);
+                  }}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {link.name}
@@ -382,7 +448,10 @@ const NavigationBar: React.FC = () => {
                   key={link.name}
                   to={link.href}
                   className={linkClasses}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setIsMegaMenuOpen(false);
+                  }}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   {link.name}

@@ -37,6 +37,10 @@ import TransportationLogisticsPage from './components/ui/verticals/Transportatio
 import RealEstatePage from './components/ui/verticals/RealEstatePage'
 import GovernmentPage from './components/ui/verticals/GovernmentPage'
 
+// QA Offerings - Bespoke Pages
+import CloudServiceTesting from './components/ui/qaOfferings/bespoke/CloudServiceTesting'
+import CrowdSourceTesting from './components/ui/qaOfferings/bespoke/CrowdSourceTesting'
+
 function App() {
   return (
     <Router>
@@ -60,6 +64,10 @@ function App() {
         <Route path="/tools/raptorscan" element={<RaptorScan />} />
         <Route path="/tools/raptorvision" element={<RaptorVision />} />
         <Route path="/tools/raptorsecurity" element={<RaptorSecurity />} />
+        
+        {/* QA Offerings - Bespoke Routes */}
+        <Route path="/qa-offerings/bespoke/cloud-service" element={<CloudServiceTesting />} />
+        <Route path="/qa-offerings/bespoke/crowd-source" element={<CrowdSourceTesting />} />
         
         {/* Verticals Routes */}
         <Route path="/verticals/healthcare" element={<HealthcarePage />} />

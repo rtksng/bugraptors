@@ -10,6 +10,7 @@ import HeroesCommon from '../common/HeroesCommon';
 import BlogSectionCommon from '../common/BlogSectionCommon';
 import NewSectionCommon from '../common/NewSectionCommon';
 import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorScan: React.FC = () => {
   const handleCtaClick = () => {
@@ -466,14 +467,18 @@ const RaptorScan: React.FC = () => {
 
         {/* Project Success Stories Section */}
         <MoboraptorsSection />
-{/* Blogs Section */}
-<BlogSectionCommon />
+        {/* Blogs Section */}
+        <BlogSectionCommon />
 
-{/* Newsletter/Ebook Subscription Section */}
-<NewsletterSectionCommon />
+        {/* Newsletter/Ebook Subscription Section */}
+        <NewsletterSectionCommon />
 
-{/* Latest News Section */}
-<NewSectionCommon />
+        {/* Latest News Section */}
+        <NewSectionCommon />
+
+        {/* Other Offices Info Section */}
+        <OtherOfficesInfo />
+
         <Footer />
       </main>
     </div>

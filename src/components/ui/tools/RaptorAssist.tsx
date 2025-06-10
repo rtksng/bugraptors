@@ -11,6 +11,7 @@ import HeroesCommon from '../common/HeroesCommon';
 import BlogSectionCommon from '../common/BlogSectionCommon';
 import NewSectionCommon from '../common/NewSectionCommon';
 import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorAssist: React.FC = () => {
   const handleCtaClick = () => {
@@ -303,6 +304,9 @@ const RaptorAssist: React.FC = () => {
 
         {/* Latest News Section */}
         <NewSectionCommon />
+
+        {/* Other Offices Info Section */}
+        <OtherOfficesInfo />
 
         <Footer />
       </main>
