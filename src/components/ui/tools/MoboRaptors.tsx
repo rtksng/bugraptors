@@ -40,7 +40,7 @@ const MoboRaptors: React.FC = () => {
           title="Quality and Speed with MoboRaptors"
           para1="MoboRaptors helps you transform your Digital Transformation journey by aiding dynamic and end-to-end testing on all your futuristic mobile app projects."
           para2="Whether you are working on advanced agile methodology or need to streamline DevOps culture, MoboRaptors has all the capabilities you need to attain the Global Compliance Benchmarks."
-          align="left"
+         
         />
 
 

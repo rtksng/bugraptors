@@ -17,7 +17,32 @@ const navLinks = [
       { name: 'Engagement Model', href: '/company/engagement-model' },
     ]
   },
-  { name: 'Insights', href: '#' },
+  { 
+    name: 'Verticals', 
+    href: '#',
+    hasDropdown: true,
+    isHoverDropdown: true,
+    dropdownItems: [
+      // Column 1
+      { name: 'Healthcare', href: '/verticals/healthcare' },
+      { name: 'Telecommunication', href: '/verticals/telecommunication' },
+      { name: 'Retail & Commerce', href: '/verticals/retail-commerce' },
+      { name: 'Energy & Utility', href: '/verticals/energy-utilities' },
+      { name: 'Transportation & Logistic', href: '/verticals/transportation-logistics' },
+      // Column 2
+      { name: 'Manufacturing', href: '/verticals/manufacturing' },
+      { name: 'Education', href: '/verticals/education' },
+      { name: 'Banking & Finance', href: '/verticals/banking-finance' },
+      { name: 'Insurance', href: '/verticals/insurance' },
+      { name: 'Real Estate', href: '/verticals/real-estate' },
+      // Column 3
+      { name: 'Travel & Hospitality', href: '/verticals/travel-hospitality' },
+      { name: 'Food and Beverages', href: '/verticals/food-beverages' },
+      { name: 'Pharma', href: '/verticals/pharma' },
+      { name: 'Media & Entertainment', href: '/verticals/media-entertainment' },
+      { name: 'Government', href: '/verticals/government' },
+    ]
+  },
   { 
     name: 'Tools', 
     href: '#',
@@ -139,28 +164,87 @@ const NavigationBar: React.FC = () => {
                       {link.isHoverDropdown && (
                         <div className="absolute top-0 left-0 right-0 h-2 bg-transparent"></div>
                       )}
-                      <div className={`w-64 ${
+                      <div className={`${
+                        link.name === 'Verticals' ? 'w-96' : 'w-64'
+                      } ${
                         link.isHoverDropdown 
                           ? 'bg-[#6B21A8] border-purple-300/30' 
                           : 'bg-[#4C1D95] border-purple-400/20'
                       } rounded-lg shadow-xl border overflow-hidden`}>
-                        {link.dropdownItems?.map((item, index) => (
-                          <Link
-                            key={item.name}
-                            to={item.href}
-                            onClick={() => {
-                              setActiveDropdown(null);
-                              setHoverDropdown(null);
-                            }}
-                            className={`block px-4 py-3 text-white transition-colors duration-200 border-b last:border-b-0 ${
-                              link.isHoverDropdown 
-                                ? 'hover:bg-purple-700/60 border-purple-300/20' 
-                                : 'hover:bg-purple-600/50 border-purple-400/10'
-                            }`}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
+                        {link.name === 'Verticals' ? (
+                          /* Three-column layout for Verticals */
+                          <div className="grid grid-cols-3 divide-x divide-purple-300/20">
+                            {/* Column 1 */}
+                            <div className="flex flex-col">
+                              {link.dropdownItems?.slice(0, 5).map((item, index) => (
+                                <Link
+                                  key={item.name}
+                                  to={item.href}
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    setHoverDropdown(null);
+                                  }}
+                                  className="block px-4 py-3 text-white hover:bg-purple-700/60 transition-colors duration-200 text-sm border-b border-purple-300/10 last:border-b-0"
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                            
+                            {/* Column 2 */}
+                            <div className="flex flex-col">
+                              {link.dropdownItems?.slice(5, 10).map((item, index) => (
+                                <Link
+                                  key={item.name}
+                                  to={item.href}
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    setHoverDropdown(null);
+                                  }}
+                                  className="block px-4 py-3 text-white hover:bg-purple-700/60 transition-colors duration-200 text-sm border-b border-purple-300/10 last:border-b-0"
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                            
+                            {/* Column 3 */}
+                            <div className="flex flex-col">
+                              {link.dropdownItems?.slice(10, 15).map((item, index) => (
+                                <Link
+                                  key={item.name}
+                                  to={item.href}
+                                  onClick={() => {
+                                    setActiveDropdown(null);
+                                    setHoverDropdown(null);
+                                  }}
+                                  className="block px-4 py-3 text-white hover:bg-purple-700/60 transition-colors duration-200 text-sm border-b border-purple-300/10 last:border-b-0"
+                                >
+                                  {item.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ) : (
+                          /* Regular single-column layout for other dropdowns */
+                          link.dropdownItems?.map((item, index) => (
+                            <Link
+                              key={item.name}
+                              to={item.href}
+                              onClick={() => {
+                                setActiveDropdown(null);
+                                setHoverDropdown(null);
+                              }}
+                              className={`block px-4 py-3 text-white transition-colors duration-200 border-b last:border-b-0 ${
+                                link.isHoverDropdown 
+                                  ? 'hover:bg-purple-700/60 border-purple-300/20' 
+                                  : 'hover:bg-purple-600/50 border-purple-400/10'
+                              }`}
+                            >
+                              {item.name}
+                            </Link>
+                          ))
+                        )}
                       </div>
                     </div>
                   )}
