@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SectionTitle from '../common/SectionTittle';
 
 interface ProjectCard {
   id: number;
@@ -43,32 +44,29 @@ const MoboraptorsSection: React.FC = () => {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden bg-[#020317]">
+    <section className="py-12 relative overflow-hidden bg-[#020317]">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto  relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-16">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
             <div className="lg:max-w-2xl">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                  Making a Difference with Every Project
-                </span>
-              </h2>
-              <p className="text-lg text-gray-300 leading-relaxed">
-                Here is the glimpse of what we have done for our customers and how it has transformed their business.
-              </p>
+              <SectionTitle
+                title="Making a Difference with Every Project"
+                para1="Here is the glimpse of what we have done for our customers and how it has transformed their business."
+                align='left'
+              />
             </div>
-            
+
             {/* View All Button */}
-            <div className="mt-8 lg:mt-0">
-              <button 
-                className="group relative px-6 py-3 bg-blue-800 hover:bg-blue-700 text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+            <div className="mt-4 lg:mt-0">
+              <button
+                className="group relative px-6 py-3 custom-bg-color text-white  rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
                 aria-label="View all projects"
               >
                 <span className="relative z-10 flex items-center">
@@ -91,11 +89,10 @@ const MoboraptorsSection: React.FC = () => {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className={`group relative cursor-pointer transition-all duration-500 ${
-                  activeCard === project.id
+                className={`group relative cursor-pointer transition-all duration-500 ${activeCard === project.id
                     ? 'transform scale-105'
                     : 'hover:transform hover:scale-102'
-                }`}
+                  }`}
                 onMouseEnter={() => setActiveCard(project.id)}
                 onClick={() => setActiveCard(project.id)}
                 role="button"
@@ -110,13 +107,13 @@ const MoboraptorsSection: React.FC = () => {
                 {/* Card Background */}
                 <div className={`
                   relative rounded-2xl border transition-all duration-500 h-80 flex flex-col overflow-hidden
-                  ${activeCard === project.id 
-                    ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20' 
+                  ${activeCard === project.id
+                    ? 'border-purple-500/50 shadow-2xl shadow-purple-500/20'
                     : 'border-purple-500/20 hover:border-purple-500/40'
                   }
                 `}>
                   {/* Background Image */}
-                  <div 
+                  <div
                     className="absolute inset-0 bg-cover bg-center transition-all duration-500"
                     style={{ backgroundImage: `url(${project.backgroundImage})` }}
                   >

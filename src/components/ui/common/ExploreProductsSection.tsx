@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from './SectionTittle';
 
 interface Product {
   name: string;
@@ -49,14 +50,11 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                {title}
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300">
-              {subtitle}
-            </p>
+            
+            <SectionTitle
+              title={title}
+              subtitle={subtitle}
+            />
           </div>
 
           {/* Products Grid */}

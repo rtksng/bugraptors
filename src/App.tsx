@@ -12,7 +12,6 @@ import {
   MoboRaptors,
   RaptorVista,
   BugBot,
-  RaptorGen,
   RaptorHub,
   RaptorAssist,
   RaptorSelect,
@@ -38,7 +37,6 @@ function App() {
         <Route path="/tools/moboraptors" element={<MoboRaptors />} />
         <Route path="/tools/raptorvista" element={<RaptorVista />} />
         <Route path="/tools/bugbot" element={<BugBot />} />
-        <Route path="/tools/raptorgen" element={<RaptorGen />} />
         <Route path="/tools/raptorhub" element={<RaptorHub />} />
         <Route path="/tools/raptorassist" element={<RaptorAssist />} />
         <Route path="/tools/raptorselect" element={<RaptorSelect />} />
