@@ -21,6 +21,23 @@ import {
   RaptorSecurity
 } from './components/ui/tools'
 
+// Vertical Pages
+import HealthcarePage from './components/ui/verticals/HealthcarePage'
+import ManufacturingPage from './components/ui/verticals/ManufacturingPage'
+import TravelHospitalityPage from './components/ui/verticals/TravelHospitalityPage'
+import TelecommunicationPage from './components/ui/verticals/TelecommunicationPage'
+import EducationPage from './components/ui/verticals/EducationPage'
+import FoodBeveragesPage from './components/ui/verticals/FoodBeveragesPage'
+import RetailCommercePage from './components/ui/verticals/RetailCommercePage'
+import BankingFinancePage from './components/ui/verticals/BankingFinancePage'
+import PharmaPage from './components/ui/verticals/PharmaPage'
+import EnergyUtilitiesPage from './components/ui/verticals/EnergyUtilitiesPage'
+import InsurancePage from './components/ui/verticals/InsurancePage'
+import MediaEntertainmentPage from './components/ui/verticals/MediaEntertainmentPage'
+import TransportationLogisticsPage from './components/ui/verticals/TransportationLogisticsPage'
+import RealEstatePage from './components/ui/verticals/RealEstatePage'
+import GovernmentPage from './components/ui/verticals/GovernmentPage'
+
 function App() {
   return (
     <Router>
@@ -45,6 +62,23 @@ function App() {
         <Route path="/tools/raptorscan" element={<RaptorScan />} />
         <Route path="/tools/raptorvision" element={<RaptorVision />} />
         <Route path="/tools/raptorsecurity" element={<RaptorSecurity />} />
+        
+        {/* Verticals Routes */}
+        <Route path="/verticals/healthcare" element={<HealthcarePage />} />
+        <Route path="/verticals/manufacturing" element={<ManufacturingPage />} />
+        <Route path="/verticals/travel-hospitality" element={<TravelHospitalityPage />} />
+        <Route path="/verticals/telecommunication" element={<TelecommunicationPage />} />
+        <Route path="/verticals/education" element={<EducationPage />} />
+        <Route path="/verticals/food-beverages" element={<FoodBeveragesPage />} />
+        <Route path="/verticals/retail-commerce" element={<RetailCommercePage />} />
+        <Route path="/verticals/banking-finance" element={<BankingFinancePage />} />
+        <Route path="/verticals/pharma" element={<PharmaPage />} />
+        <Route path="/verticals/energy-utilities" element={<EnergyUtilitiesPage />} />
+        <Route path="/verticals/insurance" element={<InsurancePage />} />
+        <Route path="/verticals/media-entertainment" element={<MediaEntertainmentPage />} />
+        <Route path="/verticals/transportation-logistics" element={<TransportationLogisticsPage />} />
+        <Route path="/verticals/real-estate" element={<RealEstatePage />} />
+        <Route path="/verticals/government" element={<GovernmentPage />} />
       </Routes>
     </Router>
   )
