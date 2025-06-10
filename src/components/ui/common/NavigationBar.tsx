@@ -18,7 +18,24 @@ const navLinks = [
     ]
   },
   { name: 'Insights', href: '#' },
-  { name: 'Careers', href: '#' },
+  { 
+    name: 'Tools', 
+    href: '#',
+    hasDropdown: true,
+    isHoverDropdown: true,
+    dropdownItems: [
+      { name: 'MoboRaptors', href: '/tools/moboraptors' },
+      { name: 'RaptorVista', href: '/tools/raptorvista' },
+      { name: 'BugBot', href: '/tools/bugbot' },
+      { name: 'RaptorGen', href: '/tools/raptorgen' },
+      { name: 'RaptorHub', href: '/tools/raptorhub' },
+      { name: 'RaptorAssist', href: '/tools/raptorassist' },
+      { name: 'RaptorSelect', href: '/tools/raptorselect' },
+      { name: 'RaptorScan', href: '/tools/raptorscan' },
+      { name: 'RaptorVision', href: '/tools/raptorvision' },
+      { name: 'RaptorSecurity', href: '/tools/raptorsecurity' },
+    ]
+  },
   { name: 'Contact Us', href: '#' },
 ];
 
@@ -26,6 +43,7 @@ const NavigationBar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [hoverDropdown, setHoverDropdown] = useState<string | null>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -54,6 +72,14 @@ const NavigationBar: React.FC = () => {
 
   const toggleDropdown = (linkName: string) => {
     setActiveDropdown(activeDropdown === linkName ? null : linkName);
+  };
+
+  const handleMouseEnter = (linkName: string) => {
+    setHoverDropdown(linkName);
+  };
+
+  const handleMouseLeave = () => {
+    setHoverDropdown(null);
   };
 
   return (
@@ -87,33 +113,55 @@ const NavigationBar: React.FC = () => {
             
             if (link.hasDropdown) {
               return (
-                <div key={link.name} className="relative">
+                <div 
+                  key={link.name} 
+                  className="relative"
+                  onMouseEnter={link.isHoverDropdown ? () => handleMouseEnter(link.name) : undefined}
+                  onMouseLeave={link.isHoverDropdown ? handleMouseLeave : undefined}
+                >
                   <button
-                    onClick={() => toggleDropdown(link.name)}
+                    onClick={link.isHoverDropdown ? undefined : () => toggleDropdown(link.name)}
                     className={`${linkClasses} flex items-center gap-2 cursor-pointer `}
                   >
                     <span className="relative z-10">{link.name}</span>
                     <FaChevronDown 
                       className={`w-3 h-3 transition-transform duration-300 ${
-                        activeDropdown === link.name ? 'rotate-180' : ''
+                        (link.isHoverDropdown ? hoverDropdown === link.name : activeDropdown === link.name) ? 'rotate-180' : ''
                       }`} 
                     />
                     <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                   
                   {/* Dropdown Menu */}
-                  {activeDropdown === link.name && (
-                    <div className="absolute top-full left-0 mt-2 w-64 bg-[#4C1D95] rounded-lg shadow-xl border border-purple-400/20 overflow-hidden z-50">
-                      {link.dropdownItems?.map((item, index) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          onClick={() => setActiveDropdown(null)}
-                          className="block px-4 py-3 text-white hover:bg-purple-600/50 transition-colors duration-200 border-b border-purple-400/10 last:border-b-0"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
+                  {(link.isHoverDropdown ? hoverDropdown === link.name : activeDropdown === link.name) && (
+                    <div className={`absolute top-full left-0 pt-2 z-50`}>
+                      {/* Invisible bridge to prevent dropdown from closing */}
+                      {link.isHoverDropdown && (
+                        <div className="absolute top-0 left-0 right-0 h-2 bg-transparent"></div>
+                      )}
+                      <div className={`w-64 ${
+                        link.isHoverDropdown 
+                          ? 'bg-[#6B21A8] border-purple-300/30' 
+                          : 'bg-[#4C1D95] border-purple-400/20'
+                      } rounded-lg shadow-xl border overflow-hidden`}>
+                        {link.dropdownItems?.map((item, index) => (
+                          <Link
+                            key={item.name}
+                            to={item.href}
+                            onClick={() => {
+                              setActiveDropdown(null);
+                              setHoverDropdown(null);
+                            }}
+                            className={`block px-4 py-3 text-white transition-colors duration-200 border-b last:border-b-0 ${
+                              link.isHoverDropdown 
+                                ? 'hover:bg-purple-700/60 border-purple-300/20' 
+                                : 'hover:bg-purple-600/50 border-purple-400/10'
+                            }`}
+                          >
+                            {item.name}
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

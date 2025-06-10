@@ -8,6 +8,18 @@ import InclusionDiversityPage from './pages/InclusionDiversityPage'
 import LifeAtBugRaptorsPage from './pages/LifeAtBugRaptorsPage'
 import CareerPage from './pages/CareerPage'
 import EngagementModelPage from './pages/EngagementModelPage'
+import {
+  MoboRaptors,
+  RaptorVista,
+  BugBot,
+  RaptorGen,
+  RaptorHub,
+  RaptorAssist,
+  RaptorSelect,
+  RaptorScan,
+  RaptorVision,
+  RaptorSecurity
+} from './components/ui/tools'
 
 function App() {
   return (
@@ -21,6 +33,18 @@ function App() {
         <Route path="/company/life-at-bugraptors" element={<LifeAtBugRaptorsPage />} />
         <Route path="/company/career" element={<CareerPage />} />
         <Route path="/company/engagement-model" element={<EngagementModelPage />} />
+        
+        {/* Tools Routes */}
+        <Route path="/tools/moboraptors" element={<MoboRaptors />} />
+        <Route path="/tools/raptorvista" element={<RaptorVista />} />
+        <Route path="/tools/bugbot" element={<BugBot />} />
+        <Route path="/tools/raptorgen" element={<RaptorGen />} />
+        <Route path="/tools/raptorhub" element={<RaptorHub />} />
+        <Route path="/tools/raptorassist" element={<RaptorAssist />} />
+        <Route path="/tools/raptorselect" element={<RaptorSelect />} />
+        <Route path="/tools/raptorscan" element={<RaptorScan />} />
+        <Route path="/tools/raptorvision" element={<RaptorVision />} />
+        <Route path="/tools/raptorsecurity" element={<RaptorSecurity />} />
       </Routes>
     </Router>
   )
