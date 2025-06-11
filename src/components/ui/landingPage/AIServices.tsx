@@ -110,8 +110,8 @@ const AIServices: React.FC = () => {
               <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
 
               {/* Floating Particles */}
-              <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-              <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300"></div>
+              <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100  delay-300 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>

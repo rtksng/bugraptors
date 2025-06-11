@@ -155,7 +155,7 @@ const CreateDreamTeam: React.FC = () => {
                         stroke="currentColor"
                         strokeWidth="4"
                         fill="none"
-                        className="animate-pulse"
+                        className=""
                       />
                       {/* Arrow Head */}
                       <path

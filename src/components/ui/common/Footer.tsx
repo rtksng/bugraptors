@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
         {/* Animated Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div 
-            className="w-full h-full animate-pulse"
+            className="w-full h-full "
             style={{
               backgroundImage: `linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
                                linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)`,
@@ -142,16 +142,13 @@ const Footer: React.FC = () => {
           />
         </div>
         
-        {/* Floating Orbs */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/8 to-blue-500/8 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/8 to-purple-500/8 rounded-full blur-[120px] animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-r from-indigo-500/6 to-pink-500/6 rounded-full blur-[100px] animate-pulse delay-2000"></div>
+        
         
         {/* Animated Particles */}
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-purple-400/20 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-purple-400/20 rounded-full "
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -164,7 +161,7 @@ const Footer: React.FC = () => {
 
       {/* Top Border with Animation */}
       <div className="absolute top-0 left-0 right-0 h-px">
-        <div className="w-full h-full bg-gradient-to-r from-transparent via-purple-500/50 to-transparent animate-pulse"></div>
+        <div className="w-full h-full bg-gradient-to-r from-transparent via-purple-500/50 to-transparent "></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

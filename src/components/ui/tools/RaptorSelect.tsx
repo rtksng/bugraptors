@@ -116,8 +116,8 @@ const RaptorSelect: React.FC = () => {
         {/* Foster Test Automation Section */}
         <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl "></div>
+            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl  delay-1000"></div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -185,8 +185,8 @@ const RaptorSelect: React.FC = () => {
         {/* Page Object Generation Benefits Section */}
         <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317]">
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-yellow-500/8 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-orange-500/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-yellow-500/8 rounded-full blur-3xl "></div>
+            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-orange-500/8 rounded-full blur-3xl  delay-1000"></div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

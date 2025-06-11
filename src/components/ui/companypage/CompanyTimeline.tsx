@@ -134,8 +134,8 @@ const CompanyTimeline: React.FC = () => {
                     </div>
 
                     {/* Decorative Elements */}
-                    <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-                    <div className="absolute bottom-4 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
+                    <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100  delay-300 transition-opacity duration-300"></div>
                   </div>
                 </div>
 

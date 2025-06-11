@@ -112,49 +112,15 @@ const RaptorSecurity: React.FC = () => {
   ];
 
   return (
-    <div className="dark bg-[#020317] min-h-screen overflow-x-hidden">
+    <div className=" min-h-screen overflow-x-hidden">
       {/* Add animated blur effects */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl "></div>
+        <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl  delay-1000"></div>
+        <div className="absolute top-3/4 left-1/3 w-64 h-64 bg-blue-500/15 rounded-full blur-3xl  delay-2000"></div>
       </div>
 
-      {/* Add styles for animations */}
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .animate-fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 6px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 10px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(255, 255, 255, 0.3);
-          border-radius: 10px;
-        }
-        
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: rgba(255, 255, 255, 0.5);
-        }
-      `}</style>
+    
 
       <NavigationBar />
       <main className="pt-16 sm:pt-20">
@@ -171,7 +137,7 @@ const RaptorSecurity: React.FC = () => {
         />
 
         {/* Foster Security Scanning Section */}
-        <section className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-b from-[#020317] to-[#1a0b2e]">
+        <section className="py-16 md:py-20 relative overflow-hidden ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               {/* Title */}
@@ -186,7 +152,7 @@ const RaptorSecurity: React.FC = () => {
         </section>
 
         {/* How Does RaptorSecurity Work Section */}
-        <section className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-b from-[#1a0b2e] to-[#020317]">
+        <section className="py-16 md:py-20 relative overflow-hidden ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -391,7 +357,7 @@ const RaptorSecurity: React.FC = () => {
         />
 
         {/* Security Benefits Section */}
-        <section className="py-16 md:py-20 relative overflow-hidden bg-gradient-to-b from-[#1a0b2e] to-[#020317]">
+        <section className="py-16 md:py-20 relative overflow-hidden ">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">

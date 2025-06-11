@@ -52,17 +52,17 @@ const BlogSectionCommon: React.FC = () => {
                   {/* AI Circuit Design */}
                   <div className="absolute inset-0">
                     <div className="w-24 h-24 mx-auto mt-12 relative">
-                      <div className="absolute inset-0 rounded-full border-2 border-cyan-300 animate-pulse"></div>
+                      <div className="absolute inset-0 rounded-full border-2 border-cyan-300 "></div>
                       <div className="absolute inset-2 rounded-full border border-blue-300 animate-ping"></div>
                       <div className="absolute inset-0 flex items-center justify-center">
                         <span className="text-2xl font-bold text-white">AI</span>
                       </div>
                     </div>
                     {/* Connecting lines */}
-                    <div className="absolute top-8 left-8 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
-                    <div className="absolute top-8 right-8 w-3 h-3 bg-blue-400 rounded-full animate-pulse delay-300"></div>
-                    <div className="absolute bottom-8 left-12 w-2 h-2 bg-indigo-400 rounded-full animate-pulse delay-500"></div>
-                    <div className="absolute bottom-8 right-12 w-3 h-3 bg-cyan-400 rounded-full animate-pulse delay-700"></div>
+                    <div className="absolute top-8 left-8 w-4 h-4 bg-cyan-400 rounded-full "></div>
+                    <div className="absolute top-8 right-8 w-3 h-3 bg-blue-400 rounded-full  delay-300"></div>
+                    <div className="absolute bottom-8 left-12 w-2 h-2 bg-indigo-400 rounded-full  delay-500"></div>
+                    <div className="absolute bottom-8 right-12 w-3 h-3 bg-cyan-400 rounded-full  delay-700"></div>
                   </div>
                 </div>
               </div>
@@ -130,7 +130,7 @@ const BlogSectionCommon: React.FC = () => {
                   <div className="relative">
                     <div className="w-20 h-32 bg-gray-800 rounded-lg border-2 border-gray-600 relative">
                       <div className="w-16 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded m-1 relative overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent "></div>
                         <div className="absolute top-2 left-2 right-2">
                           <div className="h-1 bg-white/30 rounded mb-1"></div>
                           <div className="h-1 bg-white/20 rounded mb-1 w-3/4"></div>
