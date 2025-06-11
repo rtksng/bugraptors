@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from './SectionTittle';
 
 interface HowItWorksItem {
   title: string;
@@ -49,17 +50,17 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
               </p>
             )}
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                {title}
-              </span>
-            </h2>
             
             {description && (
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 {description}
               </p>
             )}
+
+            <SectionTitle
+  title={title}
+  para1={description}
+/>
           </div>
 
           {/* Items Grid */}

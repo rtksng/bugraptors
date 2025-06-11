@@ -5,6 +5,12 @@ import HeroSection from '../common/HeroSection';
 import ExploreProductsSection from '../common/ExploreProductsSection';
 import MoboraptorsSection from './MoboraptorsSection';
 import PinkBackgroundSection from '../common/PinkBackgroundSection';
+import SectionTitle from '../common/SectionTittle';
+import HeroesCommon from '../common/HeroesCommon';
+import BlogSectionCommon from '../common/BlogSectionCommon';
+import NewSectionCommon from '../common/NewSectionCommon';
+import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorSelect: React.FC = () => {
   const handleCtaClick = () => {
@@ -100,66 +106,57 @@ const RaptorSelect: React.FC = () => {
       <NavigationBar />
       <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <HeroSection
-          logoIcon={raptorSelectIcon}
-          logoText="RaptorSelect"
-          mainHeading="Page Object Generator Plugin"
-          highlightText=""
-          description="An All-new Approach To Page Object Generation"
-          ctaText="Learn More"
-          onCtaClick={handleCtaClick}
-          showMobileIllustration={false}
-        />
- {/* Foster Test Automation Section */}
- <section className="py-20 relative overflow-hidden bg-white">
-          <div className="container mx-auto px-4 relative z-10">
+        <HeroesCommon
+          align="left"
+          title="RaptorSelect - Page Object Generator Plugin"
+          description="An All-new Approach To Page Object Generation  "
+          buttonText="Learn More"
+          tag="RaptorSelect" subtitle={''}        />
+        
+        {/* Foster Test Automation Section */}
+        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
+          <div className="absolute inset-0">
+            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto">
               {/* Title */}
               <div className="mb-12">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                    Foster Test Automation Your Way!
-                  </span>
-                </h2>
-              </div>
-
-              {/* Description Paragraphs */}
-              <div className="space-y-6 mb-12">
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  Accelerate the creation of test automation frameworks by generating the necessary code structure for page object pattern implementation through Raptor Select. Testers can define page elements within the generated page objects, enabling faster and more efficient test automation development.
-                </p>
-                
-                <p className="text-lg text-gray-700 leading-relaxed">
-                  RaptorSelect is an essential tool to improve your workflow. It will generate Page Object Model on the active tab with a single click, provided that all the options and templates are configured. The generated Page Object Model will be saved to the pre-configured download folder, striving to reduce manual involvement.
-                </p>
+                <SectionTitle
+                  title="Foster Test Automation Your Way!"
+                  para1='Accelerate the creation of test automation frameworks by generating the necessary code structure for page object pattern implementation through Raptor Select. Testers can define page elements within the generated page objects, enabling faster and more efficient test automation development.'
+                  para2='RaptorSelect is an essential tool to improve your workflow. It will generate Page Object Model on the active tab with a single click, provided that all the options and templates are configured. The generated Page Object Model will be saved to the pre-configured download folder, striving to reduce manual involvement.'
+                />
               </div>
 
               {/* Features Section */}
               <div className="mb-12">
-                <h3 className="text-3xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
+                  <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                     Features
                   </span>
                 </h3>
 
-                <div className="space-y-4">
+                <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-start space-x-4">
-                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                    <div className="w-2 h-2 custom-bg-color rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                       A customizable Java template with pre-defined page objects.
                     </p>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                    <div className="w-2 h-2 custom-bg-color rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                       Rapid page object pattern implementation with just a click.
                     </p>
                   </div>
 
                   <div className="flex items-start space-x-4">
-                    <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700 leading-relaxed">
+                    <div className="w-2 h-2 custom-bg-color rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                       Define page elements within the generated page objects.
                     </p>
                   </div>
@@ -168,9 +165,9 @@ const RaptorSelect: React.FC = () => {
 
               {/* Try RaptorSelect Button */}
               <div className="text-left">
-                <button 
+                <button
                   onClick={handleCtaClick}
-                  className="px-8 py-3 bg-blue-900 hover:bg-blue-800 text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                  className="px-6 sm:px-8 py-3 custom-bg-color hover:opacity-90 text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
                 >
                   Try RaptorSelect
                 </button>
@@ -178,70 +175,65 @@ const RaptorSelect: React.FC = () => {
             </div>
           </div>
         </section>
-       
-      
+
         {/* How RaptorSelect Works Section */}
         <PinkBackgroundSection
           title="How RaptorSelect Works?"
           items={howRaptorSelectWorksItems}
-          // buttonText="Book Your Free Demo"
-          // onButtonClick={handleDemoClick}
         />
 
-  {/* Page Object Generation Benefits Section */}
-  <section className="py-20 relative overflow-hidden">
+        {/* Page Object Generation Benefits Section */}
+        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317]">
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-yellow-600/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-yellow-500/8 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-orange-500/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
-          
-          <div className="container mx-auto px-4 relative z-10">
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-8">
+              <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div className="space-y-6 sm:space-y-8">
                   <div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                      <span className="text-gray-700">Why Must You Choose </span>
-                      <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                        RaptorSelect?
-                      </span>
-                    </h2>
+                    <SectionTitle
+                      title="Why Must You Choose RaptorSelect?"
+                      align='left'
+                    />
                   </div>
 
-                  <div className="space-y-6">
+                  <div className="space-y-4 sm:space-y-6">
                     <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-lg text-gray-700 leading-relaxed">
+                      <div className="w-2 h-2 custom-bg-color rounded-full mt-3 flex-shrink-0"></div>
+                      <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                         Instantly create page objects
                       </p>
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-lg text-gray-700 leading-relaxed">
+                      <div className="w-2 h-2 custom-bg-color rounded-full mt-3 flex-shrink-0"></div>
+                      <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                         Define page elements, actions, and assertions
                       </p>
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-lg text-gray-700 leading-relaxed">
+                      <div className="w-2 h-2 custom-bg-color rounded-full mt-3 flex-shrink-0"></div>
+                      <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                         Time-saving and fast QA execution process
                       </p>
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0"></div>
-                      <p className="text-lg text-gray-700 leading-relaxed">
+                      <div className="w-2 h-2 custom-bg-color rounded-full mt-3 flex-shrink-0"></div>
+                      <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
                         Dynamically reduce manual involvement
                       </p>
                     </div>
                   </div>
 
-                  <div className="pt-6">
-                    <button 
+                  <div className="pt-4 sm:pt-6">
+                    <button
                       onClick={handleCtaClick}
-                      className="px-8 py-3 bg-blue-900 hover:bg-blue-800 text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                      className="px-6 sm:px-8 py-3 custom-bg-color hover:opacity-90 text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
                     >
                       Learn More
                     </button>
@@ -249,17 +241,17 @@ const RaptorSelect: React.FC = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 border border-gray-200">
-                    <div className="flex items-center justify-center h-96">
+                  <div className="bg-white/[0.02] backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10">
+                    <div className="flex items-center justify-center h-80 sm:h-96">
                       {/* Robot/AI Illustration */}
                       <div className="text-center">
-                        <svg className="w-32 h-32 mx-auto mb-4 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-24 h-24 sm:w-32 sm:h-32 mx-auto mb-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         <div className="space-y-2">
-                          <div className="h-2 bg-purple-200 rounded w-3/4 mx-auto"></div>
-                          <div className="h-2 bg-purple-200 rounded w-1/2 mx-auto"></div>
-                          <div className="h-2 bg-purple-200 rounded w-2/3 mx-auto"></div>
+                          <div className="h-2 custom-bg-color opacity-50 rounded w-3/4 mx-auto"></div>
+                          <div className="h-2 custom-bg-color opacity-50 rounded w-1/2 mx-auto"></div>
+                          <div className="h-2 custom-bg-color opacity-50 rounded w-2/3 mx-auto"></div>
                         </div>
                       </div>
                     </div>
@@ -280,7 +272,17 @@ const RaptorSelect: React.FC = () => {
         {/* Project Success Stories Section */}
         <MoboraptorsSection />
 
-       
+        {/* Blogs Section */}
+        <BlogSectionCommon />
+
+        {/* Newsletter/Ebook Subscription Section */}
+        <NewsletterSectionCommon />
+
+        {/* Latest News Section */}
+        <NewSectionCommon />
+
+        {/* Other Offices Info Section */}
+        <OtherOfficesInfo />
 
         <Footer />
       </main>

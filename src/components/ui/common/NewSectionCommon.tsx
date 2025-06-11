@@ -2,20 +2,20 @@ import React from 'react';
 
 const NewSectionCommon: React.FC = () => {
   return (
-    <section className="py-20 relative bg-white">
+    <section className="py-20 relative bg-[#020317]">
       <div className="container mx-auto px-4">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-3">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-3">
                 Latest News
               </h2>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-gray-300">
                 Explore our events, recognition and company achievements
               </p>
             </div>
-            <button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
+            <button className="custom-bg-color hover:opacity-90 text-white px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg">
               View All
             </button>
           </div>
@@ -23,7 +23,7 @@ const NewSectionCommon: React.FC = () => {
           {/* News Cards Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* News Card 1 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-white/10">
               <div className="relative overflow-hidden h-48">
                 {/* Purple gradient background with CEO image */}
                 <div className="h-full bg-gradient-to-br from-purple-600 to-purple-800 relative flex items-center justify-center">
@@ -55,18 +55,18 @@ const NewSectionCommon: React.FC = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-sm text-gray-500 mb-3 font-medium">10-Feb-2025</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-4 leading-tight group-hover:text-purple-600 transition-colors duration-300">
+                <div className="text-sm text-gray-400 mb-3 font-medium">10-Feb-2025</div>
+                <h3 className="text-lg font-bold text-white mb-4 leading-tight group-hover:text-purple-400 transition-colors duration-300">
                   BugRaptors CEO Yashu Kapila Recognized for Innovation in QA Testing
                 </h3>
-                <button className="text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-300 text-sm">
+                <button className="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 text-sm">
                   Read More
                 </button>
               </div>
             </div>
 
             {/* News Card 2 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-white/10">
               <div className="relative overflow-hidden h-48">
                 {/* Clutch Award Design */}
                 <div className="h-full bg-gradient-to-br from-teal-600 to-blue-700 relative flex items-center justify-center">
@@ -98,18 +98,18 @@ const NewSectionCommon: React.FC = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-sm text-gray-500 mb-3 font-medium">26-Dec-2024</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-4 leading-tight group-hover:text-purple-600 transition-colors duration-300">
+                <div className="text-sm text-gray-400 mb-3 font-medium">26-Dec-2024</div>
+                <h3 className="text-lg font-bold text-white mb-4 leading-tight group-hover:text-purple-400 transition-colors duration-300">
                   BugRaptors Awarded as Top Global Company of Fall 2024 by Clutch
                 </h3>
-                <button className="text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-300 text-sm">
+                <button className="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 text-sm">
                   Read More
                 </button>
               </div>
             </div>
 
             {/* News Card 3 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-white/10">
               <div className="relative overflow-hidden h-48">
                 {/* Women in Tech Award */}
                 <div className="h-full bg-gradient-to-br from-purple-700 to-indigo-800 relative flex items-center justify-center">
@@ -138,18 +138,18 @@ const NewSectionCommon: React.FC = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-sm text-gray-500 mb-3 font-medium">18-Oct-2024</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-4 leading-tight group-hover:text-purple-600 transition-colors duration-300">
+                <div className="text-sm text-gray-400 mb-3 font-medium">18-Oct-2024</div>
+                <h3 className="text-lg font-bold text-white mb-4 leading-tight group-hover:text-purple-400 transition-colors duration-300">
                   BugRaptors CEO, Yashu Kapila Nominated for Women in Tech Global...
                 </h3>
-                <button className="text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-300 text-sm">
+                <button className="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 text-sm">
                   Read More
                 </button>
               </div>
             </div>
 
             {/* News Card 4 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-gray-100">
+            <div className="bg-white/5 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 group border border-white/10">
               <div className="relative overflow-hidden h-48">
                 {/* HerRising Award */}
                 <div className="h-full bg-gradient-to-br from-pink-600 to-purple-700 relative flex items-center justify-center">
@@ -185,11 +185,11 @@ const NewSectionCommon: React.FC = () => {
                 </div>
               </div>
               <div className="p-6">
-                <div className="text-sm text-gray-500 mb-3 font-medium">09-Oct-2024</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-4 leading-tight group-hover:text-purple-600 transition-colors duration-300">
+                <div className="text-sm text-gray-400 mb-3 font-medium">09-Oct-2024</div>
+                <h3 className="text-lg font-bold text-white mb-4 leading-tight group-hover:text-purple-400 transition-colors duration-300">
                   BugRaptors CEO Yashu Kapila Wins HerRising Award 2024
                 </h3>
-                <button className="text-purple-600 font-semibold hover:text-purple-800 transition-colors duration-300 text-sm">
+                <button className="text-purple-400 font-semibold hover:text-purple-300 transition-colors duration-300 text-sm">
                   Read More
                 </button>
               </div>

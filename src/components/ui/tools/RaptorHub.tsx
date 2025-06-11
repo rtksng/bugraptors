@@ -7,6 +7,12 @@ import ExploreProductsSection from '../common/ExploreProductsSection';
 import CtaSection from '../common/CtaSection';
 import HowItWorksSection from '../common/HowItWorksSection';
 import MoboraptorsSection from './MoboraptorsSection';
+import SectionTitle from '../common/SectionTittle';
+import HeroesCommon from '../common/HeroesCommon';
+import BlogSectionCommon from '../common/BlogSectionCommon';
+import NewSectionCommon from '../common/NewSectionCommon';
+import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorHub: React.FC = () => {
   const handleCtaClick = () => {
@@ -175,16 +181,12 @@ const RaptorHub: React.FC = () => {
       <NavigationBar />
       <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <HeroSection
-          logoIcon={raptorHubIcon}
-          logoText="RaptorAssist "
-          mainHeading="Elevating Testing Efficiency"
-          highlightText=""
-          description='Innovative & Seamless Project Management Using "Media"'
-          ctaText="Get Started"
-          onCtaClick={handleCtaClick}
-          showMobileIllustration={false}
-        />
+        <HeroesCommon
+          align="left"
+          title="RaptorHub – Track and Manage With Ease"
+          description="Innovative & Seamless Project Management Using "
+          buttonText="Get Started"
+          tag="RaptorHub" subtitle={''}        />
 
         {/* Experience Section */}
         <section className="py-20 relative overflow-hidden">
@@ -196,19 +198,12 @@ const RaptorHub: React.FC = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    Experience A New Era Of Agile And Effective Testing
-                  </span>
-                </h2>
-                <div className="max-w-5xl mx-auto space-y-6">
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    By seamlessly integrating with your existing QA processes, RaptorHub enhances collaboration and accelerates bug identification and resolution. It provides a centralized hub where testers can effortlessly organize and access their media files, ensuring a structured and well-documented approach to testing.
-                  </p>
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    RaptorHub not only expedites the testing process but also augments the overall quality assurance efforts. By enabling testers to capture screenshots and videos directly within the plugin, it eliminates the need for external tools, reducing complexity and saving valuable time.
-                  </p>
-                </div>
+              <SectionTitle
+  title="Experience A New Era Of Agile And Effective Testing"
+  para1="By seamlessly integrating with your existing QA processes, RaptorHub enhances collaboration and accelerates bug identification and resolution. It provides a centralized hub where testers can effortlessly organize and access their media files, ensuring a structured and well-documented approach to testing."
+  para2="RaptorHub not only expedites the testing process but also augments the overall quality assurance efforts. By enabling testers to capture screenshots and videos directly within the plugin, it eliminates the need for external tools, reducing complexity and saving valuable time."
+/>
+
               </div>
             </div>
           </div>
@@ -252,19 +247,13 @@ const RaptorHub: React.FC = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
               <div className="mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    How It Works?
-                  </span>
-                </h2>
-                <div className="max-w-4xl space-y-6">
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    RaptorHub simplifies project management by providing an intuitive interface to create and organize projects. Testers can effortlessly categorize their media files within projects, ensuring easy accessibility and structured organization.
-                  </p>
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    Additionally, users have the option to capture videos and screenshots directly from within the plugin, further streamlining the testing process. Besides, you can also opt for sharing options facilitating seamless collaboration within your organization.
-                  </p>
-                </div>
+              <SectionTitle
+  title="How It Works?"
+  para1="RaptorHub simplifies project management by providing an intuitive interface to create and organize projects. Testers can effortlessly categorize their media files within projects, ensuring easy accessibility and structured organization."
+  para2="Additionally, users have the option to capture videos and screenshots directly from within the plugin, further streamlining the testing process. Besides, you can also opt for sharing options facilitating seamless collaboration within your organization."
+/>
+
+               
               </div>
             </div>
           </div>
@@ -322,6 +311,17 @@ const RaptorHub: React.FC = () => {
 
         {/* Project Success Stories Section */}
         <MoboraptorsSection />
+{/* Blogs Section */}
+<BlogSectionCommon />
+
+{/* Newsletter/Ebook Subscription Section */}
+<NewsletterSectionCommon />
+
+{/* Latest News Section */}
+<NewSectionCommon />
+
+{/* Other Offices Info Section */}
+<OtherOfficesInfo />
 
         <Footer />
       </main>

@@ -8,6 +8,11 @@ import CtaSection from '../common/CtaSection';
 import HowItWorksSection from '../common/HowItWorksSection';
 import MoboraptorsSection from './MoboraptorsSection';
 import SectionTitle from '../common/SectionTittle';
+import HeroesCommon from '../common/HeroesCommon';
+import BlogSectionCommon from '../common/BlogSectionCommon';
+import NewSectionCommon from '../common/NewSectionCommon';
+import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const BugBot: React.FC = () => {
   const handleCtaClick = () => {
@@ -125,28 +130,22 @@ const BugBot: React.FC = () => {
       <NavigationBar />
       <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <HeroSection
-          logoIcon={bugBotIcon}
-          logoText="BugBot"
-          mainHeading="BugBot – Your Personal Testing Assistant"
-          highlightText="AI-Powered Analysis"
-          description="Exploratory testing was never this easy! Skip off all the hassle of creating common problematic values and edge cases with BugBot. 
-
-"
-          ctaText="Know More! or Get More Information"
-          onCtaClick={handleCtaClick}
-          showMobileIllustration={false}
-        />
+        <HeroesCommon
+          align="left"
+          title="BugBot – Your Personal Testing Assistant"
+          description="Add Productivity! Save Time! <br />Exploratory testing was never this easy! Skip off all the hassle of creating common problematic values and edge cases with BugBot. "
+          buttonText="Know More! Or Get More Information!"
+          tag="BugBot" subtitle={''}        />
 
         {/* The Core Capabilities Section */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-              <SectionTitle
-  title="The Core Capabilities"
-  para1="From using the potential of generative AI to automation and visual testing, make your test process smooth with BugBot's dynamic test features."
-/>
+                <SectionTitle
+                  title="The Core Capabilities"
+                  para1="From using the potential of generative AI to automation and visual testing, make your test process smooth with BugBot's dynamic test features."
+                />
 
               </div>
 
@@ -206,16 +205,16 @@ const BugBot: React.FC = () => {
           </div>
         </section>
 
-        
+
 
         {/* How We Help You Stand Out Section */}
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-              <SectionTitle
-  title="How We Help You Stand Out With BugBot?"
-/>
+                <SectionTitle
+                  title="How We Help You Stand Out With BugBot?"
+                />
 
               </div>
 
@@ -269,10 +268,10 @@ const BugBot: React.FC = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-16">
-              <SectionTitle
-  title="Tailor Your Testing Approach"
-  para1="Choose the Complete BugBot Suite or Individual AI Testing Tools"
-/>
+                <SectionTitle
+                  title="Tailor Your Testing Approach"
+                  para1="Choose the Complete BugBot Suite or Individual AI Testing Tools"
+                />
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -315,10 +314,10 @@ const BugBot: React.FC = () => {
         <section className="py-20 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
-            <SectionTitle
-  title="Drive Quality! Forget Bugs!"
-  para1="BugBot brings you higher volume of pre-designed test data which makes it easy to test. From language defect analysis to testing out forms, BugBot gives you instant access to test data to detect validation issues and allows you to foster quality improvement."
-/>
+              <SectionTitle
+                title="Drive Quality! Forget Bugs!"
+                para1="BugBot brings you higher volume of pre-designed test data which makes it easy to test. From language defect analysis to testing out forms, BugBot gives you instant access to test data to detect validation issues and allows you to foster quality improvement."
+              />
 
             </div>
           </div>
@@ -339,6 +338,17 @@ const BugBot: React.FC = () => {
         />
 
         <MoboraptorsSection />
+{/* Blogs Section */}
+<BlogSectionCommon />
+
+{/* Newsletter/Ebook Subscription Section */}
+<NewsletterSectionCommon />
+
+{/* Latest News Section */}
+<NewSectionCommon />
+
+{/* Other Offices Info Section */}
+<OtherOfficesInfo />
 
         <Footer />
       </main>

@@ -6,6 +6,12 @@ import WhyChooseSection from '../common/WhyChooseSection';
 import ExploreProductsSection from '../common/ExploreProductsSection';
 import PinkBackgroundSection from '../common/PinkBackgroundSection';
 import MoboraptorsSection from './MoboraptorsSection';
+import SectionTitle from '../common/SectionTittle';
+import HeroesCommon from '../common/HeroesCommon';
+import BlogSectionCommon from '../common/BlogSectionCommon';
+import NewSectionCommon from '../common/NewSectionCommon';
+import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
+import OtherOfficesInfo from '../common/OtherOfficesInfo';
 
 const RaptorAssist: React.FC = () => {
   const handleCtaClick = () => {
@@ -152,38 +158,28 @@ const RaptorAssist: React.FC = () => {
       <NavigationBar />
       <main className="pt-16 sm:pt-20">
         {/* Hero Section */}
-        <HeroSection
-          logoIcon={raptorAssistIcon}
-          logoText="RaptorAssist"
-          mainHeading="Elevating Testing Efficiency"
-          highlightText=""
-          description="Unleash the Power of AI in Testing!"
-          ctaText="Get Started"
-          onCtaClick={handleCtaClick}
-          showMobileIllustration={false}
-        />
+        <HeroesCommon
+          align="left"
+          title="RaptorAssist - Elevating Testing Efficiency"
+          description="Unleash the Power of AI in Testing! "
+          buttonText="Get Started"
+          tag="RaptorAssist" subtitle={''}        />
 
         {/* Experience Section */}
-        <section className="py-20 relative overflow-hidden">
+        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317]">
           <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-8">
-                  <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    The Future Of Testing Efficiency Is Here!
-                  </span>
-                </h2>
-                <div className="max-w-5xl mx-auto space-y-6">
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    The heart of RaptorAssist's power lies in its AI-driven test case generation, which operates at an astounding 8 times the speed of traditional methods. This transformative feature ensures that testing teams can achieve unparalleled productivity gains, focusing their efforts on critical tasks while RaptorAssist handles the meticulous task of test case creation. By seamlessly adapting to specific project requirements, RaptorAssist empowers testing professionals to achieve an unprecedented level of precision in their testing process.                   </p>
-                  <p className="text-xl text-gray-300 leading-relaxed">
-                    In addition to its impressive speed and precision, RaptorAssist significantly streamlines the documentation process. No longer burdened by the manual creation of testing documents, testing teams can now trust RaptorAssist to produce documentation that not only meets but exceeds industry standards. This means that testing professionals can devote more time to actual testing, confident in the knowledge that their documentation is of the highest caliber. With RaptorAssist, testing efficiency reaches new heights, setting a new standard for quality assurance in the software development industry                   </p>
-                </div>
+              <div className="text-center mb-12 sm:mb-16">
+                <SectionTitle
+                  title="The Future Of Testing Efficiency Is Here!"
+                  para1="The heart of RaptorAssist's power lies in its AI-driven test case generation, which operates at an astounding 8 times the speed of traditional methods. This transformative feature ensures that testing teams can achieve unparalleled productivity gains, focusing their efforts on critical tasks while RaptorAssist handles the meticulous task of test case creation. By seamlessly adapting to specific project requirements, RaptorAssist empowers testing professionals to achieve an unprecedented level of precision in their testing process."
+                  para2="In addition to its impressive speed and precision, RaptorAssist significantly streamlines the documentation process. No longer burdened by the manual creation of testing documents, testing teams can now trust RaptorAssist to produce documentation that not only meets but exceeds industry standards. This means that testing professionals can devote more time to actual testing, confident in the knowledge that their documentation is of the highest caliber. With RaptorAssist, testing efficiency reaches new heights, setting a new standard for quality assurance in the software development industry"
+                />
               </div>
             </div>
           </div>
@@ -213,33 +209,29 @@ const RaptorAssist: React.FC = () => {
         />
 
         {/* How RaptorAssist Works Section */}
-        <section className="py-20 relative overflow-hidden bg-gradient-to-br from-gray-900 via-purple-900 to-blue-900">
+        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
           {/* Background Effects */}
           <div className="absolute inset-0">
-            <div className="absolute top-1/3 left-1/4 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/3 left-1/4 w-64 h-64 sm:w-72 sm:h-72 bg-purple-500/15 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-64 h-64 sm:w-72 sm:h-72 bg-blue-500/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 sm:w-96 sm:h-96 bg-cyan-500/8 rounded-full blur-3xl"></div>
           </div>
 
-          <div className="container mx-auto px-4 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-7xl mx-auto">
               {/* Section Header */}
-              <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    How It Works?
-                  </span>
-                </h2>
-                <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                  RaptorAssist simplifies the testing process like never before. With its intuitive interface, users can input specific requirements, and RaptorAssist takes care of the rest. The AI engine analyzes the data and generates comprehensive test artifacts in record time.
-                </p>
+              <div className="text-center mb-12 sm:mb-16">
+                <SectionTitle
+                  title="How It Works?"
+                  para1="RaptorAssist simplifies the testing process like never before. With its intuitive interface, users can input specific requirements, and RaptorAssist takes care of the rest. The AI engine analyzes the data and generates comprehensive test artifacts in record time."
+                />
               </div>
 
               {/* Process Flow */}
               <div className="relative">
                 {/* Connection Lines */}
-                <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500/30 via-purple-500/30 to-blue-500/30 transform -translate-y-1/2 z-0"></div>
-                
+                <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-blue-500/20 transform -translate-y-1/2 z-0"></div>
+
                 {/* Steps */}
                 <div className="grid lg:grid-cols-3 gap-8 lg:gap-12 relative z-10">
                   {howRaptorAssistWorksItems.map((item, index) => (
@@ -248,26 +240,26 @@ const RaptorAssist: React.FC = () => {
                       <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg z-20">
                         {String(index + 1).padStart(2, '0')}
                       </div>
-                      
+
                       {/* Card */}
-                      <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 pt-12 border border-white/20 hover:border-cyan-400/50 transition-all duration-500 group-hover:transform group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/25">
+                      <div className="bg-white/[0.02] backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 pt-10 sm:pt-12 border border-white/10 hover:border-cyan-400/30 transition-all duration-500 group-hover:transform group-hover:scale-105 group-hover:shadow-2xl group-hover:shadow-cyan-500/10">
                         {/* Icon */}
-                        <div className="w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-purple-500/20 rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-gradient-to-br group-hover:from-cyan-500/30 group-hover:to-purple-500/30 transition-all duration-300">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 custom-bg-color rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 mx-auto group-hover:bg-gradient-to-br group-hover:from-cyan-500/25 group-hover:to-purple-500/25 transition-all duration-300">
                           <div className="text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300">
                             {item.icon}
                           </div>
                         </div>
 
                         {/* Content */}
-                        <h3 className="text-2xl font-bold text-white mb-4 text-center group-hover:text-cyan-300 transition-colors duration-300">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center group-hover:text-cyan-300 transition-colors duration-300">
                           {item.title}
                         </h3>
-                        <p className="text-gray-300 leading-relaxed text-center group-hover:text-gray-200 transition-colors duration-300">
+                        <p className="text-gray-300 leading-relaxed text-center group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
                           {item.description}
                         </p>
 
                         {/* Glow Effect */}
-                        <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-cyan-500/10 group-hover:via-purple-500/10 group-hover:to-blue-500/10 transition-all duration-500 pointer-events-none"></div>
+                        <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-cyan-500/5 group-hover:via-purple-500/5 group-hover:to-blue-500/5 transition-all duration-500 pointer-events-none"></div>
                       </div>
 
                       {/* Arrow (except for last item) */}
@@ -282,8 +274,6 @@ const RaptorAssist: React.FC = () => {
                   ))}
                 </div>
               </div>
-
-             
             </div>
           </div>
         </section>
@@ -295,17 +285,28 @@ const RaptorAssist: React.FC = () => {
           buttonText="Book Your Free Demo"
           onButtonClick={handleDemoClick}
         />
- {/* Explore Our Other Products Section */}
+        
+        {/* Explore Our Other Products Section */}
         <ExploreProductsSection
           title="Explore Our Other Products"
           subtitle="Discover More AI-Powered Quality Assurance Solutions"
           products={otherProducts}
         />
-        
+
         {/* Project Success Stories Section */}
         <MoboraptorsSection />
 
-       
+        {/* Blogs Section */}
+        <BlogSectionCommon />
+
+        {/* Newsletter/Ebook Subscription Section */}
+        <NewsletterSectionCommon />
+
+        {/* Latest News Section */}
+        <NewSectionCommon />
+
+        {/* Other Offices Info Section */}
+        <OtherOfficesInfo />
 
         <Footer />
       </main>
