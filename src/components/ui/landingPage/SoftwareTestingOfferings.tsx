@@ -54,8 +54,8 @@ const SoftwareTestingOfferings: React.FC = () => {
     <section className="relative py-20  overflow-hidden radial-bg">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 "></div>
+       
 
         {/* Subtle decorative elements */}
         {[...Array(5)].map((_, i) => (

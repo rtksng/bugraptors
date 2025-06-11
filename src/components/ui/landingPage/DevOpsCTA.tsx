@@ -48,7 +48,7 @@ const DevOpsCTA: React.FC = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-600/8 to-cyan-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 right-10 w-80 h-80 "></div>
 
         {/* Subtle decorative elements */}
         {[...Array(3)].map((_, i) => (

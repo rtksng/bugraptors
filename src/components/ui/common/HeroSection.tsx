@@ -44,8 +44,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
         
         {/* Floating Orbs */}
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/8 to-blue-500/8 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/8 to-purple-500/8 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+        
+
         
         {/* Mobile Device Illustration */}
         {showMobileIllustration && (
