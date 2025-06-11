@@ -7,7 +7,7 @@ import StarDotsBlink from '../common/StarDotsBlink';
 const Hero: React.FC = () => {
   return (
     // <section className="relative min-h-screen flex items-center py-16 sm:py-20 md:py-24 lg:py-32 xl:py-48 overflow-hidden">
-    <section className=" min-h-screen h-[calc(100vh-200px)]  flex items-center ">
+    <section className=" min-h-screen  flex items-center ">
       {/* Simplified Background Elements - Mobile Optimized */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-600/15 to-blue-600/15 rounded-full blur-3xl"></div>
@@ -15,13 +15,19 @@ const Hero: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] md:w-[800px] md:h-[800px] lg:w-[1000px] lg:h-[1000px] bg-gradient-radial from-indigo-900/8 to-transparent rounded-full"></div>
       </div>
 
-     
-     
+      {/* Subtle Grid Pattern - Mobile Optimized */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="w-full h-full" style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
+          backgroundSize: '30px 30px',
+        }}></div>
+      </div>
 
-      <div className=" -top-[200px] shadow-[0px_40px_60px_0px_rgba(8,11,58,_0.5)] flex items-center justify-end mx-auto lg:size-[1200px] rounded-full relative z-10 overflow-hidden bg-[#010212]">
+      <div className=" -top-[275px] shadow-[0px_40px_60px_0px_rgba(8,11,58,_0.5)] flex items-center justify-end mx-auto lg:size-[1200px] rounded-full relative z-10 overflow-hidden bg-[#010212]">
 
         {/* Image-Pannel */}
-        <div className="absolute left-[-80px] -bottom-10  w-[724px] h-[920px] overflow-hidden">
+        <div className="absolute left-[-80px] bottom-0  w-[724px] h-[920px] overflow-hidden">
           <img
             src="src/assets/HeroImage.png"
             alt="HeroImage"

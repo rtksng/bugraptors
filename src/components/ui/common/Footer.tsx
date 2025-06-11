@@ -142,16 +142,7 @@ const Footer: React.FC = () => {
           />
         </div>
         
-<<<<<<< HEAD
         {/* Floating Orbs */}
-=======
-<<<<<<< HEAD
-        {/* Floating Orbs */}
-=======
-        
->>>>>>> fc872baa30519be0ab3ed9dd3e8ad649613525fc
-        
->>>>>>> ccee62cd116459b8d0dbcc79fd5c1c9afbb5e90f
             
         {/* Animated Particles */}
         {[...Array(20)].map((_, i) => (
