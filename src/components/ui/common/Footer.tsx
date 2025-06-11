@@ -142,8 +142,8 @@ const Footer: React.FC = () => {
           />
         </div>
         
-        
-        
+        {/* Floating Orbs */}
+            
         {/* Animated Particles */}
         {[...Array(20)].map((_, i) => (
           <div

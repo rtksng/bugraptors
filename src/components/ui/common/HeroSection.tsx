@@ -43,7 +43,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           />
         </div>
         
-       
+
         
         {/* Mobile Device Illustration */}
         {showMobileIllustration && (
