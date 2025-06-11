@@ -30,8 +30,8 @@ const WhyChooseUsServices: React.FC = () => {
     <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/8 to-blue-500/8 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/8 to-green-500/8 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/8 to-blue-500/8 rounded-full blur-[120px] "></div>
+        <div className="absolute bottom-20 right-1/4 w-96 h-96 bg-gradient-to-r from-cyan-500/8 to-green-500/8 rounded-full blur-[120px]  delay-1000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -75,8 +75,8 @@ const WhyChooseUsServices: React.FC = () => {
               </div>
 
               {/* Decorative Elements */}
-              <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400/50 rounded-full animate-pulse"></div>
-              <div className="absolute bottom-4 left-4 w-1 h-1 bg-blue-400/50 rounded-full animate-pulse delay-500"></div>
+              <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400/50 rounded-full "></div>
+              <div className="absolute bottom-4 left-4 w-1 h-1 bg-blue-400/50 rounded-full  delay-500"></div>
 
               {/* Hover Glow Effect */}
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-purple-500/0 via-purple-500/5 to-blue-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>

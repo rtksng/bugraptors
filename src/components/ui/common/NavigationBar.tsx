@@ -464,9 +464,9 @@ const NavigationBar: React.FC = () => {
 
       {/* Floating Particles */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute top-4 left-20 w-1 h-1 bg-purple-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-8 right-32 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-500"></div>
-        <div className="absolute top-6 left-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-4 left-20 w-1 h-1 bg-purple-400 rounded-full "></div>
+        <div className="absolute top-8 right-32 w-1 h-1 bg-blue-400 rounded-full  delay-500"></div>
+        <div className="absolute top-6 left-1/2 w-1 h-1 bg-cyan-400 rounded-full  delay-1000"></div>
       </div>
     </nav>
   );

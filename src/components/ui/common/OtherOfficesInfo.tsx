@@ -56,9 +56,9 @@ const OtherOfficesInfo: React.FC = () => {
     <section className="py-20 relative bg-[#020317]">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cyan-600/5 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl "></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl  delay-1000"></div>
+        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cyan-600/5 rounded-full blur-3xl  delay-2000"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

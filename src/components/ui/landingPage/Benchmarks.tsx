@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
 
-import { 
-  FaAward, 
-  FaUsers, 
-  FaCertificate, 
+import {
+  FaAward,
+  FaUsers,
+  FaCertificate,
   FaCheckCircle
 } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTittle';
@@ -13,7 +13,7 @@ import SectionTitle from '../common/SectionTittle';
 const clients = [
   {
     name: 'Assurant',
-    logo: '/src/assets/assurant.png',
+    logo: '/src/assets/client-logo (1).png',
     color: 'from-blue-600 to-cyan-600'
   },
   {
@@ -33,7 +33,7 @@ const clients = [
   },
   {
     name: 'Mitsubishi',
-    logo: '/src/assets/mahindra.png',
+    logo: '/src/assets/client-logo (3).png',
     color: 'from-red-600 to-pink-600'
   }
 ];
@@ -59,13 +59,13 @@ const tabs = [
   }
 ];
 
-interface BenchmarksProps {}
+interface BenchmarksProps { }
 
 const Benchmarks: React.FC<BenchmarksProps> = () => {
   const [activeTab, setActiveTab] = useState('clients');
 
   return (
-    <section className="relative py-20 overflow-hidden benchmarks-radial-bg">
+    <section className="relative py-12 overflow-hidden benchmarks-radial-bg mt-8  rounded-[96px]">
 
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -74,11 +74,11 @@ const Benchmarks: React.FC<BenchmarksProps> = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
       </div>
 
-     
+
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <SectionTitle   title={'BenchmAarks '} />
+        <SectionTitle title={'BenchmAarks '} />
 
         {/* Tabs */}
         <div className="flex justify-center mb-12">
@@ -87,11 +87,10 @@ const Benchmarks: React.FC<BenchmarksProps> = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex items-center space-x-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer ${
-                  activeTab === tab.id
-                    ? 'text-white bg-gradient-to-r shadow-lg'
-                    : 'text-gray-400 hover:text-gray-300'
-                } ${activeTab === tab.id ? tab.gradient : ''}`}
+                className={`relative flex items-center space-x-2 px-6 py-3 rounded-full   transition-all duration-300 cursor-pointer ${activeTab === tab.id
+                  ? 'text-white bg-gradient-to-r shadow-lg'
+                  : 'text-gray-400 hover:text-gray-300'
+                  } ${activeTab === tab.id ? tab.gradient : ''}`}
               >
                 {tab.icon}
                 <span>{tab.label}</span>
@@ -106,54 +105,46 @@ const Benchmarks: React.FC<BenchmarksProps> = () => {
         {/* Tab Content */}
         <div className="relative">
           {/* Clients Tab */}
-          {activeTab === 'clients' && (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-              {clients.map((client, index) => (
-                <div 
-                  key={client.name}
-                  className="group relative bg-gradient-to-br from-[#0a102a]/60 to-[#151b3d]/60 backdrop-blur-sm rounded-xl p-6 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
-                  style={{ animationDelay: `${index * 150}ms` }}
-                >
-                  {/* Logo Container */}
-                  <div className="relative aspect-[3/2] flex items-center justify-center">
-                    <img 
-                      src={client.logo} 
-                      alt={`${client.name} logo`}
-                      className="max-w-full max-h-[60px] object-contain filter brightness-0 invert opacity-50 group-hover:opacity-100 transition-all duration-300"
-                    />
-                  </div>
-
-                  {/* Verification Badge */}
-                  <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <FaCheckCircle className="w-4 h-4 text-green-400" />
-                  </div>
-
-                  {/* Subtle Background Gradient */}
-                  <div className={`absolute inset-0 bg-gradient-to-r ${client.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 rounded-xl`}></div>
-                </div>
-              ))}
-            </div>
-          )}
+         {activeTab === 'clients' && (
+  <div className="max-h-[calc(100vh-200px)] overflow-y-auto pr-2">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+      {clients.map((client, index) => (
+        <div
+          key={index}
+          className="bg-gradient-to-br from-[#0a102a]/60 to-[#151b3d]/60 rounded-lg p-5 max-h-[130px]"
+        >
+          <div className="h-[60px] flex items-center justify-center">
+            <img
+              src={client.logo}
+              alt={`${client.name} logo`}
+              className="object-contain"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+)}
 
           {/* Pugmarks Tab */}
           {activeTab === 'pugmarks' && (
             <div className="text-center py-16">
-              <div className="inline-flex flex-col items-center p-8 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-2xl border border-purple-500/20 backdrop-blur-sm">
+              {/* <div className="inline-flex flex-col items-center p-8 bg-gradient-to-r from-purple-600/10 to-blue-600/10 rounded-2xl border border-purple-500/20 backdrop-blur-sm">
                 <FaAward className="w-12 h-12 text-purple-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Pugmarks Collection</h3>
                 <p className="text-gray-400">Showcase of our achievements and recognitions coming soon</p>
-              </div>
+              </div> */}
             </div>
           )}
 
           {/* Certifications Tab */}
           {activeTab === 'certifications' && (
             <div className="text-center py-16">
-              <div className="inline-flex flex-col items-center p-8 bg-gradient-to-r from-cyan-600/10 to-teal-600/10 rounded-2xl border border-cyan-500/20 backdrop-blur-sm">
+              {/* <div className="inline-flex flex-col items-center p-8 bg-gradient-to-r from-cyan-600/10 to-teal-600/10 rounded-2xl border border-cyan-500/20 backdrop-blur-sm">
                 <FaCertificate className="w-12 h-12 text-cyan-400 mb-4" />
                 <h3 className="text-xl font-semibold text-white mb-2">Our Certifications</h3>
                 <p className="text-gray-400">Professional certifications and industry standards coming soon</p>
-              </div>
+              </div> */}
             </div>
           )}
         </div>

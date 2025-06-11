@@ -49,7 +49,7 @@ const NewsletterSectionCommon: React.FC = () => {
                   </div>
                   
                   {/* Decorative Elements */}
-                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full animate-pulse"></div>
+                  <div className="absolute -top-2 -right-2 w-4 h-4 bg-yellow-400 rounded-full "></div>
                   <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-green-400 rounded-full opacity-60"></div>
                   <div className="absolute top-1/2 -right-6 w-8 h-8 border-2 border-purple-300 rounded-full opacity-40"></div>
                 </div>

@@ -73,7 +73,7 @@ const ClientTestimonials: React.FC = () => {
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-purple-400/20 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-purple-400/20 rounded-full "
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,

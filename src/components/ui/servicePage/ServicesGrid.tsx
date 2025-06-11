@@ -60,8 +60,8 @@ const ServicesGrid: React.FC = () => {
     <section className="relative py-20 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-full blur-[100px] animate-pulse"></div>
-        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/5 to-green-500/5 rounded-full blur-[100px] animate-pulse delay-1000"></div>
+        <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-full blur-[100px] "></div>
+        <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-gradient-to-r from-cyan-500/5 to-green-500/5 rounded-full blur-[100px]  delay-1000"></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -53,9 +53,9 @@ const HeroQAoffering: React.FC<HeroQAofferingProps> = ({
         </div>
         
         {/* Additional decorative elements */}
-        <div className="absolute top-32 right-64 w-2 h-2 bg-white/30 rounded-full animate-pulse"></div>
-        <div className="absolute top-48 right-16 w-3 h-3 bg-white/25 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-32 right-56 w-2 h-2 bg-white/35 rounded-full animate-pulse"></div>
+        <div className="absolute top-32 right-64 w-2 h-2 bg-white/30 rounded-full "></div>
+        <div className="absolute top-48 right-16 w-3 h-3 bg-white/25 rounded-full "></div>
+        <div className="absolute bottom-32 right-56 w-2 h-2 bg-white/35 rounded-full "></div>
       </div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -111,7 +111,7 @@ const HeroQAoffering: React.FC<HeroQAofferingProps> = ({
               
               {/* Floating elements with Tailwind animations */}
               <div className="absolute -top-4 -left-4 w-12 h-12 bg-white/15 rounded-lg backdrop-blur-sm animate-bounce"></div>
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-white/10 rounded-full backdrop-blur-sm animate-pulse"></div>
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-white/10 rounded-full backdrop-blur-sm "></div>
               <div className="absolute top-1/2 -right-6 w-8 h-8 bg-white/20 rounded-full backdrop-blur-sm animate-ping"></div>
             </div>
           </div>

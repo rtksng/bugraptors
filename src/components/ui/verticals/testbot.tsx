@@ -132,7 +132,7 @@ const TestBot: React.FC = () => {
 
                 {/* Floating Elements */}
                 <div className="absolute -top-4 -right-4 w-8 h-8 bg-blue-400 rounded-full animate-bounce"></div>
-                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400 rounded-full animate-pulse"></div>
+                <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-purple-400 rounded-full "></div>
                 <div className="absolute top-1/2 -left-6 w-4 h-4 bg-pink-400 rounded-full animate-ping"></div>
               </div>
             </div>

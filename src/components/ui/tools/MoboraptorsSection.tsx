@@ -47,8 +47,8 @@ const MoboraptorsSection: React.FC = () => {
     <section className="py-12 relative overflow-hidden bg-[#020317]">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-full blur-3xl "></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl  delay-1000"></div>
       </div>
 
       <div className="container mx-auto  relative z-10">
@@ -66,7 +66,7 @@ const MoboraptorsSection: React.FC = () => {
             {/* View All Button */}
             <div className="mt-4 lg:mt-0">
               <button
-                className="group relative px-6 py-3 custom-bg-color text-white  rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                className="group relative px-6 py-3 size-[64px] custom-bg-color text-white   shadow-lg transform hover:scale-105 transition-all duration-300"
                 aria-label="View all projects"
               >
                 <span className="relative z-10 flex items-center">

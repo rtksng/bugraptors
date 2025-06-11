@@ -34,7 +34,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         {/* Animated Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div 
-            className="w-full h-full animate-pulse"
+            className="w-full h-full "
             style={{
               backgroundImage: `linear-gradient(rgba(139, 92, 246, 0.3) 1px, transparent 1px),
                                linear-gradient(90deg, rgba(139, 92, 246, 0.3) 1px, transparent 1px)`,
@@ -43,9 +43,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           />
         </div>
         
+<<<<<<< HEAD
         {/* Floating Orbs */}
         
 
+=======
+       
+>>>>>>> fc872baa30519be0ab3ed9dd3e8ad649613525fc
         
         {/* Mobile Device Illustration */}
         {showMobileIllustration && (

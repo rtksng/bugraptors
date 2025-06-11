@@ -1,4 +1,19 @@
 import React from 'react';
+<<<<<<< HEAD
+=======
+import Hero from '../components/ui/landingPage/Hero';
+import NavigationBar from '../components/ui/common/NavigationBar';
+import Benchmarks from '../components/ui/landingPage/Benchmarks';
+import AIServices from '../components/ui/landingPage/AIServices';
+import ProprietaryTools from '../components/ui/landingPage/ProprietaryTools';
+import DomainsWeServe from '../components/ui/landingPage/DomainsWeServe';
+import SoftwareTestingOfferings from '../components/ui/landingPage/SoftwareTestingOfferings';
+import WhyChooseBugRaptors from '../components/ui/landingPage/WhyChooseBugRaptors';
+import ClientTestimonials from '../components/ui/landingPage/ClientTestimonials';
+import FAQs from '../components/ui/landingPage/FAQs';
+import BlogsNews from '../components/ui/landingPage/BlogsNews';
+import DevOpsCTA from '../components/ui/landingPage/DevOpsCTA';
+>>>>>>> fc872baa30519be0ab3ed9dd3e8ad649613525fc
 import ContactUs from '../components/ui/common/ContactUs';
 import Footer from '../components/ui/common/Footer';
 import NavigationBar from '../components/ui/common/NavigationBar';
