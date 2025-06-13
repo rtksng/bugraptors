@@ -29,7 +29,7 @@ const faqs = [
     category: 'TCOE',
     icon: <FaCog className="w-5 h-5" />,
     question: 'What is BugRaptors\' Test Center of Excellence (TCOE)?',
-    answer: 'Our Test Center of Excellence (TCOE) is a centralized hub that drives testing best practices, innovation, and quality standards across all projects. It combines expert knowledge, cutting-edge tools, and proven methodologies.'
+    answer: 'Our Test Center of Excellence (TCOE) is a centralized hub that drives testing best practices, innovation, and quality standards across all projects. It combines expert knowledge, cutting-cutting tools, and proven methodologies.'
   },
   {
     id: 'q4',
@@ -65,17 +65,15 @@ const FAQs: React.FC = () => {
   );
 
   return (
-    <section className="relative py-24  overflow-hidden">
-      {/* Background Elements */}
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24   overflow-hidden bg-transparent">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
         
-        {/* Subtle particles */}
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-purple-400/30 rounded-full "
+            className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-fade-in-out"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -86,74 +84,56 @@ const FAQs: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Enhanced Header section */}
-
+      <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
           tag="FAQ Section"
           title="Frequently Asked Questions"
         />
 
-        {/* Enhanced FAQ Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className=" max-w-4xl mx-auto space-y-8">
           {filteredFaqs.map((faq, index) => (
             <div 
               key={faq.id}
-             
+              className="group rounded-xl px-4 shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:shadow-2xl animate-fade-in" 
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <button
                 onClick={() => setOpenQuestion(openQuestion === faq.id ? null : faq.id)}
-                className="w-full text-left focus:outline-none cursor-pointer"
+                className="w-full text-left focus:outline-none cursor-pointer overflow-hidden transition-all duration-400 ease-in-out"
               >
-                {/* Header */}
-                <div className="flex items-start justify-between">
+                <div className="flex items-center justify-between">
                   <div className="flex items-start space-x-4 flex-1">
-                    {/* Category Icon */}
-                    
-                    
                     <div className="flex-1">
-                      {/* Category Badge */}
-                      <div className="inline-flex items-center px-3 py-1 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 text-xs font-medium text-purple-200 mb-3">
-                        {faq.category}
-                      </div>
-                      
-                      {/* Question */}
-                      <h3 className="text-lg text-gray-200 font-medium leading-relaxed pr-4 group-hover:text-purple-200 transition-colors duration-300">
+                      <h3 className="text-xl leading-tight font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 pb-1 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300 ease-in-out">
                         {faq.question}
                       </h3>
                     </div>
                   </div>
                   
-                  {/* Expand/Collapse Icon */}
-                  <div className="flex-shrink-0 ml-4 mt-2">
-                    <div className={`w-8 h-8 rounded-full bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 flex items-center justify-center transition-all duration-300 ${openQuestion === faq.id ? 'rotate-180 bg-purple-500/20' : ''}`}>
+                  <div className="flex-shrink-0 ">
+                    <div className={`w-9 h-9 rounded-full bg-gradient-to-r from-purple-500/15 to-blue-500/15 border border-purple-500/25 flex items-center justify-center transition-all duration-300 ease-in-out ${openQuestion === faq.id ? 'rotate-180 bg-purple-500/25' : ''}`}>
                       <FaChevronDown className="w-4 h-4 text-purple-400" />
                     </div>
                   </div>
                 </div>
 
-                {/* Answer */}
-                {openQuestion === faq.id && (
-                  <div className="mt-6 ">
-                    <div className="p-4 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-xl border border-purple-500/10">
-                      <p className="text-gray-300 text-base leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
+                <div 
+                  className={`overflow-hidden transition-all duration-400 ease-in-out ${openQuestion === faq.id ? 'max-h-screen opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'}`} 
+                >
+                  <div className="p-4 bg-gradient-to-r from-purple-500/5 to-blue-500/5 rounded-xl border border-purple-500/10">
+                    <p className="text-[#EDEADE] font-light leading-[24px]">
+                      {faq.answer}
+                    </p>
                   </div>
-                )}
-
-                {/* Bottom Border */}
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent mt-6"></div>
+                  <div className="w-full h-px bg-gradient-to-r from-transparent via-purple-500/20 to-transparent mt-6"></div>
+                </div>
               </button>
             </div>
           ))}
         </div>
 
-        {/* No Results Message */}
         {filteredFaqs.length === 0 && (
-          <div className="text-center py-12">
+          <div className="text-center py-">
             <div className="w-16 h-16 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
               <FaSearch className="w-6 h-6 text-purple-400" />
             </div>
@@ -161,11 +141,9 @@ const FAQs: React.FC = () => {
             <p className="text-gray-400">Try searching with different keywords</p>
           </div>
         )}
-
-       
       </div>
     </section>
   );
 };
 
-export default FAQs; 
+export default FAQs;

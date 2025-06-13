@@ -129,7 +129,7 @@ const RaptorVision: React.FC = () => {
 
 
         {/* Progress Towards Visionary Testing Section */}
-        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
+        <section className="py-16 sm:py-20 lg:py-20 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl "></div>
             <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl  delay-1000"></div>
@@ -223,7 +223,7 @@ const RaptorVision: React.FC = () => {
         />
 
         {/* Why Must You Choose RaptorVision Section */}
-        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317]">
+        <section className="py-16 sm:py-20 lg:py-20 relative overflow-hidden bg-[#020317]">
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-cyan-500/8 rounded-full blur-3xl "></div>
             <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/8 rounded-full blur-3xl  delay-1000"></div>

@@ -10,7 +10,10 @@ import {
   FaUsers,
   FaClock
 } from 'react-icons/fa';
-import CTAButton from '../common/Button';
+import CTAButton from '../common/CTAButton';
+import SectionTitle from '../common/SectionTittle';
+import CardTitle from '../common/CardTitle';
+import CtaActionButton from '../common/CtaActionButton';
 
 const DevOpsCTA: React.FC = () => {
   const features = [
@@ -44,11 +47,11 @@ const DevOpsCTA: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-20 md:py-24  overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24    overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-blue-600/8 to-cyan-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
 
         {/* Subtle decorative elements */}
         {[...Array(3)].map((_, i) => (
@@ -73,21 +76,17 @@ const DevOpsCTA: React.FC = () => {
             {/* Header Badge */}
 
 
-            <div className="text-left mb-12 sm:mb-16 ">
-              <div className="inline-flex items-left px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-4 sm:mb-6">
-                <FaCogs className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 mr-2 sm:mr-3" />
-                <span className="text-xs sm:text-sm font-medium text-purple-200">DevOps Excellence</span>
-              </div>
+            <div >
+            
 
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium mb-4 sm:mb-6 leading-tight w-[694px] mx-auto  text-radial-gradient">
-                Continuous Testing & DevOps Integration
-              </h2>
+          
 
-
-              <p className="text-gray-400 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto px-4">
-                Integrate quality at every stage of your software delivery pipeline. Our DevOps and continuous testing solutions ensure rapid feedback, faster releases, and robust, reliable software.
-
-              </p>
+              <SectionTitle
+                title="Continuous Testing & DevOps Integration"
+                subtitle="Integrate quality at every stage of your software delivery pipeline. Our DevOps and continuous testing solutions ensure rapid feedback, faster releases, and robust, reliable software."
+                align='left'
+                tag="DevOps Excellence"
+              />
             </div>
 
             {/* Benefits List */}
@@ -108,12 +107,19 @@ const DevOpsCTA: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              
-              <CTAButton onClick={() => console.log('Clicked!')} variant="primary">Get Started Now</CTAButton>
-              <CTAButton onClick={() => console.log('Clicked!')} variant="secondary">Watch Demo</CTAButton>
+
+           
+              <CtaActionButton
+                text="Get Started Now"
+                variant="primary"
+              />
+              <CtaActionButton
+                text="Watch Demo"
+                variant="secondary"
+              />
 
 
-             
+
             </div>
           </div>
 
@@ -165,7 +171,7 @@ const DevOpsCTA: React.FC = () => {
               {features.map((feature, index) => (
                 <div
                   key={feature.title}
-                  className="p-4 bg-custom-transparent rounded-xl border  hover:border-blue-500/30 transition-all duration-300"
+                  className="p-4 bg-custom-transparent rounded-xl border border-purple-500/20  hover:border-blue-500/30 transition-all duration-300"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className="flex items-start space-x-3">
@@ -175,8 +181,13 @@ const DevOpsCTA: React.FC = () => {
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-white font-medium text-sm mb-1">{feature.title}</h4>
-                      <p className="text-gray-400 text-xs leading-relaxed">{feature.description}</p>
+                      {/* <h4 className="text-white font-medium text-sm mb-1">{feature.title}</h4>
+                      <p className="text-gray-400 text-xs leading-relaxed">{feature.description}</p> */}
+
+                      <h3 className="text-lg leading-tight font-medium  text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 pb-1 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">{feature.title}</h3>
+
+
+                      <CardTitle description={feature.description} title={''} />
                     </div>
                   </div>
                 </div>

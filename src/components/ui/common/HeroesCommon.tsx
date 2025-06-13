@@ -52,7 +52,7 @@ const HeroesCommon: React.FC<HeroesCommonProps> = ({
         `
       }} />
 
-      <section className="relative py-16 flex items-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900 mb-16">
+      <section className="relative  py-16 flex items-center overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-900 ">
         {/* Background with VR/Tech Elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-purple-900/40 to-transparent z-10"></div>
@@ -61,7 +61,7 @@ const HeroesCommon: React.FC<HeroesCommonProps> = ({
         </div>
 
         {/* Main Content */}
-        <div className={`relative z-20 container mx-24 px-4 max-w-4xl ${alignmentClasses}`}>
+        <div className=  "container mx-auto ">
           <div className="flex items-center mb-8 justify-start">
             <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center mr-4 shadow-lg">
               {icon}

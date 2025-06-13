@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import SectionTitle from '../common/SectionTittle';
+import CardTitle from '../common/CardTitle';
+import CtaActionButton from '../common/CtaActionButton';
 
 interface ProjectCard {
   id: number;
@@ -54,8 +56,10 @@ const MoboraptorsSection: React.FC = () => {
       <div className="container mx-auto  relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Header Section */}
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-8">
-            <div className="lg:max-w-2xl">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between ">
+            <div className="">
+
+              
               <SectionTitle
                 title="Making a Difference with Every Project"
                 para1="Here is the glimpse of what we have done for our customers and how it has transformed their business."
@@ -65,7 +69,7 @@ const MoboraptorsSection: React.FC = () => {
 
             {/* View All Button */}
             <div className="mt-4 lg:mt-0">
-              <button
+              {/* <button
                 className="group relative px-6 py-3 size-[64px] custom-bg-color text-white   shadow-lg transform hover:scale-105 transition-all duration-300"
                 aria-label="View all projects"
               >
@@ -80,7 +84,11 @@ const MoboraptorsSection: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </span>
-              </button>
+              </button> */}
+
+              <CtaActionButton variant="primary" text="View All Projects" />
+
+              
             </div>
           </div>
 
@@ -134,9 +142,10 @@ const MoboraptorsSection: React.FC = () => {
 
                   {/* Card Content - Bottom */}
                   <div className="relative z-10 mt-auto p-6">
-                    <h3 className="text-lg font-semibold mb-4 text-white leading-tight">
+                    {/* <h3 className="text-lg font-semibold mb-4 text-white leading-tight">
                       {project.title}
-                    </h3>
+                    </h3> */}
+                    <h3 className="text-xl leading-tight font-medium  text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 pb-1 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300  line-clamp-2 ">{project.title}</h3>
 
                     {/* Case Details CTA */}
                     <button className="group/link flex items-center text-sm font-medium text-purple-300 hover:text-white transition-all duration-300">

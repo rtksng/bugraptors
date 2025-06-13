@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = 'font-semibold rounded-full transition-all duration-300 cursor-pointer';
   
   const variantClasses = {
-    primary: 'custom-bg-color text-white shadow-xl hover:shadow-2xl transform hover:scale-105',
+    primary: 'glass-button text-white shadow-xl hover:shadow-2xl transform hover:scale-105',
     secondary: 'bg-white/5 backdrop-blur-sm text-white border border-white/20 hover:bg-white/10 hover:border-white/40'
   };
 

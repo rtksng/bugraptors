@@ -1,5 +1,6 @@
 import React from 'react';
 import SectionTitle from './SectionTittle';
+import CardTitle from './CardTitle';
 
 interface Product {
   name: string;
@@ -23,12 +24,12 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
   className = ""
 }) => {
   return (
-    <section className={`py-20 relative overflow-hidden ${className}`}>
+    <section className={`py-16 relative overflow-hidden ${className}`}>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl "></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl  delay-1000"></div>
+        <div className=" "></div>
+        <div className="  delay-1000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
 
         {/* Additional floating elements */}
@@ -49,13 +50,12 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
       <div className="relative container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-16">
+         
             
             <SectionTitle
               title={title}
               subtitle={subtitle}
             />
-          </div>
 
           {/* Products Grid */}
           <div className={`grid gap-8 ${products.length === 1 ? 'max-w-md mx-auto' : products.length === 2 ? 'md:grid-cols-2' : products.length === 3 ? 'md:grid-cols-2 lg:grid-cols-3' : 'md:grid-cols-2 lg:grid-cols-4'}`}>
@@ -84,7 +84,7 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className={`text-2xl font-semibold text-white mb-4 transition-colors duration-300 ${
+                  {/* <h3 className={`text-2xl font-semibold text-white mb-4 transition-colors duration-300 ${
                     product.hoverColor 
                       ? `group-hover:${product.hoverColor}` 
                       : 'group-hover:text-purple-400'
@@ -93,7 +93,13 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
                   </h3>
                   <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 leading-relaxed">
                     {product.description}
-                  </p>
+                  </p> */}
+
+                  <CardTitle
+                    title={product.name}
+                    description={product.description}
+                    align='center'
+                  />
                 </div>
 
                 {/* Bottom Glowing Line */}

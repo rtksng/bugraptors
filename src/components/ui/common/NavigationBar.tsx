@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaChevronDown } from 'react-icons/fa';
 import logo from '../../../assets/logo.svg';
 import MegaMenu from './MegaMenu';
+import CtaActionButton from './CtaActionButton';
 
 const navLinks = [
   { name: 'Services', href: '/services' },
@@ -146,7 +147,7 @@ const NavigationBar: React.FC = () => {
             <img
               src={logo}
               alt="BugRaptors Logo"
-              className="relative h-8 sm:h-10 w-auto filter brightness-110 group-hover:brightness-125 transition-all duration-300"
+              className="relative h-14  w-auto filter brightness-110 group-hover:brightness-125 transition-all duration-300"
             />
           </div>
         </Link>
@@ -155,7 +156,7 @@ const NavigationBar: React.FC = () => {
         <div className="hidden lg:flex gap-8" ref={dropdownRef}>
           {navLinks.map((link) => {
             const isExternalLink = link.href.startsWith('#');
-            const linkClasses = "relative group text-gray-300 hover:text-white font-medium text-lg transition-all duration-300 py-2 px-4 rounded-full";
+            const linkClasses = "relative group text-gray-300 hover:text-white font-medium  text-[17px] transition-all duration-300 py-2 px-4 rounded-full";
             
             if (link.hasMegaMenu) {
               return (
@@ -163,7 +164,7 @@ const NavigationBar: React.FC = () => {
                   <button
                     onClick={toggleMegaMenu}
                     className={`${linkClasses} flex items-center gap-2 cursor-pointer ${
-                      isMegaMenuOpen ? 'text-white bg-purple-500/20' : ''
+                      isMegaMenuOpen ? 'text-white ' : ''
                     }`}
                   >
                     <span className="relative z-10">{link.name}</span>
@@ -172,7 +173,7 @@ const NavigationBar: React.FC = () => {
                         isMegaMenuOpen ? 'rotate-180' : ''
                       }`} 
                     />
-                    <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0  rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                 </div>
               );
@@ -194,7 +195,7 @@ const NavigationBar: React.FC = () => {
                         (link.isHoverDropdown ? hoverDropdown === link.name : activeDropdown === link.name) ? 'rotate-180' : ''
                       }`} 
                     />
-                    <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0  rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </button>
                   
                   {/* Dropdown Menu */}
@@ -299,7 +300,7 @@ const NavigationBar: React.FC = () => {
                   onClick={() => setIsMegaMenuOpen(false)}
                 >
                   <span className="relative z-10">{link.name}</span>
-                  <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0  rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a>
               );
             } else {
@@ -311,7 +312,7 @@ const NavigationBar: React.FC = () => {
                   onClick={() => setIsMegaMenuOpen(false)}
                 >  
                   <span className="relative z-10">{link.name}</span>
-                  <div className="absolute inset-0 custom-bg-color rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0  rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
               );
             }
@@ -320,7 +321,7 @@ const NavigationBar: React.FC = () => {
 
         {/* CTA Button */}
         <div className="flex items-center gap-4">
-          <button className="group relative px-4 py-2 sm:px-6 sm:py-3 custom-bg-color hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden text-sm sm:text-base cursor-pointer">
+          {/* <button className="group relative px-4 py-2 sm:px-6 sm:py-3 custom-bg-color hover:from-purple-700 hover:to-blue-700 text-white  rounded-lg shadow-lg transform hover:scale-105 transition-all duration-300 overflow-hidden text-sm sm:text-base cursor-pointer font-light">
             <span className="relative z-10 flex items-center">
               Get Started
               <svg
@@ -332,7 +333,16 @@ const NavigationBar: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
             </span>
-          </button>
+          </button> */}
+
+          <CtaActionButton
+            text="Get Started"
+            link="/projects"
+            variant="primary"
+            size="md"
+            className="ml-4"
+
+          />
 
           {/* Mobile Menu Button */}
           <button
@@ -374,7 +384,7 @@ const NavigationBar: React.FC = () => {
         <div className="px-4 py-4 sm:py-6 space-y-2 sm:space-y-4">
           {navLinks.map((link, index) => {
             const isExternalLink = link.href.startsWith('#');
-            const linkClasses = "block text-gray-300 hover:text-white font-medium text-base sm:text-lg py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-blue-600/20 transition-all duration-300 border border-transparent hover:border-purple-500/30";
+            const linkClasses = "block text-gray-300 hover:text-white  text-base sm:text-lg py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:bg-gradient-to-r hover:from-purple-600/20 hover:to-blue-600/20 transition-all duration-300 border border-transparent hover:border-purple-500/30";
             
             if (link.hasMegaMenu) {
               return (

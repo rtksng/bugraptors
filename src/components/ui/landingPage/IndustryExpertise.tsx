@@ -8,6 +8,7 @@ import {
   FaCog
 } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTittle';
+import CardTitle from '../common/CardTitle';
 
 const services = [
   {
@@ -38,14 +39,14 @@ const services = [
 
 const AIServices: React.FC = () => {
   return (
-    <section className="relative py-20  overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24    overflow-hidden">
 
 
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
 
         {/* Additional floating elements */}
@@ -63,22 +64,23 @@ const AIServices: React.FC = () => {
         }}></div>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* Section Header */}
 
 
-        <SectionTitle
-          tag="Industry Expertise"
-          
-          title="Driving Quality Across Diverse Domains"
-          subtitle="Delivering specialized testing solutions across diverse industries" />
-          
+        <div className='mb-8'>
+          <SectionTitle
+            tag="Industry Expertise"
+            title="Driving Quality Across Diverse Domains"
+            subtitle="Delivering specialized testing solutions across diverse industries" />
+        </div>
+
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
           {services.map((service, index) => (
             <div
               key={service.title}
-              className="group relative bg-custom-transparent rounded-2xl shadow-2xl p-6 hover:scale-105 hover:-translate-y-2 transition-all duration-500 border border-purple-500/20 hover:border-purple-400/40 overflow-hidden"
+              className=" group relative bg-custom-transparent rounded-xl shadow-2xl p-5 hover:scale-105 hover:-translate-y-2 transition-all duration-500 border border-purple-500/20 hover:border-purple-400/40 overflow-hidden"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Glowing Background Effect */}
@@ -88,22 +90,22 @@ const AIServices: React.FC = () => {
               <div className="absolute top-0 right-0 w-20 h-20 bg-custom-transparent rounded-bl-full"></div>
 
               {/* Icon Container */}
-              <div className={`relative mb-6 w-16 h-16 custom-bg-color rounded-xl flex items-center justify-center text-white transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+              <div className={`mx-auto relative mb-6 w-16 h-16 custom-bg-color rounded-xl flex items-center justify-center text-white transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
                 <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-xl"></div>
                 <div className="relative z-10">
                   {service.icon}
                 </div>
-              
+
               </div>
 
               {/* Content */}
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 mb-4 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
-                  {service.description}
-                </p>
+              <div className="relative z-10 text-center">
+
+                <CardTitle
+                  title={service.title}
+                  description={service.description}
+                  align="center"
+                />
               </div>
 
               {/* Bottom Glowing Line */}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import SectionTitle from './SectionTittle';
 
 interface FaqItem {
   id: string;
@@ -11,54 +12,58 @@ interface QAFaqProps {
   subtitle?: string;
   faqs: FaqItem[];
   className?: string;
-  backgroundColor?: 'white' | 'gray' | 'cream' | 'light-purple';
-  titleColor?: 'purple' | 'blue' | 'dark' | 'primary';
-  defaultOpenItems?: string[]; // Array of FAQ IDs that should be open by default
-  allowMultipleOpen?: boolean; // Whether multiple items can be open at once
+  // Let's use a very dark, uniform background for maximum contrast
+  baseBgColor?: 'deep-void';
+  // Accent for subtle lines and states
+  accentShade?: 'light-silver';
+  defaultOpenItems?: string[];
+  allowMultipleOpen?: boolean;
 }
 
 const QAFaq: React.FC<QAFaqProps> = ({
-  title = "Frequently Asked Questions (FAQs)",
-  subtitle,
+  title = "Frequently Asked Questions",
+  subtitle = "Explore common inquiries to quickly find the information you need.",
   faqs,
   className = '',
-  backgroundColor = 'white',
-  titleColor = 'purple',
+  baseBgColor = 'deep-void',
+  accentShade = 'light-silver',
   defaultOpenItems = [],
   allowMultipleOpen = true
 }) => {
   const [openItems, setOpenItems] = useState<Set<string>>(new Set(defaultOpenItems));
 
-  const backgroundClasses = {
-    white: 'bg-white',
-    gray: 'bg-gray-50',
-    cream: 'bg-orange-50/30',
-    'light-purple': 'bg-purple-50/40'
+  const baseBgClasses = {
+    'deep-void': 'bg-gray-950', // The darkest possible gray, almost black
   };
 
-  const titleClasses = {
-    purple: 'text-purple-700',
-    blue: 'text-blue-700',
-    dark: 'text-gray-800',
-    primary: 'text-gray-900'
+  const accentClasses = {
+    'light-silver': { // Fine-tuned grayscale accents
+      mainText: 'text-white', // Pure white for headings and main text
+      subText: 'text-gray-400', // Subtler gray for body text
+      itemBg: 'bg-gray-900', // Darker gray for item background
+      itemBorder: 'border-gray-800', // Subtle border
+      itemHoverBg: 'hover:bg-gray-800', // Lighter hover background
+      activeStateLine: 'bg-gray-600', // Clearer line for active state
+      iconColor: 'text-gray-500', // Muted icon
+      buttonBg: 'bg-gray-700', // Button background
+      buttonHoverBg: 'hover:bg-gray-600', // Button hover
+      focusRing: 'focus:ring-gray-500', // Focus ring
+    }
   };
+
+  const selectedAccent = accentClasses[accentShade];
 
   const toggleItem = (itemId: string) => {
     setOpenItems(prev => {
       const newOpenItems = new Set(prev);
-      
       if (newOpenItems.has(itemId)) {
-        // Close the item
         newOpenItems.delete(itemId);
       } else {
-        // Open the item
         if (!allowMultipleOpen) {
-          // If only one item can be open at a time, close all others
           newOpenItems.clear();
         }
         newOpenItems.add(itemId);
       }
-      
       return newOpenItems;
     });
   };
@@ -66,51 +71,55 @@ const QAFaq: React.FC<QAFaqProps> = ({
   const isItemOpen = (itemId: string) => openItems.has(itemId);
 
   return (
-    <section className={`py-16 px-4 ${backgroundClasses[backgroundColor]} ${className}`}>
-      <div className="container mx-auto max-w-4xl">
+    <section className={`py-16 px-4 ${baseBgClasses[baseBgColor]} ${className}`}>
+      <div className="container mx-auto max-w-4xl relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${titleClasses[titleColor]}`}>
-            {title}
-          </h2>
-          {subtitle && (
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              {subtitle}
-            </p>
-          )}
+        <div className="text-center ">
+          
+          <SectionTitle
+            title={title}
+            align="center"
+          />
         </div>
 
-        {/* FAQ Items */}
-        <div className="space-y-4">
-          {faqs.map((faq, index) => {
+        {/* FAQ Items - "Crisp Edge" Style */}
+        <div className="space-y-4"> {/* Tighter spacing for a more compact, modern feel */}
+          {faqs.map((faq) => {
             const isOpen = isItemOpen(faq.id);
-            const isFirstItem = index === 0;
-            
+
             return (
               <div
                 key={faq.id}
-                className={`border border-gray-200 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-md ${
-                  isFirstItem && isOpen ? 'bg-gray-50' : 'bg-white'
-                }`}
+                className={`
+                  relative ${selectedAccent.itemBg} rounded-md border ${selectedAccent.itemBorder}
+                  shadow-xl transition-all duration-300 ease-in-out
+                  ${selectedAccent.itemHoverBg}
+                `}
               >
+                {/* Active State Indicator - Top line */}
+                <div className={`absolute top-0 left-0 w-full h-1 rounded-t-md transition-all duration-300 ${isOpen ? selectedAccent.activeStateLine : 'bg-transparent'}`}></div>
+
                 {/* Question Header */}
                 <button
                   onClick={() => toggleItem(faq.id)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-inset"
+                  className={`w-full px-6 py-4 text-left flex items-center justify-between
+                             ${selectedAccent.mainText} text-lg font-semibold
+                             transition-colors duration-200
+                             ${selectedAccent.focusRing} focus:ring-inset rounded-md`}
                   aria-expanded={isOpen}
                   aria-controls={`faq-answer-${faq.id}`}
                 >
-                  <span className="text-lg font-medium text-gray-800 pr-4 leading-relaxed">
+                  <span className="text-xl leading-tight font-medium text-nowrap text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 pb-1 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">
                     {faq.question}
                   </span>
-                  
+
                   {/* Toggle Icon */}
                   <div className="flex-shrink-0 ml-4">
                     <div className={`w-6 h-6 flex items-center justify-center transition-transform duration-300 ${
                       isOpen ? 'transform rotate-180' : ''
                     }`}>
                       <svg
-                        className="w-5 h-5 text-gray-500"
+                        className={`w-5 h-5 ${selectedAccent.iconColor}`}
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -130,15 +139,13 @@ const QAFaq: React.FC<QAFaqProps> = ({
                 <div
                   id={`faq-answer-${faq.id}`}
                   className={`transition-all duration-300 ease-in-out ${
-                    isOpen 
-                      ? 'max-h-96 opacity-100' 
+                    isOpen
+                      ? 'max-h-screen opacity-100 pb-6 px-6' // Padding for content
                       : 'max-h-0 opacity-0 overflow-hidden'
                   }`}
                 >
-                  <div className="px-6 pb-4 pt-0">
-                    <div className="text-gray-600 leading-relaxed">
-                      {faq.answer}
-                    </div>
+                  <div className={`${selectedAccent.subText} leading-relaxed text-base`}>
+                    {faq.answer}
                   </div>
                 </div>
               </div>
@@ -147,20 +154,21 @@ const QAFaq: React.FC<QAFaqProps> = ({
         </div>
 
         {/* Optional CTA Section */}
-        <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">
-            Still have questions? We're here to help!
+        {/* <div className="text-center mt-24">
+          <p className={`${selectedAccent.subText} text-lg mb-6`}>
+            Still can't find what you need?
           </p>
-          <button className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors duration-300">
-            Contact Our Team
-            <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <button className={`inline-flex items-center px-8 py-3 ${selectedAccent.buttonBg} ${selectedAccent.mainText} font-semibold rounded-lg shadow-md
+                             ${selectedAccent.buttonHoverBg} transition-colors duration-300 ${selectedAccent.focusRing} focus:ring-offset-2 focus:ring-offset-gray-900`}>
+            Get In Touch
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );
 };
 
-export default QAFaq; 
+export default QAFaq;

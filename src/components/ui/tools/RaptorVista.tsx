@@ -29,9 +29,9 @@ const RaptorVista: React.FC = () => {
 
 
         {/* Quality and Speed Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
+        <section className=" border-1 border-red-500 relative">
+          <div className="container mx-auto ">
+            <div >
               <SectionTitle
                 title="RaptorVista Assures Impeccable Web App Quality"
                 para1="Made to rule the automation market, RaptorVista simplifies automation countering the potential pain areas of the client, right from the sync and timeout issues to flawed testing."
@@ -42,20 +42,20 @@ const RaptorVista: React.FC = () => {
 
 
               {/* Sleek Features Grid */}
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 ">
                 {[
                   "No Boiler Plate Code",
                   "Diverse Environment Support",
                   "Customized Reports",
                   "Load Test & Defect Tracking",
                   "Everything is externalized - Property Driven",
-                  "Third-party Integration like Browser Stack, Saucelabs",
+                  "Third-party Integration like Browser Stack",
                 ].map((title, idx) => (
                   <div
                     key={idx}
                     className="relative bg-purple-900/20 border border-purple-700/25 rounded-md p-4 hover:border-purple-500 hover:bg-purple-900/30 transition-colors duration-300 cursor-pointer"
                   >
-                    <h3 className="text-white text-base font-normal tracking-wide mb-1">
+                    <h3 className="text-[#EDEADE] font-light  leading-[24px]  pb-2">
                       {title}
                     </h3>
                     <div className="w-10 h-[2px] bg-purple-500 rounded-full"></div>
@@ -74,9 +74,9 @@ const RaptorVista: React.FC = () => {
         </section>
 
         {/* Third-Party Integrations Section */}
-        <section className="py-20 relative">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto text-center">
+        <section className=" relative border-1 border-red-500">
+          <div className="container mx-auto ">
+            <div className=" mx-auto text-center">
               <SectionTitle
                 title="Third-Party Integrations"
                 para1="RaptorVista as a mobile test automation tool gives you all the command you need on working most complex test suites. Irrespective of the application(Conventional or Hybrid), MoboRaptors brings you best of test management, CI/CD Integrations, and Cloud testing advantage."
@@ -84,7 +84,7 @@ const RaptorVista: React.FC = () => {
 
 
               {/* Integration Logos */}
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center px-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center ">
                 {[
                   { name: "JIRA", color: "text-blue-500" },
                   { name: "TestRail", color: "text-green-500" },
@@ -114,12 +114,12 @@ const RaptorVista: React.FC = () => {
         </section>
 
         {/* Power of Four in One Framework Section */}
-        <section className="py-16 relative overflow-hidden ">
+        <section className=" relative overflow-hidden border-1 border-red-500">
           {/* Background Blob - Larger, softer, and more strategically placed */}
           <div className="absolute -right-24 top-1/2 transform -translate-y-1/2 w-[40rem] h-[40rem]  rounded-full  pointer-events-none "></div>
 
-          <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto space-y-16">
+          <div className="container mx-auto">
+            <div className=" mx-auto space-y-16">
               {/* Top Content */}
               <div className="mb-12">
                 <SectionTitle
@@ -131,7 +131,7 @@ const RaptorVista: React.FC = () => {
 
               {/* Bottom Content - Horizontal Timeline */}
               <div className="bg-gray-800/50 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl border border-blue-700/50 p-8 relative max-w-full">
-                <div className="relative flex justify-between items-start max-w-full px-4 py-12 overflow-x-auto lg:overflow-visible">
+                <div className="relative flex justify-between items-start max-w-full px-4  overflow-x-auto lg:overflow-visible">
 
                   {/* DYNAMIC DASHED GRADIENT LINE (Alternative to the solid line) */}
                   {/* This element will act as the connector between items */}
@@ -194,12 +194,12 @@ const RaptorVista: React.FC = () => {
         </section>
 
 
-        <section className="py-16 relative overflow-hidden ">
+        <section className=" relative overflow-hidden border-1 border-red-500">
           {/* Background Blob - Larger, softer, and more strategically placed */}
           <div className="absolute -right-24 top-1/2 transform -translate-y-1/2 w-[40rem] h-[40rem] bg-gradient-to-l from-blue-700/10 to-transparent rounded-full blur-[100px] pointer-events-none opacity-80"></div>
 
           <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto space-y-16">
+            <div className=" space-y-16">
               {/* Top Content */}
               <div className="mb-12">
                 <SectionTitle
@@ -272,12 +272,12 @@ const RaptorVista: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-16 relative overflow-hidden ">
+        <section className=" relative overflow-hidden border-1 border-red-500">
           {/* Background Blob - Larger, softer, and more strategically placed */}
           <div className="absolute -right-24 top-1/2 transform -translate-y-1/2 w-[40rem] h-[40rem]  rounded-full blur-[100px] pointer-events-none "></div>
 
           <div className="container mx-auto px-4">
-            <div className="max-w-7xl mx-auto space-y-16">
+            <div className=" space-y-16">
               {/* Top Content */}
               <div className="mb-12">
                 <SectionTitle
@@ -352,7 +352,7 @@ const RaptorVista: React.FC = () => {
 
 
         {/* Vision and Mission Section */}
-        <section className="py-12 ">
+        <section className=" border-1 border-red-500">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-2 gap-6"> {/* Reduced gap between cards */}
 
@@ -405,7 +405,7 @@ const RaptorVista: React.FC = () => {
 
 
         {/* Next-Gen Mobile Test Automation Framework Section */}
-        <section className="py-14 ">
+        <section className="py-14 border-1 border-red-500">
           <div className="container mx-auto px-4"> {/* Adjusted padding to match previous sleek sections */}
             <div className="max-w-5xl mx-auto text-center mb-12">
               {/* Assuming SectionTitle component here */}
@@ -487,7 +487,7 @@ const RaptorVista: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-14 ">
+        <section className="py-14 border-1 border-red-500">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto text-center mb-12">
               {/* Assuming SectionTitle component here */}
@@ -574,8 +574,8 @@ const RaptorVista: React.FC = () => {
 
 
         {/* How MoboRaptors Squares Up Mobile Test Automation Challenges Section */}
-        <section className="py-10  text-white font-sans">
-          <div className="container mx-auto px-4 max-w-5xl">
+        <section className="py-10  text-white font-sans border-1 border-red-500">
+          <div className="container mx-auto ">
             {/* Title */}
             <div className="text-center mb-8 mx-auto">
 

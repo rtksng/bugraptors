@@ -11,6 +11,7 @@ import BlogSectionCommon from '../common/BlogSectionCommon';
 import NewSectionCommon from '../common/NewSectionCommon';
 import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
 import OtherOfficesInfo from '../common/OtherOfficesInfo';
+import QAFaq from '../common/QAFaq';
 
 const RaptorSelect: React.FC = () => {
   const handleCtaClick = () => {
@@ -101,6 +102,30 @@ const RaptorSelect: React.FC = () => {
     }
   ];
 
+  // RaptorSelect FAQ data
+  const raptorSelectFaqs = [
+    {
+      id: 'what-is-raptorselect',
+      question: 'What is RaptorSelect?',
+      answer: 'RaptorSelect is an AI-powered page object generator plugin that automatically creates page object patterns for test automation frameworks. It helps testers and developers generate code structures quickly with minimal manual effort.'
+    },
+    {
+      id: 'supported-languages',
+      question: 'Which programming languages does RaptorSelect support?',
+      answer: 'RaptorSelect supports Java, JavaScript, and Python with customizable templates. Each template comes with pre-defined page objects that can be adapted to your specific project requirements.'
+    },
+    {
+      id: 'integration-frameworks',
+      question: 'Can RaptorSelect integrate with existing testing frameworks?',
+      answer: 'Yes, RaptorSelect seamlessly integrates with popular testing frameworks including Selenium and WebdriverIO. This ensures smooth incorporation of generated page objects into your existing testing infrastructure.'
+    },
+    {
+      id: 'how-it-works',
+      question: 'How does RaptorSelect work?',
+      answer: 'RaptorSelect uses advanced code generation logic to automatically capture active elements on your web page and generate corresponding page object code. Simply configure your options and templates, then generate with a single click.'
+    }
+  ];
+
   return (
     <div className="dark bg-[#020317] min-h-screen overflow-x-hidden">
       <NavigationBar />
@@ -114,7 +139,7 @@ const RaptorSelect: React.FC = () => {
           tag="RaptorSelect" subtitle={''}        />
         
         {/* Foster Test Automation Section */}
-        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
+        <section className="py-16 sm:py-20 lg:py-20 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl "></div>
             <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl  delay-1000"></div>
@@ -183,7 +208,7 @@ const RaptorSelect: React.FC = () => {
         />
 
         {/* Page Object Generation Benefits Section */}
-        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317]">
+        <section className="py-16 sm:py-20 lg:py-20 relative overflow-hidden bg-[#020317]">
           <div className="absolute inset-0">
             <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-yellow-500/8 rounded-full blur-3xl "></div>
             <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-orange-500/8 rounded-full blur-3xl  delay-1000"></div>
@@ -267,6 +292,12 @@ const RaptorSelect: React.FC = () => {
           title="Explore Our Other Products"
           subtitle="Discover More AI-Powered Quality Assurance Solutions"
           products={otherProducts}
+        />
+        {/* QAFaq Section */}
+        <QAFaq 
+          title="RaptorSelect FAQs"
+          subtitle="Common questions about our page object generator plugin"
+          faqs={raptorSelectFaqs}
         />
 
         {/* Project Success Stories Section */}

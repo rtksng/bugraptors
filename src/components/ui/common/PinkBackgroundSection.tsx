@@ -1,10 +1,12 @@
 import React from 'react';
 import SectionTitle from './SectionTittle';
+import CardTitle from './CardTitle';
 
 interface PinkBackgroundSectionItem {
   title: string;
   description: string;
   icon: React.ReactNode;
+  align:string;
 }
 
 interface PinkBackgroundSectionProps {
@@ -13,6 +15,7 @@ interface PinkBackgroundSectionProps {
   buttonText?: string;
   onButtonClick?: () => void;
   className?: string;
+  align?: 'left' | 'center' | 'right';
 }
 
 const PinkBackgroundSection: React.FC<PinkBackgroundSectionProps> = ({
@@ -20,10 +23,18 @@ const PinkBackgroundSection: React.FC<PinkBackgroundSectionProps> = ({
   items,
   buttonText = "Book Your Free Demo",
   onButtonClick,
-  className = ""
+  className = "",
+  align = "center" // Add the new prop with a default value
 }) => {
+  // Determine the Tailwind CSS class for text alignment
+  const textAlignClass = {
+    left: 'text-left',
+    center: 'text-center',
+    right: 'text-right',
+  }[align];
+
   return (
-    <section className={`py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317] ${className}`}>
+    <section className={`py-16 sm:py-20 lg:py-20 relative overflow-hidden bg-[#020317] ${className}`}>
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl "></div>
@@ -33,9 +44,8 @@ const PinkBackgroundSection: React.FC<PinkBackgroundSectionProps> = ({
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Title */}
-          <div className="text-center mb-12 sm:mb-16">
-
-
+          {/* Apply the text alignment class here */}
+          <div className={`${textAlignClass} mb-12 sm:mb-16`}>
             <SectionTitle
               title={title}
             />
@@ -54,22 +64,22 @@ const PinkBackgroundSection: React.FC<PinkBackgroundSectionProps> = ({
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg sm:text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 leading-relaxed text-sm sm:text-base group-hover:text-gray-200 transition-colors duration-300">
-                  {item.description}
-                </p>
+                <CardTitle
+                  title={item.title}
+                  description={item.description}
+                   // Keep card titles centered within their cards or make this configurable if needed
+                />
               </div>
             ))}
           </div>
 
           {/* Call to Action Button */}
           {buttonText && (
-            <div className="text-center">
+            // Apply the text alignment class to the parent div of the button
+            <div className='flex justify-center items-center'>
               <button
                 onClick={onButtonClick}
-                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 custom-bg-color text-white text-base sm:text-lg  rounded-full hover:from-cyan-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-cyan-500/25"
+                className=" inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 custom-bg-color text-white text-base sm:text-lg  rounded-full hover:from-cyan-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-cyan-500/25"
               >
                 {buttonText}
                 <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,4 +94,4 @@ const PinkBackgroundSection: React.FC<PinkBackgroundSectionProps> = ({
   );
 };
 
-export default PinkBackgroundSection; 
+export default PinkBackgroundSection;

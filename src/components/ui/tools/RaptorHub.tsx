@@ -186,25 +186,21 @@ const RaptorHub: React.FC = () => {
           title="RaptorHub – Track and Manage With Ease"
           description="Innovative & Seamless Project Management Using "
           buttonText="Get Started"
-          tag="RaptorHub" subtitle={''}        />
+          tag="RaptorHub" subtitle={''} />
 
         {/* Experience Section */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl "></div>
-            <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl  delay-1000"></div>
-          </div>
-          
+        <section className="py-12 relative overflow-hidden ">
+
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
-              <SectionTitle
-  title="Experience A New Era Of Agile And Effective Testing"
-  para1="By seamlessly integrating with your existing QA processes, RaptorHub enhances collaboration and accelerates bug identification and resolution. It provides a centralized hub where testers can effortlessly organize and access their media files, ensuring a structured and well-documented approach to testing."
-  para2="RaptorHub not only expedites the testing process but also augments the overall quality assurance efforts. By enabling testers to capture screenshots and videos directly within the plugin, it eliminates the need for external tools, reducing complexity and saving valuable time."
-/>
 
-              </div>
+              <SectionTitle
+                title="Experience A New Era Of Agile And Effective Testing"
+                para1="By seamlessly integrating with your existing QA processes, RaptorHub enhances collaboration and accelerates bug identification and resolution. It provides a centralized hub where testers can effortlessly organize and access their media files, ensuring a structured "
+                para2="RaptorHub not only expedites the testing process but also augments the overall quality assurance efforts. By enabling testers to capture screenshots and videos directly within the plugin, it eliminates the need for external tools, reducing complexity and saving valuable time."
+                align='left'
+              />
             </div>
           </div>
         </section>
@@ -220,13 +216,13 @@ const RaptorHub: React.FC = () => {
               description: "Effortlessly take screenshots directly from within the plugin, ensuring a smooth testing process."
             },
             {
-              number: "02", 
+              number: "02",
               title: "Screen Recording",
               description: "Record videos to provide detailed insights into your projects, enhancing collaboration and understanding."
             },
             {
               number: "03",
-              title: "Upload Files", 
+              title: "Upload Files",
               description: "Easily upload various media files including images, videos, and documents, allowing for comprehensive project documentation."
             },
             {
@@ -238,23 +234,21 @@ const RaptorHub: React.FC = () => {
         />
 
         {/* How It Works Section */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl "></div>
-            <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl  delay-1000"></div>
-          </div>
-          
+        <section className="py-12 relative overflow-hidden ">
+
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-6xl mx-auto">
-              <div className="mb-16">
-              <SectionTitle
-  title="How It Works?"
-  para1="RaptorHub simplifies project management by providing an intuitive interface to create and organize projects. Testers can effortlessly categorize their media files within projects, ensuring easy accessibility and structured organization."
-  para2="Additionally, users have the option to capture videos and screenshots directly from within the plugin, further streamlining the testing process. Besides, you can also opt for sharing options facilitating seamless collaboration within your organization."
-/>
 
-               
-              </div>
+              <SectionTitle
+                title="How It Works?"
+                para1="RaptorHub simplifies project management by providing an intuitive interface to create and organize projects. Testers can effortlessly categorize their media files within projects, ensuring easy accessibility and structured organization."
+                para2="Additionally, users have the option to capture videos and screenshots directly from within the plugin, further streamlining the testing process. Besides, you can also opt for sharing options facilitating seamless collaboration within your organization."
+                align='left'
+              />
+
+
+
             </div>
           </div>
         </section>
@@ -273,7 +267,7 @@ const RaptorHub: React.FC = () => {
               )
             },
             {
-              title: "Enhanced Collaboration", 
+              title: "Enhanced Collaboration",
               description: "Share screenshots and videos seamlessly with team members, fostering better understanding and collaboration.",
               icon: (
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -283,7 +277,7 @@ const RaptorHub: React.FC = () => {
             },
             {
               title: "Streamlined Testing Process",
-              description: "Capture screenshots and videos directly within the plugin, eliminating the need for external tools.", 
+              description: "Capture screenshots and videos directly within the plugin, eliminating the need for external tools.",
               icon: (
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -301,6 +295,7 @@ const RaptorHub: React.FC = () => {
             }
           ]}
         />
+        
 
         {/* Explore Our Other Products Section */}
         <ExploreProductsSection
@@ -309,19 +304,21 @@ const RaptorHub: React.FC = () => {
           products={otherProducts}
         />
 
+
+
         {/* Project Success Stories Section */}
         <MoboraptorsSection />
-{/* Blogs Section */}
-<BlogSectionCommon />
+        {/* Blogs Section */}
+        <BlogSectionCommon />
 
-{/* Newsletter/Ebook Subscription Section */}
-<NewsletterSectionCommon />
+        {/* Newsletter/Ebook Subscription Section */}
+        <NewsletterSectionCommon />
 
-{/* Latest News Section */}
-<NewSectionCommon />
+        {/* Latest News Section */}
+        <NewSectionCommon />
 
-{/* Other Offices Info Section */}
-<OtherOfficesInfo />
+        {/* Other Offices Info Section */}
+        {/* <OtherOfficesInfo /> */}
 
         <Footer />
       </main>

@@ -9,8 +9,10 @@ import {
   FaTags,
   FaChevronRight
 } from 'react-icons/fa';
-import CTAButton from '../common/Button';
-
+import CTAButton from '../common/CTAButton';
+import SectionTitle from '../common/SectionTittle';
+import Button from '../common/CTAButton';
+import CtaActionButton from '../common/CtaActionButton';
 const blogs = [
 
   {
@@ -79,11 +81,11 @@ const BlogsNews: React.FC = () => {
   );
 
   return (
-    <section className="relative py-24  overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24    overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
 
         {/* Subtle particle elements */}
         {[...Array(5)].map((_, i) => (
@@ -102,66 +104,66 @@ const BlogsNews: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header section */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start mb-16  ">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-start  w-full  ">
 
 
-          <div className="text-left ">
-            <div className="inline-flex items-left px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-4 ">
-              <FaNewspaper className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 mr-2 sm:mr-3" />
-              <span className="text-xs sm:text-sm font-medium text-purple-200">Latest Updates
-              </span>
+          <div className='w-full'>
+
+
+
+            <div className="flex justify-between w-full items-end">
+              <SectionTitle
+                title="Blogs & Latest News"
+                align='left'
+                tag='Latest Updates'
+              />
+
+
+
             </div>
-
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium mb-4  leading-tight w-[694px] mx-auto  text-radial-gradient">
-              Blogs & Latest News
-            </h2>
-
-
-            <p className="text-gray-400 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto ">
-              Stay informed with our latest insights, industry trends, and expert analysis in software testing and quality assurance.
-
-            </p>
           </div>
 
           {/* View All Button */}
-          <div className="mt-8 lg:mt-0">
-            <button className="inline-flex items-center px-6 py-3 rounded-full custom-bg-color  border-purple-500/20 text-purple-200  hover:border-purple-500/40 transition-all duration-300 backdrop-blur-sm cursor-pointer">
-              View All Articles
-              <FaArrowRight className="w-4 h-4 ml-2" />
-            </button>
-          </div>
+
         </div>
 
         {/* Enhanced Tabs */}
-        <div className="flex space-x-2 mb-12">
-          <button
-            onClick={() => setActiveTab('blogs')}
-            className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${activeTab === 'blogs'
+        <div className="flex justify-between space-x-2 mb-12 mt-8">
+          <div className='flex space-x-2'>
+            <button
+              onClick={() => setActiveTab('blogs')}
+              className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${activeTab === 'blogs'
+                ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 text-purple-200'
+                : 'text-gray-400 hover:text-purple-200 border border-purple-500/20 hover:border-purple-500/20'
+                }`}
+            >
+              <FaBlog className="w-4 h-4 mr-2" />
+              Blogs
+              <span className={`ml-2 px-2 py-1 rounded-full text-xs ${activeTab === 'blogs' ? 'bg-purple-500/20 text-purple-300' : 'bg-gray-700/50 text-gray-400'
+                }`}>
+                {blogs.filter(item => item.type === 'blog').length}
+              </span>
+            </button>
+            <button
+              onClick={() => setActiveTab('news')}
+              className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${activeTab === 'news'
                 ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 text-purple-200'
                 : 'text-gray-400 hover:text-purple-200 border border-transparent hover:border-purple-500/20'
-              }`}
-          >
-            <FaBlog className="w-4 h-4 mr-2" />
-            Blogs
-            <span className={`ml-2 px-2 py-1 rounded-full text-xs ${activeTab === 'blogs' ? 'bg-purple-500/20 text-purple-300' : 'bg-gray-700/50 text-gray-400'
-              }`}>
-              {blogs.filter(item => item.type === 'blog').length}
-            </span>
-          </button>
-          <button
-            onClick={() => setActiveTab('news')}
-            className={`inline-flex items-center px-6 py-3 rounded-xl font-medium transition-all duration-300 cursor-pointer ${activeTab === 'news'
-                ? 'bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 text-purple-200'
-                : 'text-gray-400 hover:text-purple-200 border border-transparent hover:border-purple-500/20'
-              }`}
-          >
-            <FaNewspaper className="w-4 h-4 mr-2" />
-            Latest News
-            <span className={`ml-2 px-2 py-1 rounded-full text-xs ${activeTab === 'news' ? 'bg-purple-500/20 text-purple-300' : 'bg-gray-700/50 text-gray-400'
-              }`}>
-              {blogs.filter(item => item.type === 'news').length}
-            </span>
-          </button>
+                }`}
+            >
+              <FaNewspaper className="w-4 h-4 mr-2" />
+              Latest News
+              <span className={`ml-2 px-2 py-1 rounded-full text-xs ${activeTab === 'news' ? 'bg-purple-500/20 text-purple-300' : 'bg-gray-700/50 text-gray-400'
+                }`}>
+                {blogs.filter(item => item.type === 'news').length}
+              </span>
+            </button>
+          </div>
+
+          <CtaActionButton
+            text="View All Articles"
+            variant="primary"
+          />
         </div>
 
         {/* Enhanced Blog/News Grid */}
@@ -182,47 +184,39 @@ const BlogsNews: React.FC = () => {
 
                 {/* Category Badge */}
                 <div className="absolute top-3 left-3">
-                  <span className="inline-flex items-center px-3 py-1 rounded-full custom-bg-color text-xs text-white">
-                    <FaTags className="w-3 h-3 mr-1" />
+                  <span className="inline-flex items-center px-3 py-1 rounded-full bg-black/50 backdrop-blur-sm text-sm text-[#EDEADE]">
+
                     {item.category}
                   </span>
                 </div>
 
-                {/* Bookmark Icon */}
-                <div className="absolute top-3 right-3">
-                  <button className="p-2 rounded-full bg-black/50 backdrop-blur-sm text-white/70 hover:text-white transition-colors duration-300 cursor-pointer">
-                    <FaBookmark className="w-3 h-3" />
-                  </button>
-                </div>
+
 
                 {/* Gradient Overlay */}
                 <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-[#0B1120] to-transparent"></div>
               </div>
 
               {/* Content */}
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-200 mb-3 line-clamp-2 group-hover:text-purple-300 transition-colors duration-300">
-                  {item.title}
-                </h3>
+              <div className="p-4">
 
                 {/* Meta Information */}
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
+                <div className="flex items-center justify-between text-sm text-light text-gray-400 ">
                   <div className="flex items-center space-x-3">
                     <div className="flex items-center">
                       <FaCalendarAlt className="w-3 h-3 mr-1" />
                       <span>{item.date}</span>
                     </div>
-                    <div className="flex items-center">
-                      <FaClock className="w-3 h-3 mr-1" />
-                      <span>{item.readTime}</span>
-                    </div>
+
                   </div>
                 </div>
+                <h3 className="text-lg leading-tight font-medium line-clamp-2 my-2 text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 pb-1 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">{item.title}</h3>
+
+
 
                 {/* Read More Button */}
-                <button className="inline-flex items-center text-purple-400 font-medium hover:text-purple-300 transition-colors duration-300 group/btn cursor-pointer">
+                <button className="inline-flex items-center text-purple-400  hover:text-purple-300 transition-colors duration-300 group/btn cursor-pointer">
                   Read More
-                  <FaChevronRight className="w-3 h-3 ml-1 transform group-hover/btn:translate-x-1 transition-transform duration-300" />
+
                 </button>
               </div>
 
@@ -233,11 +227,11 @@ const BlogsNews: React.FC = () => {
         </div>
 
         {/* Enhanced Load More Section */}
-        <div className="text-center mt-12   flex items-center justify-center">
-        <CTAButton onClick={() => console.log('Clicked!')} variant="primary">Load More Articles</CTAButton>
-        </div>
+        {/* <div className="text-center mt-12   flex items-center justify-center">
+          <CTAButton onClick={() => console.log('Clicked!')} variant="primary">Load More Articles</CTAButton>
+        </div> */}
       </div>
-      
+
     </section>
   );
 };

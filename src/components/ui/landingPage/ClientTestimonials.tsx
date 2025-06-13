@@ -8,7 +8,8 @@ import {
   FaShieldAlt
 } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTittle';
-import CTAButton from '../common/Button';
+import CTAButton from '../common/CTAButton';
+import CardTitle from '../common/CardTitle';
 
 const testimonials = [
   {
@@ -63,11 +64,11 @@ const testimonials = [
 
 const ClientTestimonials: React.FC = () => {
   return (
-    <section className="relative py-20  overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24    overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
 
         {/* Subtle decorative elements */}
         {[...Array(5)].map((_, i) => (
@@ -86,7 +87,7 @@ const ClientTestimonials: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
 
           <SectionTitle
             tag="Client Success Stories"
@@ -126,9 +127,7 @@ const ClientTestimonials: React.FC = () => {
               <div className="flex items-start justify-between mb-6">
                 {/* Company Logo */}
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 custom-bg-color rounded-xl  flex items-center justify-center">
-                    <span className="text-purple-300 font-bold text-sm">{testimonial.logo}</span>
-                  </div>
+                 
                   <div>
                     <div className="flex items-center space-x-1 mb-1">
                       {[...Array(testimonial.rating)].map((_, i) => (
@@ -152,25 +151,31 @@ const ClientTestimonials: React.FC = () => {
               </div>
 
               {/* Testimonial Content */}
-              <blockquote className="text-gray-300 leading-relaxed mb-6 text-sm">
-                "{testimonial.content}"
+              <blockquote className=" leading-relaxed mb-6 ">
+                {/* "{testimonial.content}" */}
+
+              
+                 
+
+                  <p className='text-gray-400 line-clamp-3'>{testimonial.content}</p>
+                
               </blockquote>
 
               {/* Author Info */}
-              <div className="border-t border-purple-500/10 pt-4">
-                <div className="flex items-center justify-between">
+              <div className="border-t border-purple-500/10 pt-4 ">
+                <div className="flex items-center justify-between items-end">
                   <div>
-                    <h4 className="text-white font-medium">{testimonial.name}</h4>
-                    <p className="text-purple-300 text-sm">{testimonial.role}</p>
-                    <p className="text-gray-400 text-xs flex items-center mt-1">
+                  
+                    <p className="text-purple-300  ">{testimonial.role}</p>
+                    <p className="text-gray-400   flex items-center mt-1">
                       <FaBuilding className="w-3 h-3 mr-1" />
                       {testimonial.company}
                     </p>
                   </div>
 
                   {/* Read More Link */}
-                  <button className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 text-sm">
-                    <span className="mr-1">View Case</span>
+                  <button className="flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 ">
+                    <span className="mr-1">Read Full</span>
                     <FaChevronRight className="w-3 h-3" />
                   </button>
                 </div>
@@ -183,14 +188,14 @@ const ClientTestimonials: React.FC = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
+        {/* <div className="text-center mt-16">
           <div className="inline-flex flex-col items-center p-6 bg-custom-transparent rounded-2xl border border-purple-500/20 backdrop-blur-sm">
             <h3 className="text-xl font-semibold text-white mb-2">Ready to join our success stories?</h3>
             <p className="text-gray-400 mb-4">Let's discuss how we can help transform your testing processes</p>
             <CTAButton  onClick={() => console.log('Clicked!')} variant={'primary'} >Start Your Success Story </CTAButton>
           </div>
          
-        </div>
+        </div> */}
       </div>
     </section>
   );

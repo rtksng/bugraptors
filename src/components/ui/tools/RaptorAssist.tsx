@@ -12,6 +12,7 @@ import BlogSectionCommon from '../common/BlogSectionCommon';
 import NewSectionCommon from '../common/NewSectionCommon';
 import NewsletterSectionCommon from '../common/NewsletterSectionCommon';
 import OtherOfficesInfo from '../common/OtherOfficesInfo';
+import CardTitle from '../common/CardTitle';
 
 const RaptorAssist: React.FC = () => {
   const handleCtaClick = () => {
@@ -92,6 +93,7 @@ const RaptorAssist: React.FC = () => {
     {
       title: "Unprecedented Efficiency",
       description: "Experience an 8x acceleration in test case generation, revolutionizing your testing workflow.",
+      align: "center",
       icon: (
         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
@@ -101,6 +103,7 @@ const RaptorAssist: React.FC = () => {
     {
       title: "Precision and Customization",
       description: "Generate test artifacts precisely tailored to your project's unique needs, ensuring thorough testing coverage.",
+      align: "center",
       icon: (
         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -111,6 +114,7 @@ const RaptorAssist: React.FC = () => {
     {
       title: "Time and Resource Saving",
       description: "Say goodbye to manual test case creation and focus on what matters - testing and quality assurance.",
+      align: "center",
       icon: (
         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -120,6 +124,7 @@ const RaptorAssist: React.FC = () => {
     {
       title: "High-Quality Documentation",
       description: "Rest assured knowing that your testing documentation is of the highest caliber, meeting industry standards.",
+      align: "center",
       icon: (
         <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -163,22 +168,18 @@ const RaptorAssist: React.FC = () => {
           title="RaptorAssist - Elevating Testing Efficiency"
           description="Unleash the Power of AI in Testing! "
           buttonText="Get Started"
-          tag="RaptorAssist" subtitle={''}        />
+          tag="RaptorAssist" subtitle={''} />
 
         {/* Experience Section */}
-        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317]">
-          <div className="absolute inset-0">
-            <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl "></div>
-            <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl  delay-1000"></div>
-          </div>
-
+        <section className="py-8 md:p-12 lg:py-16 relative overflow-hidden bg-[#020317]">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-12 sm:mb-16">
+            <div className="max-w-7xl mx-auto">
+              <div>
                 <SectionTitle
                   title="The Future Of Testing Efficiency Is Here!"
                   para1="The heart of RaptorAssist's power lies in its AI-driven test case generation, which operates at an astounding 8 times the speed of traditional methods. This transformative feature ensures that testing teams can achieve unparalleled productivity gains, focusing their efforts on critical tasks while RaptorAssist handles the meticulous task of test case creation. By seamlessly adapting to specific project requirements, RaptorAssist empowers testing professionals to achieve an unprecedented level of precision in their testing process."
                   para2="In addition to its impressive speed and precision, RaptorAssist significantly streamlines the documentation process. No longer burdened by the manual creation of testing documents, testing teams can now trust RaptorAssist to produce documentation that not only meets but exceeds industry standards. This means that testing professionals can devote more time to actual testing, confident in the knowledge that their documentation is of the highest caliber. With RaptorAssist, testing efficiency reaches new heights, setting a new standard for quality assurance in the software development industry"
+
                 />
               </div>
             </div>
@@ -209,7 +210,7 @@ const RaptorAssist: React.FC = () => {
         />
 
         {/* How RaptorAssist Works Section */}
-        <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
+        <section className="py-16 sm:py-20 lg:py-20 relative overflow-hidden bg-gradient-to-br from-[#020317] via-[#1a0b2e] to-[#020317]">
           {/* Background Effects */}
           <div className="absolute inset-0">
             <div className="absolute top-1/3 left-1/4 w-64 h-64 sm:w-72 sm:h-72 bg-purple-500/15 rounded-full blur-3xl "></div>
@@ -251,12 +252,18 @@ const RaptorAssist: React.FC = () => {
                         </div>
 
                         {/* Content */}
-                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center group-hover:text-cyan-300 transition-colors duration-300">
+                        {/* <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 text-center group-hover:text-cyan-300 transition-colors duration-300">
                           {item.title}
                         </h3>
                         <p className="text-gray-300 leading-relaxed text-center group-hover:text-gray-200 transition-colors duration-300 text-sm sm:text-base">
                           {item.description}
-                        </p>
+                        </p> */}
+
+                        <CardTitle
+                          title={item.title}
+                          description={item.description}
+                          align='center'
+                        />
 
                         {/* Glow Effect */}
                         <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-cyan-500/0 via-purple-500/0 to-blue-500/0 group-hover:from-cyan-500/5 group-hover:via-purple-500/5 group-hover:to-blue-500/5 transition-all duration-500 pointer-events-none"></div>
@@ -284,8 +291,9 @@ const RaptorAssist: React.FC = () => {
           items={pinkSectionItems}
           buttonText="Book Your Free Demo"
           onButtonClick={handleDemoClick}
+          align='left'
         />
-        
+
         {/* Explore Our Other Products Section */}
         <ExploreProductsSection
           title="Explore Our Other Products"

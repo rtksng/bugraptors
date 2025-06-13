@@ -11,9 +11,9 @@ import {
 } from 'react-icons/fa';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+
 import SectionTitle from '../common/SectionTittle';
+import CardTitle from '../common/CardTitle';
 
 const offerings = [
   {
@@ -51,11 +51,11 @@ const offerings = [
 
 const SoftwareTestingOfferings: React.FC = () => {
   return (
-    <section className="relative py-20  overflow-hidden radial-bg">
+    <section className="relativepy-8 sm:py-12 md:py-16 lg:py-20 xl:py-24  overflow-hidden radial-bg">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
 
         {/* Subtle decorative elements */}
         {[...Array(5)].map((_, i) => (
@@ -111,13 +111,19 @@ const SoftwareTestingOfferings: React.FC = () => {
 
                   {/* Content */}
                   <div className="relative z-10 flex flex-col h-full">
-                    <h3 className="text-xl font-semibold text-white mb-3">
+
+                    <CardTitle
+                      title={offering.name}
+                      description={offering.description}
+                      align="left"
+                    />
+                    {/* <h3 className="text-xl font-semibold text-white mb-3">
                       {offering.name}
                     </h3>
 
                     <p className="text-sm text-gray-400 leading-relaxed mb-4 h-[110px] text-wrap">
                       {offering.description}
-                    </p>
+                    </p> */}
 
                     <div className="mt-2">
                       <button className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-colors duration-300 text-sm font-medium cursor-pointer">

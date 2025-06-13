@@ -13,6 +13,7 @@ import HealthCare from "../../../assets/HealthCare.png"
 import RetailCommerce from "../../../assets/Retail&Commerce.png"
 import EnergyUtilities from "../../../assets/Energy&Utilities.png"
 import mediaentertainment from "../../../assets/Media&Entertainment.png"
+import CardTitle from '../common/CardTitle';
 const domains = [
   {
     name: 'Healthcare',
@@ -51,7 +52,8 @@ const domains = [
     description: 'Testing solutions for communication platforms',
     icon: FaMobile,
     color: 'bg-yellow-500',
-    gradient: 'from-yellow-500/20 to-yellow-500/5'
+    gradient: 'from-yellow-500/20 to-yellow-500/5',
+    img:RetailCommerce,
   },
   {
     name: 'Media & Entertainment',
@@ -65,11 +67,11 @@ const domains = [
 
 const DomainsWeServe: React.FC = () => {
   return (
-    <section className="relative py-20   overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24     overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
       </div>
 
@@ -86,32 +88,40 @@ const DomainsWeServe: React.FC = () => {
         {/* Enhanced Header */}
       
 
-        <SectionTitle  tag='Industry Expertise' title={'Driving Quality Across Diverse Domains '} subtitle='  Delivering specialized testing solutions across diverse industries'/>
+<div className="mb-4 md:mb-6 lg:mb-8">
+<SectionTitle  tag='Industry Expertise' title={'Driving Quality Across Diverse Domains '} subtitle='  Delivering specialized testing solutions across diverse industries'/>
 
+</div>
         {/* Domains Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {domains.map((domain, index) => (
             <div
               key={domain.name}
-              className="group relative aspect-[4/3] rounded-2xl overflow-hidden border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
+              className="group relative  rounded-xl  overflow-hidden border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${domain.gradient}`}></div>
               
               {/* Card Content */}
-              <div className="relative h-full p-4 flex flex-col justify-between bg-gradient-to-br from-[#0a102a]/80 to-[#151b3d]/80 backdrop-blur-sm">
+              <div className="relative h-full p-3 flex flex-col  bg-gradient-to-br from-[#0a102a]/80 to-[#151b3d]/80 backdrop-blur-sm">
                 {/* Icon */}
-                <img src={domain.img} alt="" className='mb-3 h-[187px] object-fill bg-[#7446d9] rounded-2xl' />
+                <img src={domain.img} alt="" className='mb-3 h-[187px] object-fill bg-[#7446d9] rounded-lg' />
                 
                 {/* Text Content */}
                 <div>
-                  <h3 className="text-xl font-semibold text-white mb-1 group-hover:text-purple-200 transition-colors duration-300">
+                  {/* <h3 className="text-xl font-semibold text-white mb-1 group-hover:text-purple-200 transition-colors duration-300">
                     {domain.name}
                   </h3>
                   <p className="text-sm text-gray-300 group-hover:text-gray-200 transition-colors duration-300">
                     {domain.description}
-                  </p>
+                  </p> */}
+
+                  <CardTitle
+                    title={domain.name}
+                    description={domain.description}
+                    align="center"
+                  />
                 </div>
               </div>
 

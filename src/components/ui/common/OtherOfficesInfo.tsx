@@ -1,154 +1,248 @@
-import React from 'react';
+// components/SleekGlobalPresence.jsx
+import React, { useState } from 'react';
 
-const OtherOfficesInfo: React.FC = () => {
-  const offices = [
-    {
-      flag: '🇺🇸',
-      title: 'Corporate Office - USA',
-      address: '5858 Horton Street, Suite 101,',
-      address2: 'Emeryville, CA 94608, United States',
-      phone: '+1 (510) 371 - 9164',
-      bgGradient: 'from-blue-900/20 to-red-900/20'
+// Define valid color types
+type OfficeColor = 'purple' | 'blue' | 'green' | 'pink';
+
+interface Office {
+  id: string;
+  flag: string;
+  title: string;
+  fullTitle: string;
+  address: string;
+  cityStateZip: string;
+  phone: string;
+  mapLink: string;
+  description: string;
+  color: OfficeColor;
+  gradientColor: string;
+}
+
+const offices: Office[] = [
+  {
+    id: 'ny',
+    flag: "🇺🇸",
+    title: "New York",
+    fullTitle: "New York Headquarters",
+    address: "123 Innovation Drive, Suite 400",
+    cityStateZip: "New York, NY 10001",
+    phone: "+1 212 555 0100",
+    mapLink: "https://maps.app.goo.gl/YourActualNewYorkMapLink", // Use actual map links
+    description: "Our primary hub for North American operations, driving innovation in finance and technology, at the heart of the global economy.",
+    color: "purple", // Used for subtle styling
+    gradientColor: "rgba(168,85,247,0.15)", // Specific color for radial gradient
+  },
+  {
+    id: 'ldn',
+    flag: "🇬🇧",
+    title: "London",
+    fullTitle: "London EMEA Hub",
+    address: "789 Tech Lane, Borough",
+    cityStateZip: "London, SW1A 0AA",
+    phone: "+44 20 7946 0123",
+    mapLink: "https://maps.app.goo.gl/YourActualLondonMapLink",
+    description: "Strategic center for Europe, Middle East, and Africa, fostering international partnerships and groundbreaking solutions.",
+    color: "blue",
+    gradientColor: "rgba(59,130,246,0.15)",
+  },
+  {
+    id: 'beng',
+    flag: "🇮🇳",
+    title: "Bengaluru",
+    fullTitle: "Bengaluru Innovation Campus",
+    address: "456 Digital Avenue",
+    cityStateZip: "Electronics City, Bengaluru, 560100",
+    phone: "+91 80 2345 6789",
+    mapLink: "https://maps.app.goo.gl/YourActualBengaluruMapLink",
+    description: "A dynamic hub for engineering excellence and product development in the APAC region, driving future technologies.",
+    color: "green",
+    gradientColor: "rgba(34,197,94,0.15)",
+  },
+  {
+    id: 'syd',
+    flag: "🇦🇺",
+    title: "Sydney",
+    fullTitle: "Sydney Oceanic Center",
+    address: "10 Innovation Hub",
+    cityStateZip: "Pyrmont, NSW 2009",
+    phone: "+61 2 9876 5432",
+    mapLink: "https://maps.app.goo.gl/YourActualSydneyMapLink",
+    description: "Our Australasian operations, focusing on emerging markets and digital transformation across the Pacific.",
+    color: "pink",
+    gradientColor: "rgba(236,72,153,0.15)",
+  },
+];
+
+const SleekGlobalPresence = () => {
+  const [activeOfficeId, setActiveOfficeId] = useState(offices[0].id);
+  const activeOffice = offices.find(office => office.id === activeOfficeId) || offices[0];
+
+  // Define color classes for dynamic styling
+  const colorClasses: Record<OfficeColor, {
+    text: string;
+    border: string;
+    shadow: string;
+    hoverText: string;
+    accentBg: string;
+  }> = {
+    purple: {
+      text: 'text-purple-400',
+      border: 'border-purple-600/50',
+      shadow: 'shadow-purple-500/20',
+      hoverText: 'hover:text-purple-300',
+      accentBg: 'bg-purple-600',
     },
-    {
-      flag: '🇮🇳',
-      title: 'Test Labs - India',
-      address: '2nd Floor, C-136, Industrial Area,',
-      address2: 'Phase - 8, Mohali-160071, Punjab, India',
-      phone: '+91 77173 - 00289',
-      bgGradient: 'from-orange-900/20 to-green-900/20'
+    blue: {
+      text: 'text-blue-400',
+      border: 'border-blue-600/50',
+      shadow: 'shadow-blue-500/20',
+      hoverText: 'hover:text-blue-300',
+      accentBg: 'bg-blue-600',
     },
-    {
-      flag: '🇮🇳',
-      title: 'Corporate Office - India',
-      address: '52, First Floor, Sec-71, Mohali, PB',
-      address2: '160071 India',
-      phone: null,
-      bgGradient: 'from-orange-900/20 to-blue-900/20'
+    green: {
+      text: 'text-green-400',
+      border: 'border-green-600/50',
+      shadow: 'shadow-green-500/20',
+      hoverText: 'hover:text-green-300',
+      accentBg: 'bg-green-600',
     },
-    {
-      flag: '🇬🇧',
-      title: 'United Kingdom',
-      address: '97 Hackney Rd London E2 8ET',
-      address2: null,
-      phone: null,
-      bgGradient: 'from-blue-900/20 to-red-900/20'
+    pink: {
+      text: 'text-pink-400',
+      border: 'border-pink-600/50',
+      shadow: 'shadow-pink-500/20',
+      hoverText: 'hover:text-pink-300',
+      accentBg: 'bg-pink-600',
     },
-    {
-      flag: '🇦🇺',
-      title: 'Australia',
-      address: 'Suite 4004, 11 Hassal St Parramatta NSW',
-      address2: '2150',
-      phone: null,
-      bgGradient: 'from-blue-900/20 to-yellow-900/20'
-    },
-    {
-      flag: '🇦🇪',
-      title: 'UAE',
-      address: 'Meydan Grandstand, 6th floor, Meydan',
-      address2: 'Road, Nad Al Sheba, Dubai, U.A.E',
-      phone: null,
-      bgGradient: 'from-red-900/20 to-green-900/20'
-    }
-  ];
+  };
 
-  return (
-    <section className="py-20 relative bg-[#020317]">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl "></div>
-        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl  delay-1000"></div>
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-cyan-600/5 rounded-full blur-3xl  delay-2000"></div>
-      </div>
+  const currentColors = colorClasses[activeOffice.color];
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Global <span className="text-purple-400">Presence</span>
-            </h2>
-            <p className="text-gray-300 text-lg max-w-3xl mx-auto leading-relaxed">
-              BugRaptors is one of the best software testing companies headquartered in India and the US, which is committed to catering to the diverse QA needs of any business. We are one of the fastest-growing QA companies, striving to deliver technology-oriented QA services, worldwide. BugRaptors is a team of 200+ ISTQB-certified testers, along with <span className="text-purple-400 font-semibold">ISO 9001:2018</span> and <span className="text-purple-400 font-semibold">ISO 27001</span> certifications.
-            </p>
-          </div>
+  // return (
+  //   <section className="min-h-screen flex items-center justify-center py-20 bg-gradient-to-br from-gray-950 to-black text-white relative overflow-hidden">
+  //     {/* Background radial gradient spotlight */}
+  //     {/* Changed to inline style for dynamic radial gradient as Tailwind JIT struggles with fully dynamic class names here */}
+  //     <div
+  //       className="absolute inset-0 z-0 transition-opacity duration-1000"
+  //       style={{
+  //         background: `radial-gradient(circle at center, ${activeOffice.gradientColor} 0%, transparent 70%)`,
+  //       }}
+  //     ></div>
+      
+  //     <div className="relative z-10 max-w-7xl mx-auto px-8 w-full"> {/* Increased max-w and horizontal padding */}
+  //       <div className="text-center mb-20"> {/* Increased bottom margin */}
+  //         <h2 className="text-7xl font-extrabold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-gray-100 to-gray-400 mb-6 drop-shadow-xl leading-tight"> {/* Larger, tighter tracking, brighter gradient, heavier shadow, tighter leading */}
+  //           Our Global Nexus
+  //         </h2>
+  //         <p className="mt-4 text-2xl text-gray-400 max-w-3xl mx-auto font-light leading-relaxed">
+  //           Connecting **expertise**, **innovation**, and **partnership** across the globe to redefine boundaries.
+  //         </p>
+  //       </div>
 
-          {/* Offices Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {offices.map((office, index) => (
-              <div
-                key={index}
-                className={`group relative p-8 rounded-2xl border border-white/10 bg-gradient-to-br ${office.bgGradient} backdrop-blur-sm hover:border-purple-400/30 transition-all duration-300 hover:transform hover:scale-105`}
-              >
-                {/* Decorative corner element */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-purple-400 rounded-full opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
-                
-                {/* Flag and Title */}
-                <div className="flex items-center mb-6">
-                  <span className="text-3xl mr-4">{office.flag}</span>
-                  <h3 className="text-xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
-                    {office.title}
-                  </h3>
-                </div>
+  //       <div className="flex flex-col lg:flex-row justify-center items-center gap-12"> {/* Increased gap */}
+  //         {/* Office Selectors (Flags) */}
+  //         <div className="flex lg:flex-col gap-6 p-6 lg:p-0 rounded-full lg:rounded-none bg-gray-800/30 backdrop-blur-md border border-white/5 shadow-inner"> {/* Larger padding, more blur */}
+  //           {offices.map((office) => (
+  //             <button
+  //               key={office.id}
+  //               onClick={() => setActiveOfficeId(office.id)}
+  //               className={`relative w-16 h-16 lg:w-24 lg:h-24 flex items-center justify-center rounded-full
+  //                           border-2 transition-all duration-300 ease-out group
+  //                           ${activeOfficeId === office.id ? `${colorClasses[office.color].border} ${colorClasses[office.color].accentBg} scale-110 shadow-lg` : 'border-transparent hover:border-white/10'} 
+  //                           focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-950 ${colorClasses[office.color].text}`} 
+  //               title={office.fullTitle}
+  //             >
+  //               <span className="text-4xl lg:text-5xl transition-transform duration-300 group-hover:scale-110"> 
+  //                 {office.flag}
+  //               </span>
+  //               {activeOfficeId === office.id && (
+  //                 <div className={`absolute -bottom-3 lg:-right-3 lg:top-1/2 lg:-translate-y-1/2
+  //                                 w-4 h-4 lg:w-5 lg:h-5 rounded-full ${colorClasses[office.color].accentBg} shadow-md
+  //                                 animate-pulse-slow`}></div> 
+  //               )}
+  //             </button>
+  //           ))}
+  //         </div>
 
-                {/* Address */}
-                <div className="mb-6">
-                  <div className="flex items-start mb-2">
-                    <svg className="w-5 h-5 text-purple-400 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <div className="text-gray-300 leading-relaxed">
-                      <p>{office.address}</p>
-                      {office.address2 && <p>{office.address2}</p>}
-                    </div>
-                  </div>
-                </div>
+  //         {/* Main Display Card */}
+  //         <div
+  //           className={`relative w-full max-w-3xl bg-gray-800/50 backdrop-blur-3xl p-12 rounded-4xl
+  //                      border ${currentColors.border} shadow-3xl ${currentColors.shadow}
+  //                      transition-all duration-700 ease-in-out transform hover:scale-[1.005]`} 
+  //           style={{ minHeight: '480px' }} 
+  //         >
+  //           {/* Animated Glow on Card Border */}
+  //           <div className={`absolute inset-0 rounded-4xl pointer-events-none
+  //                          border-2 ${currentColors.border} opacity-50 blur-xl
+  //                          animate-card-glow`}></div> 
 
-                {/* Phone */}
-                {office.phone && (
-                  <div className="flex items-center">
-                    <svg className="w-5 h-5 text-purple-400 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    <a 
-                      href={`tel:${office.phone.replace(/\s|-/g, '')}`}
-                      className="text-purple-400 hover:text-purple-300 transition-colors duration-300 font-medium"
-                    >
-                      {office.phone}
-                    </a>
-                  </div>
-                )}
+  //           <div className="relative z-10 flex flex-col justify-between h-full">
+  //             <div>
+  //               <div className="flex items-center mb-8"> 
+  //                 <span className="text-7xl mr-8">{activeOffice.flag}</span> 
+  //                 <h3 className="text-5xl font-bold text-white leading-tight"> 
+  //                   {activeOffice.fullTitle}
+  //                 </h3>
+  //               </div>
 
-                {/* Hover effect overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/0 to-blue-600/0 group-hover:from-purple-600/5 group-hover:to-blue-600/5 rounded-2xl transition-all duration-300"></div>
-              </div>
-            ))}
-          </div>
+  //               <p className="text-gray-300 text-xl mb-10 leading-relaxed opacity-90"> 
+  //                 {activeOffice.description}
+  //               </p>
 
-          {/* Certifications Badge */}
-          <div className="mt-16 text-center">
-            <div className="inline-flex items-center space-x-6 px-8 py-4 bg-white/5 backdrop-blur-sm rounded-full border border-white/10">
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span className="text-white font-medium">ISO 9001:2018 Certified</span>
-              </div>
-              <div className="w-px h-6 bg-white/20"></div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-blue-400 rounded-full"></div>
-                <span className="text-white font-medium">ISO 27001 Certified</span>
-              </div>
-              <div className="w-px h-6 bg-white/20"></div>
-              <div className="flex items-center space-x-2">
-                <div className="w-3 h-3 bg-purple-400 rounded-full"></div>
-                <span className="text-white font-medium">200+ ISTQB Certified Testers</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  //               <div className="space-y-6"> 
+  //                 {/* Address */}
+  //                 <div className="flex items-start">
+  //                   <svg className={`w-8 h-8 ${currentColors.text} mr-6 mt-1 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+  //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+  //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+  //                   </svg>
+  //                   <div className="text-gray-400 text-xl"> 
+  //                     <p className="font-semibold">{activeOffice.address}</p>
+  //                     <p>{activeOffice.cityStateZip}</p>
+  //                   </div>
+  //                 </div>
+
+  //                 {/* Phone */}
+  //                 {activeOffice.phone && (
+  //                   <div className="flex items-center">
+  //                     <svg className={`w-8 h-8 ${currentColors.text} mr-6 flex-shrink-0`} fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+  //                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+  //                     </svg>
+  //                     <a
+  //                       href={`tel:${activeOffice.phone.replace(/\s|-/g, '')}`}
+  //                       className={`${currentColors.text} ${currentColors.hoverText} transition-colors duration-300 font-semibold text-xl`} 
+  //                     >
+  //                       {activeOffice.phone}
+  //                     </a>
+  //                   </div>
+  //                 )}
+  //               </div>
+  //             </div>
+
+  //             {/* Action Button */}
+  //             {activeOffice.mapLink && (
+  //               <div className="mt-12"> 
+  //                 <a
+  //                   href={activeOffice.mapLink}
+  //                   target="_blank"
+  //                   rel="noopener noreferrer"
+  //                   className={`inline-flex items-center px-10 py-4 rounded-full text-xl font-medium
+  //                              bg-gray-700/50 border border-white/20 backdrop-blur-md
+  //                              hover:bg-gray-600/70 ${currentColors.text} hover:text-white
+  //                              transition-all duration-300 ease-in-out group`} 
+  //                 >
+  //                   View on Map
+  //                   <svg className="w-6 h-6 ml-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"> 
+  //                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+  //                   </svg>
+  //                 </a>
+  //               </div>
+  //             )}
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </section>
+  // );
 };
 
-export default OtherOfficesInfo; 
+export default SleekGlobalPresence;

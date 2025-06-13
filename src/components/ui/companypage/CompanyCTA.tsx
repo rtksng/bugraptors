@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaArrowRight, FaEnvelope, FaPhone } from 'react-icons/fa';
-import CTAButton from '../common/Button';
+import CTAButton from '../common/CTAButton';
 
 const CompanyCTA: React.FC = () => {
   const contactMethods = [

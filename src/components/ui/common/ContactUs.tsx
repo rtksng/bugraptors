@@ -77,11 +77,11 @@ const ContactUs: React.FC = () => {
   ];
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24   overflow-hidden">
       {/* Creative Background - Mobile Optimized */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
 
         {/* Creative Grid Pattern */}
         <div className="absolute inset-0 opacity-[0.02]">

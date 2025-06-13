@@ -11,6 +11,8 @@ import raptorinfinity from "../../../assets/RaptorInfinity.svg"
 import raptorvista from "../../../assets/RaptorVista.svg"
 import raptorsecurity from "../../../assets/RaptorSecurity.svg"
 import mobraptors from "../../../assets/MoboRaptors.svg"
+import CardTitle from '../common/CardTitle';
+import SectionTitle from '../common/SectionTittle';
 
 
 const frameworks = [
@@ -53,11 +55,11 @@ const process = [
 
 const WhyChooseBugRaptors: React.FC = () => {
   return (
-    <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24   overflow-hidden">
       {/* Background Elements - Mobile Optimized */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className=""></div>
+        <div className=""></div>
 
         {/* Subtle decorative elements */}
         {[...Array(4)].map((_, i) => (
@@ -74,63 +76,64 @@ const WhyChooseBugRaptors: React.FC = () => {
         ))}
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-1">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* Enhanced Header - Mobile Optimized */}
         <div className="text-center mb-12 sm:mb-16 ">
-          <div className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-blue-600/20 border border-purple-500/30 backdrop-blur-sm mb-4 sm:mb-6">
-            <FaAward className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 mr-2 sm:mr-3" />
-            <span className="text-xs sm:text-sm font-medium text-purple-200">Why Choose Us</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-medium mb-4 sm:mb-6 leading-tight w-[694px] mx-auto  text-radial-gradient">
-            Why Choose BugRaptors as Your Software Testing Partner?
-          </h2>
-
-
-          <p className="text-gray-400 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto px-4">
-            Your software's success starts with the right testing partner! Discover what makes us the preferred choice for quality assurance.
-          </p>
+         
+         
+          <SectionTitle
+            title="Why Choose BugRaptors as Your Software Testing Partner?"
+            subtitle="Your software's success starts with the right testing partner! Discover what makes us the preferred choice for quality assurance."
+            tag="Why Choose Us"
+          />
         </div>
 
-        
+
 
         {/* Main Content Grid - Mobile Optimized */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8 ">
           {/* Left Column - Expertise Cards */}
-          <div className="space-y-4 sm:space-y-6">
+          <div className="space-y-4 sm:space-y-6 flex flex-col ">
 
 
-          <div className="flex items-start p-6 space-x-3 sm:space-x-4 bg-[#371C85]/8 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+            <div className="flex items-center grow p-6 space-x-3 sm:space-x-4 bg-[#371C85]/8 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
               <img
                 src="src/assets/ExpertiseIconSvg.svg"
                 alt="Spark icon"
-                className="size-12 mr-2 sm:mr-3 self-start "
+                className="size-12 mr-2 sm:mr-3 "
               />
 
-              <div className="flex-1 ">
-                <h3 className="sm:text-xl lg:text-[28px] font-medium text-white mb-2 sm:mb-3">
+              <div>
+                {/* <h3 className="sm:text-xl lg:text-[28px] font-medium text-white mb-2 sm:mb-3">
                   Expertise in Advanced Next-Gen Tools
                 </h3>
                 <p className="text-gray-400 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base lg:text-lg ">
                   We specialize in tools like Selenium, WebDriverIO, Cypress, Playwright, and AI/ML libraries to deliver comprehensive, next-gen testing solutions.
-                </p>
+                </p> */}
+
+                <CardTitle
+                  title="Expertise in Advanced Next-Gen Tools"
+                  description="We specialize in tools like Selenium, WebDriverIO, Cypress, Playwright, and AI/ML libraries to deliver comprehensive, next-gen testing solutions."
+                  align="left"
+                />
               </div>
             </div>
 
             {/* Certified Expertise */}
-            <div className="flex items-start p-6 space-x-3 sm:space-x-4 bg-[#371C85]/8 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
+            <div className="flex items-center grow p-6 space-x-3 sm:space-x-4 bg-[#371C85]/8 rounded-lg sm:rounded-xl lg:rounded-2xl border border-purple-500/10 hover:border-purple-500/30 transition-all duration-300">
               <img
                 src="src/assets/CertifiedExpertiseSvg.svg"
                 alt="Spark icon"
-                className="size-12 mr-2 sm:mr-3 self-start  "
+                className="size-12 mr-2 sm:mr-3 "
               />
 
-              <div className="flex-1 ">
-                <h3 className="sm:text-xl lg:text-[28px] font-medium text-white mb-2 sm:mb-3">
-                  Certified Expertise
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base lg:text-lg ">
-                  Our ISTQB-certified experts deliver scalable, reliable QA solutions for complex, mission-critical applications.                </p>
+              <div>
+                
+                <CardTitle
+                  title="Certified Expertise"
+                  description="Our ISTQB-certified experts deliver scalable, reliable QA solutions for complex, mission-critical applications."
+                  align="left"
+                />
               </div>
             </div>
 
@@ -148,22 +151,23 @@ const WhyChooseBugRaptors: React.FC = () => {
               />
 
               <div className="flex-1 ">
-                <h3 className="sm:text-xl lg:text-[28px] font-medium text-white mb-2 sm:mb-3">
-                  Our Proprietary Frameworks
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base lg:text-lg ">
-                  Our AI-powered, internally developed frameworks significantly enhance testing efficiency and accuracy:
-                </p>
+               
+
+                <CardTitle
+                  title="Our Proprietary Frameworks"
+                  description="Our AI-powered, internally developed frameworks significantly enhance testing efficiency and accuracy:"
+                  align="left"
+                />
               </div>
             </div>
 
 
             {/* Framework Grid - Mobile Optimized */}
-            <div className="grid grid-cols-1 gap-4 max-w-[278px] z-50">
+            <div className="grid grid-cols-1 gap-4 max-w-[278px] z-50 mt-4">
               {frameworks.map((framework, index) => (
                 <div
                   key={framework.name}
-                  className="py-2.5 px-5 bg-[#f5f5f5]/10 rounded-full border border-purple-500/10 hover:border-purple-500/20 transition-all duration-300"
+                  className="py-2.5 px-5 glassmorph-bg  border border-purple-500/10 hover:border-purple-500/20 transition-all duration-300"
                   style={{ animationDelay: `${index * 150}ms` }}
                 >
                   <div className="flex items-center gap-4">
@@ -172,7 +176,7 @@ const WhyChooseBugRaptors: React.FC = () => {
                       alt={framework.alt}
                       className="size-8 object-contain"
                     />
-                    <h4 className="text-white sm:text-base lg:text-xl mb-1">
+                    <h4 className="text-lg leading-tight font-medium text-nowrap text-[#c0c0c0] hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r from-white to-purple-200 pb-1 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">
                       {framework.name}
                     </h4>
                   </div>
@@ -202,19 +206,19 @@ const WhyChooseBugRaptors: React.FC = () => {
 
             <div className='flex-1'>
               <div className="flex-1 ">
-                <h3 className="sm:text-xl lg:text-[28px] font-medium text-white mb-2 sm:mb-3">
-                  Transparent, Results-Driven Process
-                </h3>
-                <p className="text-gray-400 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base lg:text-lg ">
-                  Our proven methodology ensures consistent quality delivery through structured phases and continuous improvement.
-                </p>
+               
+                <CardTitle
+                  title="Transparent, Results-Driven Process"
+                  description="Our proven methodology ensures consistent quality delivery through structured phases and continuous improvement."
+                  align="left"
+                />
               </div>
               {/* Process Steps - Mobile Optimized */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1 sm:gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-1 sm:gap-5 mt-4">
                 {process.map((item, index) => (
                   <div
                     key={item.step}
-                    className="flex items-center justify-center space-x-2 sm:space-x-3 sm:px-3 sm:py-2 px-5 py-3 bg-[#F5F5FF]/10 rounded-full border border-purple-500/10 hover:border-purple-500/20 transition-all duration-300"
+                    className="flex items-center justify-center space-x-2 sm:space-x-3 sm:px-3 sm:py-2 px-5 py-3 glassmorph-bg rounded-full border border-purple-500/10 hover:border-purple-500/20 transition-all duration-300"
                     style={{ animationDelay: `${index * 100}ms` }}
                   >
                     {/* <div className="text-purple-400 flex-shrink-0">

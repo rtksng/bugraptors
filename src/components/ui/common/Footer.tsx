@@ -181,7 +181,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Main Footer Content */}
-        <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 mb-16 transition-all duration-1000 delay-200 ${
+        <div className={`grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12transition-all duration-1000 delay-200 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           {footerSections.map((section, sectionIndex) => (
@@ -202,7 +202,7 @@ const Footer: React.FC = () => {
                       style={{ animationDelay: `${(sectionIndex * 100) + (index * 50)}ms` }}
                     >
                       <div className="flex-1">
-                        <div className="text-sm text-gray-300 group-hover/link:text-white transition-colors duration-300">
+                        <div className=" text-gray-300 group-hover/link:text-white transition-colors duration-300">
                           {item.label}
                         </div>
                       </div>
@@ -226,12 +226,12 @@ const Footer: React.FC = () => {
               <div key={social.label} className="group relative">
                 <a
                   href={social.url}
-                  className={`relative w-14 h-14  rounded-2xl bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 
+                  className={`relative size-10  rounded-lg bg-gradient-to-br from-purple-500/10 to-blue-500/10 border border-purple-500/20 
                     flex items-center justify-center group-hover:border-purple-500/40 hover:scale-110 transition-all duration-300 ${social.hoverColor}`}
                   aria-label={social.label}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-15 transition-opacity duration-300`}></div>
+                  <div className={`absolute inset-0 rounded-lg bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-15 transition-opacity duration-300`}></div>
                   <div className="relative  text-gray-400 group-hover:text-white transform group-hover:scale-110 transition-all duration-300">
                     {social.icon}
                   </div>
@@ -247,7 +247,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6">
-            <p className="text-sm text-gray-400 flex items-center">
+            <p className=" text-gray-400 flex items-center">
               <span className="relative flex h-2 w-2 mr-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -257,7 +257,7 @@ const Footer: React.FC = () => {
                 BugRaptors
               </span>
             </p>
-            <div className="flex space-x-4 text-xs">
+            <div className="flex space-x-4 ">
               <a href="#" className="text-gray-500 hover:text-purple-400 transition-colors duration-300 relative group">
                 Privacy Policy
                 <div className="absolute bottom-0 left-0 w-0 h-px bg-purple-400 group-hover:w-full transition-all duration-300"></div>

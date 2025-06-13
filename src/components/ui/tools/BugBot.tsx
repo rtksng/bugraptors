@@ -138,10 +138,10 @@ const BugBot: React.FC = () => {
           tag="BugBot" subtitle={''}        />
 
         {/* The Core Capabilities Section */}
-        <section className="py-20 relative">
+        <section className="py-16 relative">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+              <div className="text-center">
                 <SectionTitle
                   title="The Core Capabilities"
                   para1="From using the potential of generative AI to automation and visual testing, make your test process smooth with BugBot's dynamic test features."
