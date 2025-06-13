@@ -65,7 +65,7 @@ const FAQs: React.FC = () => {
   );
 
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24   overflow-hidden bg-transparent">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 border-1 border-gradient-effect overflow-hidden bg-transparent">
       <div className="absolute inset-0 overflow-hidden">
         <div className=""></div>
         <div className=""></div>
@@ -85,10 +85,13 @@ const FAQs: React.FC = () => {
       </div>
 
       <div className="relative mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div className='mb-4 md:mb-6 lg:mb-8'>
         <SectionTitle
           tag="FAQ Section"
           title="Frequently Asked Questions"
         />
+        </div>
 
         <div className=" max-w-4xl mx-auto space-y-8">
           {filteredFaqs.map((faq, index) => (

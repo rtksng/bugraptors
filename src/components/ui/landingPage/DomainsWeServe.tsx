@@ -1,10 +1,10 @@
 import React from 'react';
-import { 
-  FaHospital, 
-  FaShoppingCart, 
-  FaUniversity, 
-  FaBolt, 
-  FaMobile, 
+import {
+  FaHospital,
+  FaShoppingCart,
+  FaUniversity,
+  FaBolt,
+  FaMobile,
   FaVideo,
 } from 'react-icons/fa';
 import SectionTitle from '../common/SectionTittle';
@@ -21,7 +21,7 @@ const domains = [
     icon: FaHospital,
     color: 'bg-purple-500',
     gradient: 'from-purple-500/20 to-purple-500/5',
-    img:HealthCare,
+    img: HealthCare,
   },
   {
     name: 'Retail & Commerce',
@@ -29,7 +29,7 @@ const domains = [
     icon: FaShoppingCart,
     color: 'bg-yellow-500',
     gradient: 'from-yellow-500/20 to-yellow-500/5',
-    img:RetailCommerce,
+    img: RetailCommerce,
   },
   {
     name: 'Banking & Finance',
@@ -37,7 +37,7 @@ const domains = [
     icon: FaUniversity,
     color: 'bg-purple-500',
     gradient: 'from-purple-500/20 to-purple-500/5',
-    img:BankingFinance,
+    img: BankingFinance,
   },
   {
     name: 'Energy & Utilities',
@@ -45,7 +45,7 @@ const domains = [
     icon: FaBolt,
     color: 'bg-purple-500',
     gradient: 'from-purple-500/20 to-purple-500/5',
-    img:EnergyUtilities,
+    img: EnergyUtilities,
   },
   {
     name: 'Telecommunication',
@@ -53,7 +53,7 @@ const domains = [
     icon: FaMobile,
     color: 'bg-yellow-500',
     gradient: 'from-yellow-500/20 to-yellow-500/5',
-    img:RetailCommerce,
+    img: RetailCommerce,
   },
   {
     name: 'Media & Entertainment',
@@ -61,7 +61,7 @@ const domains = [
     icon: FaVideo,
     color: 'bg-purple-500',
     gradient: 'from-purple-500/20 to-purple-500/5',
-    img:mediaentertainment,
+    img: mediaentertainment,
   }
 ];
 
@@ -86,12 +86,12 @@ const DomainsWeServe: React.FC = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Enhanced Header */}
-      
 
-<div className="mb-4 md:mb-6 lg:mb-8">
-<SectionTitle  tag='Industry Expertise' title={'Driving Quality Across Diverse Domains '} subtitle='  Delivering specialized testing solutions across diverse industries'/>
 
-</div>
+        <div className="mb-4 md:mb-6 lg:mb-8">
+          <SectionTitle tag='Industry Expertise' title={'Driving Quality Across Diverse Domains '} subtitle='  Delivering specialized testing solutions across diverse industries' />
+
+        </div>
         {/* Domains Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {domains.map((domain, index) => (
@@ -102,12 +102,12 @@ const DomainsWeServe: React.FC = () => {
             >
               {/* Background Gradient */}
               <div className={`absolute inset-0 bg-gradient-to-br ${domain.gradient}`}></div>
-              
+
               {/* Card Content */}
               <div className="relative h-full p-3 flex flex-col  bg-gradient-to-br from-[#0a102a]/80 to-[#151b3d]/80 backdrop-blur-sm">
                 {/* Icon */}
                 <img src={domain.img} alt="" className='mb-3 h-[187px] object-fill bg-[#7446d9] rounded-lg' />
-                
+
                 {/* Text Content */}
                 <div>
                   {/* <h3 className="text-xl font-semibold text-white mb-1 group-hover:text-purple-200 transition-colors duration-300">
@@ -131,7 +131,7 @@ const DomainsWeServe: React.FC = () => {
           ))}
         </div>
 
-        
+
       </div>
     </section>
   );

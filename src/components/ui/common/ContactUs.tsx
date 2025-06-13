@@ -96,12 +96,14 @@ const ContactUs: React.FC = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section - Mobile Optimized */}
 
-        <SectionTitle
-          tag="Get In Touch"
+        <div className='mb-4 md:mb-6 lg:mb-8'>
+          <SectionTitle
+            tag="Get In Touch"
 
-          title="Let's Start Something Great"
-          subtitle="Share your QA requirements with us and our experts will get back to you" />
+            title="Let's Start Something Great"
+            subtitle="Share your QA requirements with us and our experts will get back to you" />
 
+        </div>
 
         {/* Creative Two-Column Layout - Mobile Optimized */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start">

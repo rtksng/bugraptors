@@ -59,7 +59,7 @@ const tools = [
 
 const ProprietaryTools: React.FC = () => {
   return (
-    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24   overflow-hidden ">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 border-1 border-gradient-effect  overflow-hidden ">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className=""></div>

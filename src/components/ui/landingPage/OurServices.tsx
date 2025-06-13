@@ -73,10 +73,11 @@ const SoftwareTestingOfferings: React.FC = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Enhanced Header Section */}
-
-
+       
+       <div className='mb-4 md:mb-6 lg:mb-8'>
         <SectionTitle tag="Our Services" title=" Comprehensive Software Testing Solutions" subtitle=" From initial planning to final deployment, we provide end-to-end testing services that transform your software from bugged to bug-free." />
+
+       </div>
 
         {/* Offerings Carousel */}
         <div className="relative px-12">
