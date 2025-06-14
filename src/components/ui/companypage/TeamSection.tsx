@@ -43,7 +43,7 @@ const TeamSection: React.FC = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-blue-600/8 to-cyan-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-80 h-80 "></div>
       </div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,7 +97,7 @@ const TeamSection: React.FC = () => {
                 {/* Status Indicator */}
                 <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="flex items-center space-x-2 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <div className="w-2 h-2 bg-green-400 rounded-full "></div>
                     <span className="text-white text-xs font-medium">Available</span>
                   </div>
                 </div>
@@ -129,9 +129,9 @@ const TeamSection: React.FC = () => {
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-purple-600 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-b-2xl"></div>
 
               {/* Enhanced Floating Particles */}
-              <div className="absolute top-4 right-4 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-              <div className="absolute bottom-20 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
-              <div className="absolute top-1/2 right-2 w-0.5 h-0.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-500 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300"></div>
+              <div className="absolute bottom-20 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100  delay-300 transition-opacity duration-300"></div>
+              <div className="absolute top-1/2 right-2 w-0.5 h-0.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100  delay-500 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
@@ -197,9 +197,9 @@ const TeamSection: React.FC = () => {
             </div>
             
             {/* Floating Particles */}
-            <div className="absolute top-6 right-6 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-            <div className="absolute bottom-6 left-6 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
-            <div className="absolute top-1/3 left-8 w-0.5 h-0.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-500 transition-opacity duration-300"></div>
+            <div className="absolute top-6 right-6 w-1.5 h-1.5 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300"></div>
+            <div className="absolute bottom-6 left-6 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100  delay-300 transition-opacity duration-300"></div>
+            <div className="absolute top-1/3 left-8 w-0.5 h-0.5 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100  delay-500 transition-opacity duration-300"></div>
           </div>
         </div>
       </div>

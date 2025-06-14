@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from './SectionTittle';
 
 interface HowItWorksItem {
   title: string;
@@ -26,8 +27,8 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Animated Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-purple-600/15 rounded-full blur-3xl "></div>
+        <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl  delay-1000"></div>
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:48px_48px]"></div>
@@ -35,8 +36,8 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
         {/* Floating Particles */}
         <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-purple-400/60 rounded-full animate-bounce delay-300"></div>
         <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-blue-400/60 rounded-full animate-bounce delay-700"></div>
-        <div className="absolute top-1/2 left-1/8 w-1 h-1 bg-purple-300/80 rounded-full animate-pulse delay-500"></div>
-        <div className="absolute bottom-1/3 right-1/8 w-2 h-2 bg-blue-300/80 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/8 w-1 h-1 bg-purple-300/80 rounded-full  delay-500"></div>
+        <div className="absolute bottom-1/3 right-1/8 w-2 h-2 bg-blue-300/80 rounded-full  delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -49,17 +50,17 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
               </p>
             )}
             
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-purple-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
-                {title}
-              </span>
-            </h2>
             
             {description && (
               <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
                 {description}
               </p>
             )}
+
+            <SectionTitle
+  title={title}
+  para1={description}
+/>
           </div>
 
           {/* Items Grid */}
@@ -89,7 +90,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
                         {item.icon}
                         
                         {/* Icon Glow Ring */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 "></div>
                       </div>
                       
                       {/* Floating Ring */}
@@ -122,7 +123,7 @@ const HowItWorksSection: React.FC<HowItWorksSectionProps> = ({
               <div className="flex items-center space-x-4">
                 {items.map((_, index) => (
                   <React.Fragment key={index}>
-                    <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full animate-pulse" style={{ animationDelay: `${index * 200}ms` }}></div>
+                    <div className="w-3 h-3 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full " style={{ animationDelay: `${index * 200}ms` }}></div>
                     {index < items.length - 1 && (
                       <div className="w-8 h-px bg-gradient-to-r from-purple-500/50 to-blue-500/50"></div>
                     )}

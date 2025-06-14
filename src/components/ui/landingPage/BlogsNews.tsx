@@ -82,14 +82,14 @@ const BlogsNews: React.FC = () => {
     <section className="relative py-24  overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 "></div>
+       
 
         {/* Subtle particle elements */}
         {[...Array(5)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-purple-400/30 rounded-full "
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,

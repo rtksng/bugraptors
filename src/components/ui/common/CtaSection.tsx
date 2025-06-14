@@ -20,8 +20,8 @@ const CtaSection: React.FC<CtaSectionProps> = ({
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Animated Gradient Orbs */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl "></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl  delay-1000"></div>
         
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:32px_32px]"></div>
@@ -29,8 +29,8 @@ const CtaSection: React.FC<CtaSectionProps> = ({
         {/* Floating Particles */}
         <div className="absolute top-1/3 left-1/6 w-2 h-2 bg-purple-400/60 rounded-full animate-bounce delay-300"></div>
         <div className="absolute top-2/3 right-1/6 w-3 h-3 bg-blue-400/60 rounded-full animate-bounce delay-700"></div>
-        <div className="absolute top-1/2 left-1/3 w-1 h-1 bg-purple-300/80 rounded-full animate-pulse delay-500"></div>
-        <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-blue-300/80 rounded-full animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/3 w-1 h-1 bg-purple-300/80 rounded-full  delay-500"></div>
+        <div className="absolute bottom-1/3 right-1/3 w-2 h-2 bg-blue-300/80 rounded-full  delay-1000"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">

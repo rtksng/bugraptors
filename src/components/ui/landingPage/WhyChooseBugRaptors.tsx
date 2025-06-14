@@ -56,14 +56,14 @@ const WhyChooseBugRaptors: React.FC = () => {
     <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
       {/* Background Elements - Mobile Optimized */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 "></div>
         <div className="absolute bottom-20 right-10 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
 
         {/* Subtle decorative elements */}
         {[...Array(4)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-1 h-1 bg-purple-400/30 rounded-full animate-pulse"
+            className="absolute w-1 h-1 bg-purple-400/30 rounded-full "
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,

@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from './SectionTittle';
 
 interface WhyChooseItem {
   number: string;
@@ -25,8 +26,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
 
         {/* Additional floating elements */}
@@ -48,14 +48,11 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                {title}
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto">
-              {description}
-            </p>
+
+            <SectionTitle
+              title={title}
+              para1={description}
+            />
           </div>
 
           {/* Items Grid */}
@@ -77,7 +74,7 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
                   <div className="relative w-12 h-12 custom-bg-color rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                     <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent rounded-lg"></div>
                     <span className="text-white font-bold text-lg relative z-10">{item.number}</span>
-                    
+
                     {/* Glowing ring effect */}
                     <div className="absolute inset-0 rounded-lg border-2 border-purple-400/0 group-hover:border-purple-400/30 transition-all duration-300"></div>
                   </div>
@@ -102,8 +99,8 @@ const WhyChooseSection: React.FC<WhyChooseSectionProps> = ({
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
                 {/* Floating Particles */}
-                <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-                <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
+                <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300"></div>
+                <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100  delay-300 transition-opacity duration-300"></div>
               </div>
             ))}
           </div>

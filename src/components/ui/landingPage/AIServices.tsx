@@ -44,8 +44,8 @@ const AIServices: React.FC = () => {
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Animated gradient orbs */}
-        <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-96 h-96 "></div>
+       
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
 
         {/* Additional floating elements */}
@@ -98,7 +98,7 @@ const AIServices: React.FC = () => {
 
               {/* Content */}
               <div className="relative z-10">
-                <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 mb-4 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">
+                <h3 className="text-xl  text-transparent bg-clip-text bg-gradient-to-r from-white to-purple-200 mb-4 group-hover:from-purple-300 group-hover:to-cyan-300 transition-all duration-300">
                   {service.title}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
@@ -110,8 +110,8 @@ const AIServices: React.FC = () => {
               <div className={`absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r ${service.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
 
               {/* Floating Particles */}
-              <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-              <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
+              <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300"></div>
+              <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100  delay-300 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>

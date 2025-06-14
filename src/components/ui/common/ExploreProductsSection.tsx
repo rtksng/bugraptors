@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from './SectionTittle';
 
 interface Product {
   name: string;
@@ -25,9 +26,10 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
     <section className={`py-20 relative overflow-hidden ${className}`}>
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Animated gradient orbs */}
+        {/* Animated gradient orbs - Resolved nested merge conflict */}
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-r from-purple-600/8 to-blue-600/8 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-r from-cyan-600/8 to-purple-600/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-indigo-900/5 to-transparent rounded-full"></div>
 
         {/* Additional floating elements */}
@@ -49,14 +51,11 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                {title}
-              </span>
-            </h2>
-            <p className="text-xl text-gray-300">
-              {subtitle}
-            </p>
+
+            <SectionTitle
+              title={title}
+              subtitle={subtitle}
+            />
           </div>
 
           {/* Products Grid */}
@@ -79,7 +78,7 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
                   <div className="relative z-10">
                     {product.icon}
                   </div>
-                  
+
                   {/* Glowing ring effect */}
                   <div className="absolute inset-0 rounded-xl border-2 border-purple-400/0 group-hover:border-purple-400/30 transition-all duration-300"></div>
                 </div>
@@ -87,8 +86,8 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
                 {/* Content */}
                 <div className="relative z-10">
                   <h3 className={`text-2xl font-semibold text-white mb-4 transition-colors duration-300 ${
-                    product.hoverColor 
-                      ? `group-hover:${product.hoverColor}` 
+                    product.hoverColor
+                      ? `group-hover:${product.hoverColor}`
                       : 'group-hover:text-purple-400'
                   }`}>
                     {product.name}
@@ -102,8 +101,8 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
                 <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-600 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
 
                 {/* Floating Particles */}
-                <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse transition-opacity duration-300"></div>
-                <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 animate-pulse delay-300 transition-opacity duration-300"></div>
+                <div className="absolute top-4 right-4 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100  transition-opacity duration-300"></div>
+                <div className="absolute bottom-8 left-4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100  delay-300 transition-opacity duration-300"></div>
 
                 {/* Click overlay for future link functionality */}
                 {product.link && (
@@ -118,4 +117,4 @@ const ExploreProductsSection: React.FC<ExploreProductsSectionProps> = ({
   );
 };
 
-export default ExploreProductsSection; 
+export default ExploreProductsSection;

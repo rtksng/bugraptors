@@ -1,4 +1,5 @@
 import React from 'react';
+import SectionTitle from './SectionTittle';
 
 interface PinkBackgroundSectionItem {
   title: string;
@@ -22,41 +23,41 @@ const PinkBackgroundSection: React.FC<PinkBackgroundSectionProps> = ({
   className = ""
 }) => {
   return (
-    <section className={`py-20 relative overflow-hidden bg-gradient-to-br from-pink-50 to-orange-50 ${className}`}>
+    <section className={`py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-[#020317] ${className}`}>
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/4 left-1/6 w-96 h-96 bg-orange-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/6 w-96 h-96 bg-pink-200/20 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-purple-500/10 rounded-full blur-3xl "></div>
+        <div className="absolute bottom-1/4 right-1/6 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 rounded-full blur-3xl  delay-1000"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Title */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                {title}
-              </span>
-            </h2>
+          <div className="text-center mb-12 sm:mb-16">
+
+
+            <SectionTitle
+              title={title}
+            />
           </div>
 
           {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12">
             {items.map((item, index) => (
-              <div 
-                key={index} 
-                className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 border border-white/50 hover:border-purple-200/80 transition-all duration-300 group hover:shadow-xl hover:shadow-purple-100/50"
+              <div
+                key={index}
+                className="bg-white/[0.02] backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 group hover:shadow-xl hover:shadow-cyan-500/10"
               >
                 {/* Icon */}
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 custom-bg-color rounded-xl sm:rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
                   {item.icon}
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-gray-800 mb-4 group-hover:text-purple-700 transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-4 group-hover:text-cyan-300 transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-gray-300 leading-relaxed text-sm sm:text-base group-hover:text-gray-200 transition-colors duration-300">
                   {item.description}
                 </p>
               </div>
@@ -68,10 +69,10 @@ const PinkBackgroundSection: React.FC<PinkBackgroundSectionProps> = ({
             <div className="text-center">
               <button
                 onClick={onButtonClick}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 custom-bg-color text-white text-base sm:text-lg  rounded-full hover:from-cyan-600 hover:to-purple-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-cyan-500/25"
               >
                 {buttonText}
-                <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-2 w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </button>
